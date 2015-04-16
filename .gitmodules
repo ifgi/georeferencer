@@ -1,9 +1,9 @@
 [submodule "js/Leaflet"]
 	path = js/Leaflet
 	url = https://github.com/Leaflet/Leaflet.git
-[submodule "js/sylvester"]
-	path = js/sylvester
-	url = https://github.com/jcoglan/sylvester.git
 [submodule "js/Leaflet.draw"]
 	path = js/Leaflet.draw
 	url = https://github.com/Leaflet/Leaflet.draw.git
+[submodule "js/sylvester"]
+	path = js/sylvester
+	url = https://github.com/jcoglan/sylvester.git
