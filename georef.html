@@ -106,6 +106,9 @@
 						<h3 title="Type the URL of the map you want to georeference.">1 - Image</h3>
 						<div>
 							<div id="imageForm">
+
+							    <b>Load Map via URL image</b>
+								<br><br>
 								Image url: 
 								<input id="imgMapInput" type="text">
 								<button id="btLoadImage">Load image</button>
@@ -114,9 +117,15 @@
 
 
 								<br><br>
-								OAI ID
+								<b>Load Map via OAI</b>
+								<br><br>
+								OAI Base URL
+								<input id="oaiBaseURI" type="text" value="http://sammlungen.ulb.uni-muenster.de/oai/?verb=GetRecord&metadataPrefix=mets&identifier=">
+								<br>OAI ID
+								
 								<input id="oaiInput" type="text">
-								<button id="btOAI">Load Data via OAI</button>
+
+								<button id="btOAI">Load Map</button>
 								<br>e.g. 1617753
 
 

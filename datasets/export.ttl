@@ -1,0 +1,3804 @@
+@prefix phen: <http://www.geographicknowledge.de/vocab/historicmapsphen#> .
+@prefix dbp: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbp-de: <http://de.dbpedia.org/resource/> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix lode: <http://linkedevents.org/ontology/> .
+@prefix maps: <http://www.geographicknowledge.de/vocab/maps#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix geof: <http://www.opengis.net/def/function/geosparql/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dbpedia2: <http://dbpedia.org/property/> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geoWgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dbpedia: <http://dbpedia.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo-1-0: <http://www.opengis.net/ont/geosparql/1.0#> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114750> maps:represents <http://uni-muenster.de/historicmaps/Aegyptus_Antiqua> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659878> ;
+	maps:mapSize "2.8 * 5.2 cm"^^xsd:string ;
+	maps:title "Aegyptus Antiqua / Mandato Serenissimi Delphini Publici Iuris Facta"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114750/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114750/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1784" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114750> maps:hasScale "1:24059134.9"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659878/4976071929> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114750> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659878/4976071929> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659878/4976071929> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((28.69014262312585 32.18447352414618,35.20647140891442 31.53098972954986,36.35786969230042 22.876240689042106,29.853857024756962 23.609743259184327,28.69014262312585 32.18447352414618))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114750> terms:description "Aegyptus Antiqua / Mandato Serenissimi Delphini Publici Iuris Facta. Auctor D'Anville. J. C. Berndt Sculp."^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114090> a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655753> ;
+	maps:mapSize "3.2 * 3.4 cm"^^xsd:string ;
+	maps:title "Africa / entw. und gez. von C. F. Weiland"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114090/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114090/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1841" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114090> maps:hasScale "1:377837409.3"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655753/4975927021> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114090> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655753/4975927021> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655753/4975927021> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-32.52967280372597 39.65261729849631,-31.133151397118876 -38.403251197987245,67.66600105856602 -36.50786277470917,66.26947965195893 41.54800572177439,-32.52967280372597 39.65261729849631))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114090> terms:description "Africa / entw. und gez. von C. F. Weiland,Africa / entw. and signed by C. F. Weiland,"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Africa , dbp:Khedivate_of_Egypt , dbp:Transvaal_Colony , dbp:British_Somaliland .
+
+<http://uni-muenster.de/historicmaps/Africa> a maps:Place ;
+	foaf:name "Africa"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114090> terms:creator <http://d-nb.info/gnd/121494233> .
+
+<http://d-nb.info/gnd/121494233> a terms:Agent ;
+	foaf:name "Weiland, Karl Ferdinand"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114750> maps:mapsPhenomenon dbp:Egypt , dbp:Middle_East , dbp:EgyptRoman_province , dbp:Egypt_Eyalet ;
+	terms:references dbp:Aegyptus .
+
+_:node192p4hbhox593 a phen:Agriculture .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114750> maps:mapsPhenomenon _:node192p4hbhox593 .
+
+_:node192p4hbhox969 a time:Instant .
+
+_:node192p4hbhox581 a time:Instant .
+
+_:node192p4hbhox979 time:inXSDDateTime "1789-01-01T12:00:00"^^xsd:dateTime .
+
+_:node192p4hbhox978 time:inXSDDateTime "1648-01-01T12:00:00"^^xsd:dateTime .
+
+_:node192p4hbhox582 a time:Instant .
+
+_:node192p4hbhox580 time:hasBeginning _:node192p4hbhox980 .
+
+dbp:Grafschaft_Mark phen:wasAcquiredBy dbp:Johann_Sigismund ;
+	phen:partOfObject dbp:Prussia .
+
+dbp:Herzogtum_Kleve phen:wasAcquiredBy dbp:Johann_Sigismund ;
+	phen:partOfObject dbp:Prussia .
+
+dbp:Rothenstein phen:wasAcquiredBy dbp:Johann_Sigismund ;
+	phen:partOfObject dbp:Prussia .
+
+dbp:Herzogtum_Magdeburg phen:wasAcquiredBy dbp:Friedrich_of_Brandenburg ;
+	phen:partOfObject dbp:Prussia .
+
+_:node192p4hbhox583 a phen:Event ;
+	phen:isSettingForPerson dbp:Friedrich_of_Brandenburg ;
+	phen:isSettingForRole dbp:Duke ;
+	phen:rulesOver dbp:Prussia ;
+	phen:isSettingAtTime _:node192p4hbhox577 .
+
+_:node192p4hbhox577 a time:TemporalInterval .
+
+_:node192p4hbhox981 time:inXSDDateTime "1619-01-01T12:00:00"^^xsd:dateTime .
+
+_:node192p4hbhox584 a time:Instant .
+
+_:node192p4hbhox970 time:hasEnd _:node192p4hbhox979 .
+
+dbp:Duchy_of_Prussia phen:partOfObject dbp:Prussia .
+
+_:node192p4hbhox579 a phen:Event ;
+	phen:isSettingForPerson dbp:Johann_Sigismund ;
+	phen:isSettingForRole dbp:Duke ;
+	phen:rulesOver dbp:Prussia ;
+	phen:isSettingAtTime _:node192p4hbhox580 .
+
+_:node192p4hbhox580 a time:TemporalInterval .
+
+_:node192p4hbhox594 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114750> maps:mapsPhenomenon _:node192p4hbhox594 .
+
+_:node192p4hbhox595 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114750> maps:mapsPhenomenon _:node192p4hbhox595 .
+
+_:node192p4hbhox596 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114750> maps:mapsPhenomenon _:node192p4hbhox596 .
+
+dbp:Egypt a maps:Place ;
+	foaf:name "Egypt"^^xsd:string .
+
+dbp:Middle_East a maps:Place ;
+	foaf:name "Middle_East"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114750> terms:creator <http://d-nb.info/gnd/137456972> , <http://d-nb.info/gnd/117662046> ;
+	maps:mapsPhenomenon dbp:Egypt , dbp:Red_Sea , dbp:Mediterranean_Sea .
+
+dbp:Egypt a phen:State , dbpedia-owl:Country .
+
+dbp:Red_Sea a phen:Sea .
+
+_:node192p4hbhox560 phen:happensAt dbp:Maladsetschna ;
+	phen:participantsNumber "28000"^^xsd:decimal ;
+	phen:temperature "-30"^^dbp-de:Réaumur-Skala .
+
+dbp:Mediterranean_Sea a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> terms:creator <http://d-nb.info/gnd/1014927757> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> maps:mapsPhenomenon dbp:Bohemia .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon dbp:Italy , dbp:Spain , dbp:PortugAal , dbp:Turkey , dbp:Germany , dbp:Denmark , dbp:Swedena , dbp:France , dbp:United_Kingdom , dbp:Poland , dbp:Ukraine , dbp:Norway , dbp:Finland .
+
+dbp:Czech_Republic a dbpedia-owl:Country .
+
+dbp:Italy a phen:State .
+
+dbp:Spain a phen:State .
+
+dbp:Portugal a phen:State .
+
+dbp:Turkey a phen:State .
+
+dbp:Germany a phen:State .
+
+dbp:Denmark a phen:State .
+
+dbp:Sweden a phen:State .
+
+dbp:France a phen:State .
+
+dbp:United_Kingdom a phen:State .
+
+dbp:Poland a phen:State .
+
+dbp:Ukraine a phen:State .
+
+dbp:Norway a phen:State .
+
+dbp:Finland a phen:State .
+
+dbp:Caspian_Sea a phen:Sea .
+
+dbp:Mediterranean_Sea a phen:Sea .
+
+dbp:North_Sea a phen:Sea .
+
+dbp:Peace_of_Westphalia a dbp:Peace_treaty .
+
+dbp:French_Revolution a phen:Event .
+
+dbp:Ireland a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsTime _:node192p4hbhox607 .
+
+_:node192p4hbhox607 a time:Interval .
+
+_:node192p4hbhox577 time:hasBeginning _:node192p4hbhox982 .
+
+_:node192p4hbhox606 a time:Instant .
+
+_:node192p4hbhox968 a time:Instant .
+
+_:node192p4hbhox982 time:inXSDDateTime "1610-01-01T12:00:00"^^xsd:dateTime .
+
+_:node192p4hbhox605 a time:Instant .
+
+_:node192p4hbhox970 time:hasBeginning _:node192p4hbhox978 .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:mapsPhenomenon dbp:Ukraine , dbp:Norway , dbp:Finland .
+
+dbp:Reichenberg a phen:Village .
+
+dbp:Italy a phen:State .
+
+dbp:Spain a phen:State .
+
+dbp:Portugal a phen:State .
+
+dbp:Turkey a phen:State .
+
+dbp:Germany a phen:State .
+
+dbp:Denmark a phen:State .
+
+dbp:Sweden a phen:State .
+
+dbp:France a phen:State .
+
+dbp:United_Kingdom a phen:State .
+
+dbp:Poland a phen:State .
+
+dbp:Ukraine a phen:State .
+
+dbp:Norway a phen:State .
+
+dbp:Finland a phen:State .
+
+dbp:Caspian_Sea a phen:Sea .
+
+dbp:Mediterranean_Sea a phen:Sea .
+
+dbp:North_Sea a phen:Sea .
+
+dbp:Peace_of_Westphalia a dbp:Peace_treaty .
+
+dbp:French_Revolution a phen:Event .
+
+dbp:Ireland phen:partOfObject dbp:United_Kingdom .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:mapsTime _:node192p4hbhox624 .
+
+_:node192p4hbhox624 a time:Interval .
+
+_:node192p4hbhox577 time:hasEnd _:node192p4hbhox983 .
+
+_:node192p4hbhox623 a time:Instant .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> maps:mapsPhenomenon <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox983 time:inXSDDateTime "1688-01-01T12:00:00"^^xsd:dateTime .
+
+_:node192p4hbhox622 a time:Instant .
+
+_:node192p4hbhox974 time:inXSDDateTime "1648-01-01T12:00:00"^^xsd:dateTime .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:mapsPhenomenon dbp:Portugal , dbp:Turkey , dbp:Germany , dbp:Denmark , dbp:Sweden , dbp:France , dbp:United_Kingdom , dbp:Poland .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130> maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2539400> ;
+	maps:mapSize "3.6 * 3.6 cm"^^xsd:string ;
+	maps:title "Africa"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1832" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130> maps:hasScale "1:361057503.7"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2539400/4934560099> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2539400/4934560099> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2539400/4934560099> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-37.46296413087201 45.79658034836302,61.00348573057241 37.85945496190166,61.74008652964615 -39.26998208035948,-37.120214530283825 -32.41959642532505,-37.46296413087201 45.79658034836302))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130> terms:description "Erschienen, Magdeburg : Mazzuchi, 1832"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Africa ;
+	terms:references dbp:Magdeburg .
+
+_:node192p4hbhox628 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130> maps:mapsPhenomenon _:node192p4hbhox628 .
+
+_:node192p4hbhox629 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130> maps:mapsPhenomenon _:node192p4hbhox629 .
+
+_:node192p4hbhox630 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130> maps:mapsPhenomenon _:node192p4hbhox630 .
+
+_:node192p4hbhox633 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130> maps:mapsPhenomenon _:node192p4hbhox633 .
+
+_:node192p4hbhox632 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130> maps:mapsPhenomenon _:node192p4hbhox632 .
+
+_:node192p4hbhox631 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130> maps:mapsPhenomenon _:node192p4hbhox631 .
+
+<http://uni-muenster.de/historicmaps/africa> a maps:Place ;
+	foaf:name "africa"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130> terms:creator <http://d-nb.info/gnd/179474561> ;
+	maps:mapsPhenomenon dbp:Africa , dbp:Arabian_Peninsula , dbp:Iran .
+
+dbp:Africa a phen:Territory .
+
+dbp:Iran a phen:Territory .
+
+dbp:Arabian_Peninsula a phen:Territory .
+
+dbp:Atalntic_Ocean a phen:WaterBody .
+
+dbp:Mediterranean_Sea a phen:Sea .
+
+_:node192p4hbhox561 phen:participantsNumber "12000"^^xsd:decimal ;
+	phen:temperature "-30"^^dbp-de:Réaumur-Skala ;
+	phen:nextEvent _:node192p4hbhox562 .
+
+_:node192p4hbhox562 a phen:War .
+
+_:node192p4hbhox541 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox562 phen:happensAt dbp:Vilnius ;
+	phen:participantsNumber "8000"^^xsd:decimal ;
+	phen:temperature "-26"^^dbp-de:Réaumur-Skala ;
+	phen:nextEvent _:node192p4hbhox563 .
+
+_:node192p4hbhox563 a phen:War .
+
+_:node192p4hbhox542 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox563 phen:happensAt dbp:Kaunas ;
+	phen:participantsNumber "4000"^^xsd:decimal .
+
+_:node192p4hbhox564 a phen:War .
+
+_:node192p4hbhox543 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox564 phen:happensAt dbp:Kaunas ;
+	phen:participantsNumber "6000"^^xsd:decimal .
+
+_:node192p4hbhox544 a phen:War .
+
+_:node192p4hbhox545 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox544 phen:happensAt dbp:Glubokoye ;
+	phen:participantsNumber "60000"^^xsd:decimal ;
+	phen:nextEvent _:node192p4hbhox565 .
+
+_:node192p4hbhox565 a phen:War .
+
+_:node192p4hbhox546 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox565 phen:happensAt dbp:Polazk ;
+	phen:participantsNumber "35000"^^xsd:decimal ;
+	phen:nextEvent _:node192p4hbhox556 .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368> terms:references dbp:Holland , dbp:Switzerland , dbp:Northern_Italy , dbp:Denmark .
+
+_:node192p4hbhox914 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368> maps:mapsPhenomenon _:node192p4hbhox914 .
+
+_:node192p4hbhox915 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368> maps:mapsPhenomenon _:node192p4hbhox915 .
+
+_:node192p4hbhox916 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368> maps:mapsPhenomenon dbp:Germany , dbp:France .
+
+_:node192p4hbhox560 phen:nextEvent _:node192p4hbhox561 .
+
+_:node192p4hbhox561 a phen:War .
+
+_:node192p4hbhox547 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox561 phen:happensAt dbp:Smarhon .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121582> maps:hasScale "1:50640520.1"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2753082/5014983015> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121582> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2753082/5014983015> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2753082/5014983015> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((4.677934664447927 55.863420388839984,13.688053362915884 56.379282855776495,15.025188916667325 49.4128145500043,5.570769913552539 48.97508814076834,4.677934664447927 55.863420388839984))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121582> terms:description "General Karte vom Preussischen Staate : mit den Gränzen der Regierungs-Bezirke und landräthlichen Kreise / entworfen im Jahre 1827 von F. B. Engelhardt. Schrift gestochen von Heinrich Kliewer. Situation, Berge und Wasser von W. Bimbé, General map of the Prussian state: the limits of the governmental districts and counties landräthlichen / designed in 1827 by FB Engelhardt. Scripture engraved by Heinrich Kliewer. Situation, mountains and water of W. bimbe"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Frankfurt> , <http://uni-muenster.de/historicmaps/Heidelberg> ;
+	terms:references dbp:Denmark , dbp:Prussia .
+
+_:node192p4hbhox821 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121582> maps:mapsPhenomenon _:node192p4hbhox821 .
+
+_:node192p4hbhox822 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121582> maps:mapsPhenomenon _:node192p4hbhox822 .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218> terms:references dbp:River_Thames , dbp:Ebro , dbp:Denmark .
+
+_:node192p4hbhox823 a phen:RulingSituation .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121582> maps:mapsPhenomenon _:node192p4hbhox823 .
+
+_:node192p4hbhox826 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121582> maps:mapsPhenomenon _:node192p4hbhox826 .
+
+_:node192p4hbhox825 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121582> maps:mapsPhenomenon _:node192p4hbhox825 .
+
+<http://uni-muenster.de/historicmaps/Frankfurt> a maps:Place ;
+	foaf:name "Frankfurt"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Heidelberg> a maps:Place ;
+	foaf:name "Heidelberg"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121582> terms:creator <http://d-nb.info/gnd/1053395116> , <http://d-nb.info/gnd/101454694> , <http://d-nb.info/gnd/123967023> ;
+	maps:mapsPhenomenon dbp:North_Sea , _:node192p4hbhox824 , dbp:Germany , dbp:Poland , dbp:Denmark , dbp:France , dbp:Netherlands , dbp:Austria , dbp:Belgium , dbp:Slovakia , dbp:Hungary .
+
+dbp:Poland a phen:State .
+
+_:node192p4hbhox626 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:mapsPhenomenon _:node192p4hbhox626 .
+
+_:node192p4hbhox625 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:mapsPhenomenon _:node192p4hbhox625 .
+
+dbp:Spain a maps:Place ;
+	foaf:name "Spain"^^xsd:string .
+
+dbp:Denmark a maps:Place ;
+	foaf:name "Denmark"^^xsd:string .
+
+dbp:United_Kingdom a maps:Place ;
+	foaf:name "United_Kingdom"^^xsd:string .
+
+dbp:Italy a maps:Place ;
+	foaf:name "Italy"^^xsd:string .
+
+dbp:Germany a maps:Place ;
+	foaf:name "Germany"^^xsd:string .
+
+dbp:Turkey a maps:Place .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102194> maps:represents <http://uni-muenster.de/historicmaps/Weltatlas> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2532818> ;
+	maps:mapSize "4.9 * 5.2 cm"^^xsd:string ;
+	maps:title "Weltatlas in 18 Blättern"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102194/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102194/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1800" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102194> maps:hasScale "1:697866828.7"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2532818/4934312937> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102194> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2532818/4934312937> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2532818/4934312937> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((4.179358823138074 64.8376872599419,68.8237211438414 83.55380464161425,115.67824358446265 82.99485658451823,170.76424191677475 68.32307942548039,199.25914169502332 51.608617176964145,216.94208687976723 18.48934412451308,212.2233113682498 -9.845576152007169,171.88447096799283 -52.10319364760488,147.62612210094605 -65.72709196238982,109.29797762021227 -74.34751830476273,65.23196260836622 -77.74535347824234,9.20085158878581 -66.23296742045828,-32.472349673735266 -42.25263386236219,-48.801255062482014 -11.78449624826348,-33.733070624042654 37.868769607711755,4.179358823138074 64.8376872599419))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102194> terms:description "[Weltatlas in 18 Blättern] / Joh[ann] Walch, Erschienen:"^^xsd:string ;
+	maps:mapsPhenomenon dbp:India , dbp:Africa , dbp:Australia , dbp:Russia , dbp:China , <http://dbpedia.org/page/Europe> .
+
+_:node192p4hbhox638 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102194> maps:mapsPhenomenon _:node192p4hbhox638 .
+
+_:node192p4hbhox639 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102194> maps:mapsPhenomenon _:node192p4hbhox639 .
+
+_:node192p4hbhox640 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102194> maps:mapsPhenomenon _:node192p4hbhox640 .
+
+_:node192p4hbhox642 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102194> maps:mapsPhenomenon _:node192p4hbhox642 .
+
+_:node192p4hbhox641 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102194> maps:mapsPhenomenon _:node192p4hbhox641 .
+
+dbp:India a maps:Place ;
+	foaf:name "India"^^xsd:string .
+
+dbp:Africa a maps:Place ;
+	foaf:name "Africa"^^xsd:string .
+
+dbp:Australia a maps:Place ;
+	foaf:name "Australia"^^xsd:string .
+
+dbp:Russia a maps:Place ;
+	foaf:name "Russia"^^xsd:string .
+
+dbp:China a maps:Place ;
+	foaf:name "China"^^xsd:string .
+
+_:node192p4hbhox925 a phen:Battle .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> maps:mapsPhenomenon dbp:Reichenberg .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102194> terms:creator <http://d-nb.info/gnd/121821218> ;
+	maps:mapsPhenomenon dbp:Asia .
+
+dbp:Czech_Republic a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102194> maps:mapsPhenomenon dbp:Australia , dbp:Africa , dbp:Indian_Ocean .
+
+<http://dbpedia.org/page/Europe> a phen:Territory .
+
+dbp:Indian_Ocean a phen:WaterBody .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470> maps:title "Carte Particuliere D'Amstelland"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470/mapRepresentationTime> a time:Instant .
+
+dbp:Poland a dbpedia-owl:Country .
+
+dbp:Germany a phen:State , dbpedia-owl:Country .
+
+dbp:France a phen:State , dbpedia-owl:Country .
+
+dbp:Denmark a phen:State , dbpedia-owl:Country .
+
+dbp:Netherlands a phen:State , dbpedia-owl:Country .
+
+dbp:Austria a phen:State , dbpedia-owl:Country .
+
+dbp:Belgium a phen:State , dbpedia-owl:Country .
+
+dbp:Slovakia a phen:State , dbpedia-owl:Country .
+
+dbp:Hungary a phen:State , dbpedia-owl:Country .
+
+dbp:North_Sea a phen:Sea .
+
+_:node192p4hbhox824 a phen:Territory ;
+	foaf:name dbp:Prussia ;
+	phen:RulingSituation dbp:Roman_Empire .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2578854> ;
+	maps:mapSize "2.8 * 2.9 cm"^^xsd:string ;
+	maps:title "Asien"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1845" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> maps:hasScale "1:511625756.5"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2578854/4939272371> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2578854/4939272371> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2578854/4939272371> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((21.672839606488154 75.4733057113416,201.55108020259996 75.36895452136872,173.24165513203837 -11.597627446690485,-8.011962591446888 -11.500845205615143,21.672839606488154 75.4733057113416))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> terms:description "Asien / entw. und gez. von C. F. Weiland"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Asia .
+
+dbp:China foaf:name "China"^^xsd:string .
+
+dbp:Turkey a maps:Place ;
+	foaf:name "Turkey"^^xsd:string .
+
+dbp:Arabia a maps:Place ;
+	foaf:name "Arabia"^^xsd:string .
+
+dbp:Russia a maps:Place ;
+	foaf:name "Russia"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> maps:mapsPhenomenon dbp:Russia , dbp:Persian , dbp:China , dbp:India , dbp:Indian_Ocean , dbp:Mongolia , dbp:Corea , dbp:Indian_subcontinent , dbp:Borneo , dbp:Japan .
+
+dbp:Russia a phen:Territory .
+
+dbp:Persian a phen:Territory .
+
+dbp:China a phen:Territory .
+
+dbp:India a phen:Territory .
+
+dbp:Indian_Oceana a phen:Territory .
+
+dbp:Mongolia a phen:Territory .
+
+dbp:Corea a phen:Territory .
+
+dbp:Indian_subcontinent a phen:Territory .
+
+dbp:Borneo a phen:Territory .
+
+dbp:Japan a phen:Territory .
+
+dbp:Indian_Ocean a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113954> maps:mapsPhenomenon dbp:Philippines ;
+	terms:references dbp:Asia .
+
+_:node192p4hbhox643 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113954> maps:mapsPhenomenon _:node192p4hbhox643 .
+
+_:node192p4hbhox644 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113954> maps:mapsPhenomenon _:node192p4hbhox644 .
+
+_:node192p4hbhox645 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113954> maps:mapsPhenomenon _:node192p4hbhox645 .
+
+_:node192p4hbhox646 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113954> maps:mapsPhenomenon _:node192p4hbhox646 .
+
+dbp:India a maps:Place ;
+	foaf:name "India"^^xsd:string .
+
+dbp:Arabia a maps:Place ;
+	foaf:name "Arabia"^^xsd:string .
+
+dbp:China a maps:Place ;
+	foaf:name "China"^^xsd:string .
+
+dbp:Turkey a maps:Place ;
+	foaf:name "Turkey"^^xsd:string .
+
+dbp:Japan a maps:Place ;
+	foaf:name "Japan"^^xsd:string .
+
+dbp:Philippines a maps:Place ;
+	foaf:name "Philippines"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113954> terms:creator <http://d-nb.info/gnd/116397284> ;
+	maps:mapsPhenomenon dbp:Russia , dbp:Persian , dbp:China , dbp:Hindustan , dbp:Indian_Ocean , dbp:Mongolia , dbp:Corea , dbp:Indian_subcontinent , dbp:Borneo , dbp:New_Guinea , dbp:Japan .
+
+dbp:Russia a phen:Territory .
+
+dbp:Persian a phen:Territory .
+
+dbp:China a phen:Territory .
+
+dbp:Hindustan a phen:Territory .
+
+dbp:Indian_Ocean a phen:Territory .
+
+dbp:Mongolia a phen:Territory .
+
+dbp:Corea a phen:Territory .
+
+dbp:Indian_subcontinent a phen:Territory .
+
+dbp:Borneo a phen:Territory .
+
+dbp:New_Guinea a phen:Territory .
+
+dbp:Japan a phen:Territory .
+
+dbp:Indian_Ocean a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon dbp:Caspian_Sea , dbp:Norway , dbp:Germany .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:represents <http://uni-muenster.de/historicmaps/ZweitePeriode2> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619155> ;
+	maps:mapSize "2.6 * 2.6 cm"^^xsd:string ;
+	maps:title "Zweite Periode"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1648" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:hasScale "1:109200643"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619155/4971320553> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619155/4971320553> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619155/4971320553> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((16.01170774446146 78.99823958717911,32.57336070110654 62.05259403571704,2.2605868605590587 24.292184396435907,-13.989488527726397 41.92820489975535,16.01170774446146 78.99823958717911))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> terms:description "Zweite Periode : vom Westfälischen Frieden bis zur französischen Revolution von 1648 bis 1789 ; Übersichtskarte für das Jahr 1788"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Spain , dbp:Denmark , dbp:United_Kingdom , dbp:Italy , dbp:Germany , dbp:Turkey , dbp:Mediterranean_Sea , dbp:Caspian_Sea , dbp:Finland .
+
+_:node192p4hbhox619 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:mapsPhenomenon _:node192p4hbhox619 .
+
+_:node192p4hbhox620 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:mapsPhenomenon _:node192p4hbhox620 .
+
+_:node192p4hbhox621 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:mapsPhenomenon _:node192p4hbhox621 .
+
+_:node192p4hbhox627 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:mapsPhenomenon _:node192p4hbhox627 .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113954> maps:represents <http://uni-muenster.de/historicmaps/Asia> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2657231> ;
+	maps:mapSize "2.8 * 2.9 cm"^^xsd:string ;
+	maps:title "Asia"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113954/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113954/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1826" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113954> maps:hasScale "1:378582589.7"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2657231/4975993382> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113954> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2657231/4975993382> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2657231/4975993382> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((14.692170593608411 64.0008974408405,192.8063790560794 85.53420100924146,202.10244792159557 2.0007435455132168,26.725090110675218 -20.99776857118921,14.692170593608411 64.0008974408405))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113954> terms:description "Asia : neu bearbeitet nach R. u. St. / zuerst entw. u. gez. v. C. G. R. 1821, Asia: new entw edited by R. St. u / first.. u. signed. v. C. G. R. 1821"^^xsd:string ;
+	maps:mapsPhenomenon dbp:India , dbp:Arabia , dbp:China , dbp:Turkey , dbp:Japan .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102109> maps:represents dbp:Australia ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2529304> ;
+	maps:mapSize "4.4 * 4.2 cm"^^xsd:string ;
+	maps:title "Australien"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102109/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102109/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1832" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102109> maps:hasScale "1:457171436.6"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2529304/4933373093> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102109> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2529304/4933373093> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2529304/4933373093> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((102.02257696798775 46.22930443898295,228.38114402605459 42.957305876177884,241.1995991445072 -63.261290024146085,106.03959218183309 -61.95432145786376,102.02257696798775 46.22930443898295))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102109> terms:description "Australien / Albrecht Platt,   Erschienen: Magdeburg : Mazzuchi, 1832"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Australia , dbp:Philippines , dbp:China , dbp:Vietnam , dbp:Papua_New_Guinea .
+
+_:node192p4hbhox647 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102109> maps:mapsPhenomenon _:node192p4hbhox647 .
+
+_:node192p4hbhox648 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102109> maps:mapsPhenomenon _:node192p4hbhox648 .
+
+_:node192p4hbhox649 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102109> maps:mapsPhenomenon _:node192p4hbhox649 .
+
+_:node192p4hbhox651 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102109> maps:mapsPhenomenon _:node192p4hbhox651 .
+
+_:node192p4hbhox650 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102109> maps:mapsPhenomenon _:node192p4hbhox650 .
+
+dbp:Australia a maps:Place ;
+	foaf:name "Australia"^^xsd:string .
+
+dbp:Philippines a maps:Place ;
+	foaf:name "Philippines"^^xsd:string .
+
+dbp:China a maps:Place ;
+	foaf:name "China"^^xsd:string .
+
+dbp:Vietnam a maps:Place ;
+	foaf:name "Vietnam"^^xsd:string .
+
+dbp:Papua_New_Guinea a maps:Place ;
+	foaf:name "Papua_New_Guinea"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-102109> terms:creator <http://d-nb.info/gnd/130859338> ;
+	maps:mapsPhenomenon dbp:Australia , dbp:New_Zealand , dbp:Indian_Ocean , dbp:Papua_New_Guinea .
+
+dbp:Papua_New_Guinea a phen:Territory .
+
+dbp:Indian_Ocean a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470/mapRepresentationTime> xsd:gYear "1749" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470> maps:hasScale "1:1157907.8"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2666531/4977146633> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2666531/4977146633> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2666531/4977146633> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((4.7165918715834785 52.433792071421806,5.157445194143493 52.462294670943905,5.177714258617 52.23261577546188,4.728047498203912 52.20348511615051,4.7165918715834785 52.433792071421806))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470> terms:description "Carte Particuliere D'Amstelland ou les Environs d'Amsteldam, Muyden, Weesp, Naarden &c. / I. Condet s., Erschienen:Amsterdam : Cóvens en Mortier, 1749"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Weesp , dbp:Horstermeer .
+
+_:node192p4hbhox545 a phen:War .
+
+_:node192p4hbhox548 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox545 phen:happensAt dbp:Smolensk ;
+	phen:participantsNumber "175000"^^xsd:decimal ;
+	phen:nextEvent _:node192p4hbhox546 .
+
+_:node192p4hbhox546 a phen:War .
+
+_:node192p4hbhox549 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox546 phen:happensAt dbp:Dorogobusch ;
+	phen:participantsNumber "145000"^^xsd:decimal ;
+	phen:nextEvent _:node192p4hbhox547 .
+
+_:node192p4hbhox547 a phen:War .
+
+_:node192p4hbhox550 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox547 phen:happensAt <http://dbpedia.org/resource/Gagarin_(Smolensk)> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218> maps:mapsPhenomenon _:node192p4hbhox907 .
+
+_:node192p4hbhox908 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218> maps:mapsPhenomenon _:node192p4hbhox908 .
+
+_:node192p4hbhox909 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218> maps:mapsPhenomenon _:node192p4hbhox909 .
+
+_:node192p4hbhox913 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218> maps:mapsPhenomenon _:node192p4hbhox913 .
+
+_:node192p4hbhox912 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218> maps:mapsPhenomenon _:node192p4hbhox912 .
+
+_:node192p4hbhox911 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218> maps:mapsPhenomenon _:node192p4hbhox911 .
+
+_:node192p4hbhox910 a phen:Village .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218> maps:mapsPhenomenon _:node192p4hbhox910 .
+
+<http://uni-muenster.de/historicmaps/Germany> a maps:Place .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> maps:mapsPhenomenon dbp:China , dbp:Turkey , dbp:Arabia , dbp:Russia .
+
+_:node192p4hbhox838 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> maps:mapsPhenomenon _:node192p4hbhox838 .
+
+_:node192p4hbhox839 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> maps:mapsPhenomenon _:node192p4hbhox839 .
+
+_:node192p4hbhox840 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> maps:mapsPhenomenon _:node192p4hbhox840 .
+
+_:node192p4hbhox843 a phen:Sea .
+
+_:node192p4hbhox761 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114739> maps:mapsPhenomenon _:node192p4hbhox761 .
+
+dbp:India a maps:Place ;
+	foaf:name "India"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114739> terms:creator <http://d-nb.info/gnd/117662046> ;
+	maps:mapsPhenomenon dbp:South_Asia , dbp:India , dbp:Ganges , dbp:Bay_of_Bengal .
+
+dbp:South_Asia a phen:Continent .
+
+dbp:India a dbpedia-owl:Country .
+
+dbp:Indian_Ocean a phen:WaterBody .
+
+dbp:Bay_of_Bengal a phen:WaterBody .
+
+_:node192p4hbhox760 a phen:WaterBody ;
+	foaf:name "gangeticus sinus" ;
+	owl:sameAs dbp:Bay_of_Bengal .
+
+dbp:Ganges a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> maps:mapsPhenomenon _:node192p4hbhox843 .
+
+_:node192p4hbhox842 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> maps:mapsPhenomenon _:node192p4hbhox842 .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> maps:mapsPhenomenon dbp:Papal_States , dbp:Wallachia , dbp:Hohenzollern-Hechingen ;
+	terms:references dbp:Austrian_Empire .
+
+_:node192p4hbhox763 a phen:Agriculture .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> maps:mapsPhenomenon _:node192p4hbhox763 .
+
+_:node192p4hbhox764 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> maps:mapsPhenomenon _:node192p4hbhox764 .
+
+_:node192p4hbhox765 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> maps:mapsPhenomenon _:node192p4hbhox765 .
+
+_:node192p4hbhox771 a phen:Pasture .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> maps:mapsPhenomenon _:node192p4hbhox771 .
+
+_:node192p4hbhox770 a phen:Person .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> maps:mapsPhenomenon _:node192p4hbhox770 .
+
+_:node192p4hbhox769 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> maps:mapsPhenomenon _:node192p4hbhox769 .
+
+_:node192p4hbhox768 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> maps:mapsPhenomenon _:node192p4hbhox768 .
+
+_:node192p4hbhox767 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> maps:mapsPhenomenon _:node192p4hbhox767 .
+
+_:node192p4hbhox766 a phen:Valley .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> maps:mapsPhenomenon _:node192p4hbhox766 .
+
+dbp:Austria a maps:Place ;
+	foaf:name "Austria"^^xsd:string .
+
+dbp:Bosnia a maps:Place ;
+	foaf:name "Bosnia"^^xsd:string .
+
+dbp:Dalmatie a maps:Place ;
+	foaf:name "Dalmatie"^^xsd:string .
+
+dbp:Italy a maps:Place ;
+	foaf:name "Italy"^^xsd:string .
+
+dbp:Tyrol a maps:Place ;
+	foaf:name "Tyrol"^^xsd:string .
+
+dbp:Bohemen a maps:Place ;
+	foaf:name "Bohemen"^^xsd:string .
+
+dbp:Poland a maps:Place ;
+	foaf:name "Poland"^^xsd:string .
+
+dbp:Galizien a maps:Place ;
+	foaf:name "Galizien"^^xsd:string .
+
+dbp:Bayern a maps:Place ;
+	foaf:name "Bayern"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> terms:creator <http://d-nb.info/gnd/108469034> ;
+	maps:mapsPhenomenon dbp:Adriatic_Sea , dbp:Croatia , dbp:Italy , dbp:Slovenia , dbp:Austria , dbp:Hungary .
+
+dbp:Croatia a phen:State , dbpedia-owl:Country .
+
+dbp:Italy a phen:State , dbpedia-owl:Country .
+
+dbp:Slovenia a phen:State , dbpedia-owl:Country .
+
+dbp:Austria a phen:State , dbpedia-owl:Country .
+
+dbp:Hungary a phen:State , dbpedia-owl:Country .
+
+dbp:Adriatic_Sea a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> a maps:Map .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104848> maps:represents dbp:Berlin ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2542582> ;
+	maps:mapSize "3 * 2.8 cm"^^xsd:string ;
+	maps:title "Gegend der Staedte Berlin und Potsdam"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104848/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104848/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1780" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104848> maps:hasScale "1:1300359"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2542582/4935495816> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104848> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2542582/4935495816> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839> maps:represents <http://uni-muenster.de/historicmaps/Bourges> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549382> ;
+	maps:mapSize "2.5 * 2.4 cm"^^xsd:string ;
+	maps:title "Bourges"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839/mapRepresentationTime> a time:Interval .
+
+_:node192p4hbhox624 time:hasBeginning _:node192p4hbhox974 .
+
+_:node192p4hbhox975 time:inXSDDateTime "1789-01-01T12:00:00"^^xsd:dateTime .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839/mapRepresentationTime/start> a time:Instant ;
+	xsd:gYear "" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839/mapRepresentationTime/end> a time:Instant ;
+	xsd:gYear "" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839> maps:hasScale "1:13412867.9"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549382/4935745197> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549382/4935745197> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549382/4935745197> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((1.884352265835345 47.812241317863,4.303788494542275 48.27634006571406,4.343999654353615 46.46913950131103,1.9477567798454976 45.95999312087274,1.884352265835345 47.812241317863))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839> terms:description "Atlas von Frankreich"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/France> , <http://uni-muenster.de/historicmaps/Bourges> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> maps:mapsPhenomenon <http://dbpedia.org/page/Europe> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839> maps:mapsPhenomenon dbp:Bourges ;
+	terms:references dbp:France ;
+	maps:mapsPhenomenon _:node192p4hbhox857 .
+
+<http://uni-muenster.de/historicmaps/France> a maps:Place ;
+	foaf:name "France"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Bourges> a maps:Place ;
+	foaf:name "Bourges"^^xsd:string .
+
+_:node192p4hbhox926 a phen:Territory ;
+	foaf:name dbp:Bohemia .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839> terms:creator <http://uni-muenster.de/historicmaps/-> .
+
+dbp:Bourges a phen:City , dbpedia-owl:Country .
+
+dbp:France a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368> maps:mapsPhenomenon dbp:Grand_Duchy_of_Baden , dbp:Papal_States ;
+	terms:references dbp:Germany , dbp:France .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> maps:represents <http://ifgi.uni-muenster.de/lodum/historicmaps/french_invasion> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://upload.wikimedia.org/wikipedia/commons/2/29/Minard.png> ;
+	maps:mapSize "62 x 30 cm"^^xsd:string ;
+	maps:title "Carte Figurative des pertes successives en hommes de larmée française dans la campagne de Russie 1812-1813"^^xsd:string ;
+	maps:mapsTime "1812"^^xsd:gYear ;
+	maps:hasScale "1:1263295.7"^^xsd:string .
+
+<http://upload.wikimedia.org/wikipedia/commons/2/29/Minard.png/-14355424445> a geo-1-0:Geometry .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> maps:mapsArea <http://upload.wikimedia.org/wikipedia/commons/2/29/Minard.png/-14355424445> .
+
+<http://upload.wikimedia.org/wikipedia/commons/2/29/Minard.png/-14355424445> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((23.371833222045964 54.140046047857226,23.55903693781022 56.241317074857854,34.80166842995702 55.652705831575624,34.92468218551003 56.34134041373865,38.21479299079259 56.15800836686735,37.580156295730816 53.597235632210705,23.371833222045964 54.140046047857226))"^^sf:wktLiteral .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> terms:description "Charles Minards 1869 chart showing the number of men in Napoleon’s 1812 Russian campaign army, their movements, as well as the temperature they encountered on the return path"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Moscow , dbp:Minsk , dbp:Kaunas , dbp:Vilnius , <http://dbpedia.org/resource/Duchy_of_Courland_and_Semigallia_(1918)> , <http://dbpedia.org/resource/Kingdom_of_Lithuania_(1918)> , dbp:Lokot_Autonomy .
+
+dbp:Moscow a maps:Place ;
+	foaf:name "Moscow"^^xsd:string .
+
+dbp:Misk a maps:Place ;
+	foaf:name "Minsk"^^xsd:string .
+
+dbp:Kowno a maps:Place ;
+	foaf:name "Kowno"^^xsd:string .
+
+dbp:Vilnius a maps:Place ;
+	foaf:name "Wilna"^^xsd:string .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> terms:creator <http://d-nb.info/gnd/117578460> .
+
+<http://d-nb.info/gnd/117578460> a terms:Agent ;
+	foaf:name "Charles Minard"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-112050> a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2627784> ;
+	maps:mapSize "5.3 * 5.5 cm"^^xsd:string ;
+	maps:title "Das europäische Russland : kyrillische Beschriftung"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-112050/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-112050/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1810" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-112050> maps:hasScale "1:76397042"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2627784/4972441232> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-112050> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2627784/4972441232> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2627784/4972441232> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((27.01727126643442 70.09245915317946,17.636962433303058 44.19885810155951,57.261677895311436 37.88561403204173,65.6302832952552 64.18722326283981,27.01727126643442 70.09245915317946))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-112050> terms:description "Das europäische Russland : kyrillische Beschriftung, The European Russia: Cyrillic lettering"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Rusia> , <http://uni-muenster.de/historicmaps/Asia> , <http://uni-muenster.de/historicmaps/CaspianSea> , <http://uni-muenster.de/historicmaps/BlackSea> , dbp:County_of_Kladsko , <http://dbpedia.org/resource/Duchy_of_Courland_and_Semigallia_(1918)> , dbp:Kingdom_of_Bulgaria , dbp:Kingdom_of_Prussia , dbp:Kingdom_of_Saxony ;
+	terms:references dbp:Russia , dbp:European_Russia , dbp:Cyrillic_alphabet .
+
+<http://uni-muenster.de/historicmaps/Rusia> a maps:Place ;
+	foaf:name "Rusia"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Asia> a maps:Place ;
+	foaf:name "Asia"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/CaspianSea> a maps:Place ;
+	foaf:name "CaspianSea"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/BlackSea> a maps:Place ;
+	foaf:name "BlackSea"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368> maps:mapsPhenomenon _:node192p4hbhox916 .
+
+_:node192p4hbhox918 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368> maps:mapsPhenomenon _:node192p4hbhox918 .
+
+_:node192p4hbhox917 a phen:Village .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368> maps:mapsPhenomenon _:node192p4hbhox917 .
+
+<http://uni-muenster.de/historicmaps/Deutschland> a maps:Place ;
+	foaf:name "Deutschland"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Frankreich> a maps:Place ;
+	foaf:name "Frankreich"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Schweitz> a maps:Place ;
+	foaf:name "Schweitz"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Italy> a maps:Place ;
+	foaf:name "Italy"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Holland> a maps:Place ;
+	foaf:name "Holland"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/> a maps:Place ;
+	foaf:name ""^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368> terms:creator <http://d-nb.info/gnd/183617770> , <http://d-nb.info/gnd/118563343> , <http://d-nb.info/gnd/123967023> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110442> maps:mapsPhenomenon dbp:Amsterdam , dbp:London , dbp:United_Kingdom , dbp:North_Sea , dbp:Paris , dbp:Copenhagen , dbp:France , dbp:Germany .
+
+dbp:Amsterdam a phen:City .
+
+dbp:London a phen:City .
+
+dbp:Paris a phen:City .
+
+dbp:United_Kingdom a phen:State , dbpedia-owl:Country .
+
+dbp:Copenhagen a phen:State , dbpedia-owl:Country .
+
+dbp:France a phen:State , dbpedia-owl:Country .
+
+dbp:Germany a phen:State , dbpedia-owl:Country .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> maps:mapsPhenomenon dbp:Soviet_Union ;
+	terms:references dbp:Napoleon .
+
+_:node192p4hbhox551 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> terms:references dbp:Army .
+
+<http://dbpedia.org/page/Battle> a phen:Battle .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> maps:mapsPhenomenon <http://dbpedia.org/page/Battle> .
+
+_:node192p4hbhox547 phen:participantsNumber "127000"^^xsd:decimal ;
+	phen:nextEvent _:node192p4hbhox548 .
+
+_:node192p4hbhox548 a phen:War .
+
+_:node192p4hbhox552 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox548 phen:happensAt dbp:Moschaisk ;
+	phen:participantsNumber "100000"^^xsd:decimal ;
+	phen:nextEvent _:node192p4hbhox549 .
+
+_:node192p4hbhox549 a phen:War .
+
+_:node192p4hbhox553 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox549 phen:happensAt dbp:Moscow ;
+	phen:participantsNumber "100000"^^xsd:decimal ;
+	phen:nextEvent _:node192p4hbhox550 .
+
+_:node192p4hbhox550 a phen:War .
+
+_:node192p4hbhox554 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox550 phen:happensAt dbp:Malojaroslawez ;
+	phen:participantsNumber "100000"^^xsd:decimal ;
+	phen:nextEvent _:node192p4hbhox551 .
+
+_:node192p4hbhox555 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470> maps:represents <http://uni-muenster.de/historicmaps/Amstelland> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2666531> ;
+	maps:mapSize "2.7 * 2.5 cm"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> maps:represents dbp:Austria ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2751072> ;
+	maps:mapSize "1.9 * 1.8 cm"^^xsd:string ;
+	maps:title "General Charte des Oestreichischen Kaiserstaats : nach seiner gegenwaertigen Begraenzung und neuesten innern Eintheilung / entworfen von C. F. Weiland"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299> maps:represents <http://uni-muenster.de/historicmaps/Greece> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2660414> .
+
+_:node192p4hbhox559 phen:participantsNumber "28000"^^xsd:decimal ;
+	phen:temperature "-24"^^dbp-de:Réaumur-Skala ;
+	phen:nextEvent _:node192p4hbhox560 .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113931> maps:represents <http://uni-muenster.de/historicmaps/Overview_Arabia> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655691> ;
+	maps:mapSize "1.7 * 1.4 cm"^^xsd:string ;
+	maps:title "Übersichts-Karte von Arabien"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113931/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113931/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1852" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113931> maps:hasScale "1:201989654.7"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655691/4975926062> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113931> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655691/4975926062> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655691/4975926062> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((31.85903049020735 31.873023507415674,60.719737237723805 30.80994947520138,60.480100589704165 12.132140631565973,30.8850013563989 13.411070734290309,31.85903049020735 31.873023507415674))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113931> terms:description "Survey Map of Arabia:  zu C. Ritter's Erdkunde, Buch 3, West-Asien, Theil 12, 13 ; [nebst:] Oman / Bearb. von H. Kiepert. Hrsg. von C. Ritter"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Arabian_Peninsula> , dbp:Arabian_Peninsula ;
+	terms:references dbp:Saudi_Arabia , dbp:Ritter , dbp:West , dbp:Oman .
+
+_:node192p4hbhox816 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113931> maps:mapsPhenomenon _:node192p4hbhox816 .
+
+_:node192p4hbhox817 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113931> maps:mapsPhenomenon _:node192p4hbhox817 .
+
+_:node192p4hbhox818 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113931> maps:mapsPhenomenon _:node192p4hbhox818 .
+
+_:node192p4hbhox820 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113931> maps:mapsPhenomenon _:node192p4hbhox820 .
+
+_:node192p4hbhox819 a phen:Village .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113931> maps:mapsPhenomenon _:node192p4hbhox819 .
+
+<http://uni-muenster.de/historicmaps/Arabian_Peninsula> a maps:Place ;
+	foaf:name "Arabian_Peninsula"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113931> terms:creator <http://d-nb.info/gnd/101105037> , <http://d-nb.info/gnd/116168862> ;
+	maps:mapsPhenomenon dbp:Maskat , dbp:Egypt , dbp:Oman , dbp:Saudi_Arabia , dbp:Arabian_Peninsula , dbp:Red_Sea .
+
+dbp:Egypt a phen:Territory , phen:State , dbpedia-owl:Country .
+
+dbp:Oman a phen:Territory , phen:State , dbpedia-owl:Country .
+
+dbp:Saudi_Arabia a phen:Territory , phen:State , dbpedia-owl:Country .
+
+dbp:Maskat a phen:City .
+
+dbp:Arabian_Peninsula a phen:Territory .
+
+dbp:Red_Sea a phen:Sea .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619150/4971320548> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619150/4971320548> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619150/4971320548> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-9.00854917557219 67.56066530070106,47.23395975348393 70.0832286086759,47.840181740754886 31.546506610752523,-11.598494103787068 28.27911201347527,-9.00854917557219 67.56066530070106))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> terms:description "Zweite Periode : vom Westfälischen Frieden bis zur französischen Revolution von 1648 bis 1789 ; Übersichtskarte für das Jahr 1648, Second period: from the Peace of Westphalia to the French Revolution from 1648 to 1789; Overview map for the year 1648"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Spain , dbp:Finland , dbp:Mediterranean_Sea , dbp:Italy .
+
+_:node192p4hbhox841 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> maps:mapsPhenomenon _:node192p4hbhox841 .
+
+dbp:Asia a maps:Place ;
+	foaf:name "Asia"^^xsd:string .
+
+dbp:China a maps:Place .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114739> maps:represents <http://uni-muenster.de/historicmaps/Antiquam_Indiae> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659866> ;
+	maps:mapSize "4.2 * 5.3 cm"^^xsd:string ;
+	maps:title "Ad Antiquam Indiae Geographiam Tabula"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114739/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114739/mapRepresentationTime> a time:Instant .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842/mapRepresentationTime> a time:Instant .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110754> maps:represents <http://uni-muenster.de/historicmaps/Galia2> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693> a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2732092> ;
+	maps:mapSize "2.5 * 2.4 cm"^^xsd:string ;
+	maps:title "The Benedictine Priory or Abbey and Order,"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1738" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693> maps:hasScale "1:57433501.6"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2732092/5012575269> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2732092/5012575269> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2732092/5012575269> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-7.94418703353648 51.25176960649854,-7.345855532878057 41.80676321920931,10.536548516210406 41.6349649070558,9.869081662516962 51.28232903579783,-7.94418703353648 51.25176960649854))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693> terms:description "The Benedictine Priory or Abbey & Order, as well as religious than Monalium France. St. Benedict, there existētes according to a copy of the Paris. care and works Carl P. Rupert"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Asia> , dbp:France , dbp:Elbe , dbp:Germany , dbp:Austria , dbp:Luxemburg , dbp:Seine , dbp:Switzerland , dbp:Roggenburg_Abbey , dbp:County_of_Baden , dbp:Hohenzollern-Sigmaringen , dbp:County_of_Blankenburg , dbp:Hohenzollern-Hechingen , dbp:House_of_Hohenzollern-Haigerloch , dbp:Waldburg-Waldsee ;
+	terms:references dbp:France .
+
+_:node192p4hbhox789 a phen:Agriculture .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693> maps:mapsPhenomenon _:node192p4hbhox789 .
+
+_:node192p4hbhox790 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693> maps:mapsPhenomenon _:node192p4hbhox790 .
+
+_:node192p4hbhox791 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693> maps:mapsPhenomenon _:node192p4hbhox791 .
+
+_:node192p4hbhox796 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693> maps:mapsPhenomenon _:node192p4hbhox796 .
+
+_:node192p4hbhox795 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693> maps:mapsPhenomenon _:node192p4hbhox795 .
+
+_:node192p4hbhox794 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693> maps:mapsPhenomenon _:node192p4hbhox794 .
+
+_:node192p4hbhox793 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693> maps:mapsPhenomenon _:node192p4hbhox793 .
+
+<http://uni-muenster.de/historicmaps/Asia> a maps:Place ;
+	foaf:name "Asia"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-119693> terms:creator <http://d-nb.info/gnd/1028747489> , <http://d-nb.info/gnd/174163363> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110754> maps:mapsPhenomenon dbp:France , dbp:Spain , dbp:Pyrenees , dbp:Switzerland , dbp:Rhône , dbp:Loire , dbp:Seine , _:node192p4hbhox792 .
+
+dbp:France a phen:State , dbpedia-owl:Country .
+
+dbp:Spain a phen:State , dbpedia-owl:Country .
+
+dbp:Switzerland a phen:State , dbpedia-owl:Country .
+
+dbp:Pyrenees a phen:Landform .
+
+dbp:Loire a phen:River .
+
+dbp:Rhône a phen:River .
+
+dbp:Seine a phen:River .
+
+_:node192p4hbhox792 a phen:Territory ;
+	foaf:name dbp:Gallia ;
+	phen:RulingSituation dbp:Roman_Empire .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470> maps:mapsPhenomenon dbp:Netherlands .
+
+_:node192p4hbhox597 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470> maps:mapsPhenomenon _:node192p4hbhox597 .
+
+_:node192p4hbhox598 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470> maps:mapsPhenomenon _:node192p4hbhox598 .
+
+_:node192p4hbhox599 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470> maps:mapsPhenomenon _:node192p4hbhox599 .
+
+_:node192p4hbhox601 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470> maps:mapsPhenomenon _:node192p4hbhox601 .
+
+_:node192p4hbhox600 a phen:Village .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470> maps:mapsPhenomenon _:node192p4hbhox600 .
+
+dbp:Weesp a maps:Place ;
+	foaf:name "Weesp"^^xsd:string .
+
+dbp:Horstermeer a maps:Place ;
+	foaf:name "Horstermeer"^^xsd:string .
+
+dbp:Netherlands a maps:Place ;
+	foaf:name "Netherlands"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116470> terms:creator <http://d-nb.info/gnd/140943331> ;
+	maps:mapsPhenomenon dbp:Netherlands , dbp:Amsterdam .
+
+dbp:Netherlands a phen:Territory .
+
+dbp:Amsterdam a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:represents <http://ifgi.uni-muenster.de/historicmaps/ZweitePeriode> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619150> ;
+	maps:mapSize "2.9 * 2.8 cm"^^xsd:string ;
+	maps:title "Zweite Periode"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1648" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:hasScale "1:192749439.8"^^xsd:string .
+
+dbp:Atlantic_Ocean a phen:Sea .
+
+dbp:Latin_America a phen:Territory .
+
+dbp:America a phen:Territory .
+
+<http://dbpedia.org/page/French_invasion_of_Russia> a phen:Invasion .
+
+_:node192p4hbhox541 a phen:War .
+
+_:node192p4hbhox556 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox541 phen:happensAt dbp:Kaunas ;
+	phen:participantsNumber "422000"^^xsd:decimal ;
+	phen:nextEvent _:node192p4hbhox542 .
+
+_:node192p4hbhox542 a phen:War .
+
+_:node192p4hbhox557 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox542 phen:happensAt dbp:Vilnius ;
+	phen:participantsNumber "400000"^^xsd:decimal ;
+	phen:nextEvent _:node192p4hbhox543 , _:node192p4hbhox544 .
+
+_:node192p4hbhox543 a phen:War .
+
+_:node192p4hbhox558 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox543 phen:happensAt dbp:Wizebsk .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120483> maps:represents <http://uni-muenster.de/historicmaps/Europa> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2750883> ;
+	maps:mapSize "4.7 * 4.4 cm"^^xsd:string ;
+	maps:title "Europa"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120483/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120483/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1811" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120483> maps:hasScale "1:93703165.4"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2750883/5014883917> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120483> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2750883/5014883917> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2750883/5014883917> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-13.57932730811981 70.718704916164,54.304651238241505 72.55815061871198,53.94103768112316 30.002033575742853,-14.685590952690134 27.583070240444435,-13.57932730811981 70.718704916164))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120483> terms:description "Europa / nach den vorzüglichsten Hülfsmitteln neu entworfen und gezeichnet von Ferd. Götze, Europe / redesigned after the principal expedients and drawn by Ferd. idol, Weimar, Erschienen : Geogr. Inst., 1811"^^xsd:string .
+
+_:node192p4hbhox904 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120483> maps:mapsPhenomenon _:node192p4hbhox904 .
+
+_:node192p4hbhox905 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120483> maps:mapsPhenomenon _:node192p4hbhox905 .
+
+_:node192p4hbhox906 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120483> maps:mapsPhenomenon _:node192p4hbhox906 ;
+	terms:creator <http://d-nb.info/gnd/10086502X> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> terms:references <http://dbpedia.org/page/Europe> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120483> maps:mapsPhenomenon dbp:Italy .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114129> a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655764> ;
+	maps:mapSize "2.2 * 2.9 cm"^^xsd:string ;
+	maps:title "America"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114129/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114129/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1844" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114129> maps:hasScale "1:656307295.3"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655764/4975927055> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114129> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655764/4975927055> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655764/4975927055> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-160.12417220233402 74.84475799106333,-39.69326662679407 85.48279237361486,-11.350957445029792 -63.935892632868516,-132.27816482281673 -75.23092716030237,-160.12417220233402 74.84475799106333))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114129> terms:description "America / entw. und gez. von C. F. Weiland"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Atlantic_Ocean , dbp:America ;
+	terms:references dbp:Americas .
+
+_:node192p4hbhox634 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114129> maps:mapsPhenomenon _:node192p4hbhox634 .
+
+_:node192p4hbhox635 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114129> maps:mapsPhenomenon _:node192p4hbhox635 .
+
+_:node192p4hbhox636 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114129> maps:mapsPhenomenon _:node192p4hbhox636 .
+
+_:node192p4hbhox637 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114129> maps:mapsPhenomenon _:node192p4hbhox637 .
+
+dbp:America a maps:Place ;
+	foaf:name "America"^^xsd:string .
+
+dbp:Atlantic_Ocean a maps:Place ;
+	foaf:name "Atlantic_Ocean"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114129> terms:creator <http://d-nb.info/gnd/121494233> ;
+	maps:mapsPhenomenon dbp:America , dbp:Latin_America , dbp:Atlantic_Ocean .
+
+_:node192p4hbhox543 phen:participantsNumber "175000"^^xsd:decimal ;
+	phen:nextEvent _:node192p4hbhox545 .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120483> maps:mapsPhenomenon dbp:Spain , dbp:Portugal , dbp:Turkey , dbp:Germany , dbp:Denmark , dbp:Sweden , dbp:France , dbp:United_Kingdom , dbp:Poland , dbp:Ukraine , dbp:Norway , dbp:Finland , dbp:Caspian_Sea , dbp:Mediterranean_Sea , dbp:North_Sea .
+
+<http://dbpedia.org/page/Europe> a phen:State .
+
+dbp:Italy a phen:State .
+
+dbp:Spain a phen:State .
+
+dbp:Portugal a phen:State .
+
+dbp:Turkey a phen:State .
+
+dbp:Germany a phen:State .
+
+dbp:Denmark a phen:State .
+
+dbp:Sweden a phen:State .
+
+dbp:France a phen:State .
+
+dbp:United_Kingdom a phen:State .
+
+dbp:Poland a phen:State .
+
+dbp:Ukraine a phen:State .
+
+dbp:Norway a phen:State .
+
+dbp:Finland a phen:State .
+
+dbp:France a dbpedia-owl:Country .
+
+dbp:Caspian_Sea a phen:Sea .
+
+dbp:Mediterranean_Sea a phen:Sea .
+
+dbp:North_Sea a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-112061> a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2627788> ;
+	maps:mapSize "5.7 * 6 cm"^^xsd:string ;
+	maps:title "Das europäische Russland: kyrillische Beschriftung"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-112061/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-112061/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1820" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-112061> maps:hasScale "1:49733159.5"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2627788/4972441236> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-112061> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2627788/4972441236> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2627788/4972441236> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((23.09759298134455 53.57794327193636,15.790453758563721 60.56296725648481,53.86534754337561 56.85576203533233,60.042175057291445 50.06009955090491,23.09759298134455 53.57794327193636))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-112061> terms:description "Das europäische Russland: kyrillische Beschriftung, The European Russia: Cyrillic lettering, 1820"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Russia> , <http://uni-muenster.de/historicmaps/Asia> , <http://dbpedia.org/page/Europe> , <http://uni-muenster.de/historicmaps/CaspianSea> , <http://uni-muenster.de/historicmaps/BlackSea> , dbp:Asia .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110442> terms:references <http://dbpedia.org/page/Europe> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-112061> maps:mapsPhenomenon dbp:Caspian_Sea , dbp:East_Germany , dbp:Congress_Poland ;
+	terms:references dbp:Russia , dbp:European_Russia .
+
+<http://uni-muenster.de/historicmaps/Russia> a maps:Place ;
+	foaf:name "Russia"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Asia> a maps:Place ;
+	foaf:name "Asia"^^xsd:string .
+
+_:node192p4hbhox926 phen:RulingSituation dbp:Roman_Empire .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> maps:mapsTime <http://lodum.uni-muenster.de/historicmaps/minardmap001/mapRepresentationTime> .
+
+<http://uni-muenster.de/historicmaps/CaspianSea> a maps:Place ;
+	foaf:name "CaspianSea"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/BlackSea> a maps:Place ;
+	foaf:name "BlackSea"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2542582/4935495816> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((12.994320785868798 52.60744328090044,13.543269631390878 52.64158476552563,13.545006784414845 52.3801219694914,13.005156545303786 52.345033188635384,12.994320785868798 52.60744328090044))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104848> terms:description "Around the cities of Berlin and Potsdam"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Berlin , dbp:Germany , dbp:Kingdom_of_Prussia .
+
+_:node192p4hbhox844 a phen:Agriculture .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104848> maps:mapsPhenomenon _:node192p4hbhox844 .
+
+_:node192p4hbhox845 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104848> maps:mapsPhenomenon _:node192p4hbhox845 .
+
+_:node192p4hbhox846 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104848> maps:mapsPhenomenon _:node192p4hbhox846 .
+
+_:node192p4hbhox853 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104848> maps:mapsPhenomenon _:node192p4hbhox853 .
+
+dbp:Berlin a maps:Place ;
+	foaf:name "Berlin"^^xsd:string .
+
+dbp:Germany a maps:Place ;
+	foaf:name "Germany"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104848> maps:mapsPhenomenon dbp:Berlin , dbp:Postdam , dbp:Elbe , dbp:Havel , dbp:Switzerland , dbp:Germany , _:node192p4hbhox852 , _:node192p4hbhox851 , _:node192p4hbhox850 , _:node192p4hbhox849 , dbp:Spain .
+
+dbp:Germany a phen:State , dbpedia-owl:Country .
+
+dbp:Spain a phen:State , dbpedia-owl:Country .
+
+dbp:Switzerland a phen:State , dbpedia-owl:Country .
+
+dbp:Berlin a phen:City .
+
+dbp:Postdam a phen:City .
+
+_:node192p4hbhox848 a phen:Road ;
+	phen:connects _:node192p4hbhox847 , dbp:Berlin .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842/mapRepresentationTime> xsd:gYear "1817" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> maps:hasScale "1:108682381.3"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2751072/5014911108> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2751072/5014911108> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2751072/5014911108> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-2.3676039188179026 53.8576891248186,22.520335414202176 53.22006956016753,36.949181107890155 40.18632813513105,12.057080063143804 40.60227697135202,-2.3676039188179026 53.8576891248186))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120842> terms:description "General Charter of the Austrian Kaiser State: by his present-day Begraenzung and latest internal division / designed by CF Weiland"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Austria , dbp:Bosnia , dbp:Dalmatie , dbp:Italy , dbp:Tyrol , dbp:Bohemen , dbp:Poland , dbp:Galizien , dbp:Bayern , dbp:Grand_Duchy_of_Baden , dbp:Bourbon_Restoration , dbp:Duchy_of_Schleswig , dbp:Hohenzollern-Sigmaringen , dbp:Neutral_Moresnet .
+
+_:node192p4hbhox854 a phen:Agriculture .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839> maps:mapsPhenomenon _:node192p4hbhox854 .
+
+_:node192p4hbhox855 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839> maps:mapsPhenomenon _:node192p4hbhox855 .
+
+_:node192p4hbhox856 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839> maps:mapsPhenomenon _:node192p4hbhox856 .
+
+_:node192p4hbhox858 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839> maps:mapsPhenomenon _:node192p4hbhox858 .
+
+_:node192p4hbhox857 a phen:Village .
+
+dbp:Elbe a phen:River .
+
+dbp:Havel a phen:Lake .
+
+_:node192p4hbhox849 a phen:LandUse .
+
+_:node192p4hbhox850 a phen:Wood .
+
+_:node192p4hbhox851 a phen:Agriculture .
+
+_:node192p4hbhox852 a phen:Building .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110964> maps:mapsPhenomenon dbp:Stettin , dbp:Poland , <http://dbpedia.org/page/Europe> ;
+	dc:description "gestochen von Paulus Schmidt"^^xsd:string ;
+	dc:date "1850" ;
+	dc:description "Einzelne Sammlungen, Karten"^^xsd:string ;
+	terms:rightsHolder _:node192p4hbhox868 .
+
+_:node192p4hbhox868 foaf:name "Münster : Univ.-und Landesbibliothek"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110964> terms:rights _:node192p4hbhox869 .
+
+_:node192p4hbhox869 dc:date "2014"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110964> a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/download/webcache/304/2622173> ;
+	maps:mapSize "3.9 * 4.1 cm"^^xsd:string ;
+	maps:title "Der Regierungsbezirk Stettin"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110964/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110964/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1850" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110964> maps:hasScale "1:26528044.4"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/download/webcache/304/2622173/4745452154> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110964> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/download/webcache/304/2622173/4745452154> .
+
+<http://sammlungen.ulb.uni-muenster.de/download/webcache/304/2622173/4745452154> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((5.453359555830204 57.11864956537523,14.40503352101716 49.58895255880632,33.477940085320114 47.46155747570982,24.324336876539853 55.10502535024972,5.453359555830204 57.11864956537523))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110964> terms:description "The county of Szczecin. Der Regierungsbezirk Stettin"^^xsd:string ;
+	terms:references dbp:County , dbp:Szczecin , dbp:Regierungsbezirk .
+
+dbp:Berlin a maps:Place ;
+	foaf:name "Berlin"^^xsd:string .
+
+dbp:Germany a maps:Place ;
+	foaf:name "Germany"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110964> terms:creator <http://d-nb.info/gnd/117515450> .
+
+<http://d-nb.info/gnd/117515450> a terms:Agent ;
+	foaf:name "Schmidt, Paulus"^^xsd:string .
+
+dbp:Berlin a phen:City .
+
+dbp:Stettin a phen:City .
+
+dbp:Berlin dbpedia-owl:country dbp:Germany .
+
+dbp:Germany a phen:State .
+
+dbp:Stettin dbpedia-owl:country dbp:Poland .
+
+dbp:Poland a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114739/mapRepresentationTime> xsd:gYear "1783" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114739> maps:hasScale "1:115598184.9"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659866/4976071894> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114739> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659866/4976071894> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659866/4976071894> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((63.40656734489662 36.0056998220455,105.22210356943839 33.46844607540011,106.30970849771828 -0.5326554863228008,63.484352346946274 2.0575492847929677,63.40656734489662 36.0056998220455))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114739> terms:description "Ad Antiquam Indiae Geographiam Tabula / Auctor D'Anville. S. V. Dorn sc., Erschienen:Norimbergae : Officina Weigelio-Schneideriana, 1783"^^xsd:string ;
+	maps:mapsPhenomenon dbp:India .
+
+_:node192p4hbhox757 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114739> maps:mapsPhenomenon _:node192p4hbhox757 .
+
+_:node192p4hbhox758 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114739> maps:mapsPhenomenon _:node192p4hbhox758 .
+
+_:node192p4hbhox759 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114739> maps:mapsPhenomenon _:node192p4hbhox759 .
+
+_:node192p4hbhox762 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114739> maps:mapsPhenomenon _:node192p4hbhox762 .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121582> maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2753082> ;
+	maps:mapSize "1.4 * 1.8 cm"^^xsd:string ;
+	maps:title "General Karte vom Preussischen Staate"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121582/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121582/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1829" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> maps:represents <http://uni-muenster.de/historicmaps/Volkerkarte_Europe> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2752853> ;
+	maps:mapSize "2.9 * 2.7 cm"^^xsd:string ;
+	maps:title "Völkerkarte von Europa"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1821" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> maps:hasScale "1:202694239.4"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2752853/5014955692> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2752853/5014955692> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2752853/5014955692> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-19.1289280315827 70.58296359021202,48.64580053833606 75.54339048256826,57.86834026710248 35.38176544462692,-9.675743609628052 30.622168166304306,-19.1289280315827 70.58296359021202))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> terms:description "Völkerkarte von Europa : zu O'Etzels Erdkunde II. Theil I. Abtheilung / von F. A. O'Etzel. In Stein grav. vom Königl. Lithograph Voss, International map of Europe: to O'Etzels Geography II Section I. detachment / FA O'Etzel.. Grav in stone. from the Royal. Lithograph Voss"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105839> maps:mapsPhenomenon <http://dbpedia.org/page/Europe> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/France> , <http://uni-muenster.de/historicmaps/Italy> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114470> maps:represents <http://uni-muenster.de/historicmaps/Iran> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659741> ;
+	maps:mapSize "3.1 * 2.7 cm"^^xsd:string ;
+	maps:title "Übersichts-Karte von Iran, oder West-Hochasien, : zu C. Ritters Erdkunde, Buch 3, West-Asien, Theil 8, 9 / berarb. von H. Kiepert. Hrsg. von C. Ritter"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114470/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114470/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1852" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114470> maps:hasScale "1:83684880.6"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659741/4976070734> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114470> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659741/4976070734> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659741/4976070734> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((44.99674919778961 40.93144142515446,69.72718132213008 39.95507328783087,70.65960963935588 23.540141613048526,45.39744921079255 24.610360434064255,44.99674919778961 40.93144142515446))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114470> terms:description "Outline map of Iran, or West High Asia: Critters to geography, Book 3, West Asia, part 8, 9 / berarb. by H. Kiepert. Eds. C. Knight"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/asia> , dbp:Khanate_of_Kokand ;
+	terms:references dbp:Iran , dbp:Western_Asia .
+
+_:node192p4hbhox833 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114470> maps:mapsPhenomenon _:node192p4hbhox833 .
+
+_:node192p4hbhox834 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114470> maps:mapsPhenomenon _:node192p4hbhox834 .
+
+_:node192p4hbhox835 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114470> maps:mapsPhenomenon _:node192p4hbhox835 .
+
+_:node192p4hbhox837 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114470> maps:mapsPhenomenon _:node192p4hbhox837 .
+
+_:node192p4hbhox836 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114470> maps:mapsPhenomenon _:node192p4hbhox836 .
+
+<http://uni-muenster.de/historicmaps/asia> a maps:Place ;
+	foaf:name "asia"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114470> terms:creator <http://d-nb.info/gnd/101105037> , <http://d-nb.info/gnd/116168862> ;
+	maps:mapsPhenomenon dbp:Namak_Lake , dbp:Western_Asia , dbp:Caspian_Sea , dbp:Tehran , dbp:Iran .
+
+dbp:Western_Asia a phen:Territory .
+
+dbp:Iran a phen:State , dbpedia-owl:Country .
+
+dbp:Caspian_Sea a phen:Sea .
+
+dbp:Namak_Lake a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816> maps:represents <http://uni-muenster.de/historicmaps/Guatemala> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2696184> ;
+	maps:mapSize "4.3 * 3.8 cm"^^xsd:string ;
+	maps:title "Geographisch-statistische Charte von Guatemala : [mit Erläuterungen auf der Karte] / Gerrich"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1823" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816> maps:hasScale "1:92959493.8"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2696184/4980700208> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2696184/4980700208> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2696184/4980700208> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-98.02077398867237 23.915508433632425,-72.04599963901123 20.971018873712904,-78.45112222544951 7.73199683519557,-104.7842180346008 9.61769428411754,-98.02077398867237 23.915508433632425))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816> terms:description "Geographisch-statistische Charte von Guatemala : [mit Erläuterungen auf der Karte] / Gerrich"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Guatemala> , dbp:Guatemala_City , dbp:Danish_West_Indies , dbp:Captaincy_General_of_Cuba , dbp:Gran_Colombia ;
+	terms:references dbp:Guatemala .
+
+_:node192p4hbhox448 a phen:Agriculture .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816> maps:mapsPhenomenon _:node192p4hbhox448 .
+
+_:node192p4hbhox449 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816> maps:mapsPhenomenon _:node192p4hbhox449 .
+
+_:node192p4hbhox450 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816> maps:mapsPhenomenon _:node192p4hbhox450 .
+
+_:node192p4hbhox454 a phen:Sand .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816> maps:mapsPhenomenon _:node192p4hbhox454 .
+
+_:node192p4hbhox453 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816> maps:mapsPhenomenon _:node192p4hbhox453 .
+
+_:node192p4hbhox452 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816> maps:mapsPhenomenon _:node192p4hbhox452 .
+
+_:node192p4hbhox451 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816> maps:mapsPhenomenon _:node192p4hbhox451 .
+
+<http://uni-muenster.de/historicmaps/Guatemala> a maps:Place ;
+	foaf:name "Guatemala"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-117816> terms:creator <http://d-nb.info/gnd/103175038X> ;
+	maps:mapsPhenomenon dbp:Guatemala , dbp:Atlantic_Ocean , dbp:Pacific_Ocean .
+
+dbp:Guatemala a phen:State , dbpedia-owl:Country .
+
+dbp:Atlantic_Ocean a phen:WaterBody .
+
+dbp:Pacific_Ocean a phen:Sea .
+
+_:node192p4hbhox550 phen:temperature "18"^^dbp-de:Réaumur-Skala .
+
+_:node192p4hbhox551 a phen:War .
+
+_:node192p4hbhox559 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox551 phen:happensAt dbp:Moschaisk .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> terms:created "1820"^^xsd:string ;
+	dc:description "published in St. Petersburg"^^xsd:string ;
+	terms:rightsHolder _:node192p4hbhox895 .
+
+_:node192p4hbhox895 foaf:name "Münster : Univ.-und Landesbibliothek"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> terms:rights _:node192p4hbhox896 .
+
+_:node192p4hbhox896 dc:date "2014"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/download/webcache/304/2549167> ;
+	maps:mapSize "5.5 * 5.8 cm"^^xsd:string ;
+	maps:title "Das europäische Russland, politisch und administrativ"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1820" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> maps:hasScale "1:99551588.5"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/download/webcache/304/2549167/4708940133> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/download/webcache/304/2549167/4708940133> .
+
+<http://sammlungen.ulb.uni-muenster.de/download/webcache/304/2549167/4708940133> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((13.802269261024755 73.97135530467943,7.965832737447673 40.12228683714014,61.210841568211094 33.451083775784205,66.68705635813112 67.80334051962575,13.802269261024755 73.97135530467943))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> terms:description "Das europäische Russland, politisch und administrativ. The European Russia, politically and administratively. Mit kyrillischer Beschriftung."^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Rusia> , <http://uni-muenster.de/historicmaps/St.Petersburg> ;
+	terms:references dbp:European_Russia .
+
+<http://uni-muenster.de/historicmaps/Rusia> a maps:Place ;
+	foaf:name "Russia"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/St.Petersburg> a maps:Place ;
+	foaf:name "St.Petersburg"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> terms:creator <http://d-nb.info/gnd/158871138> .
+
+<http://d-nb.info/gnd/158871138> a terms:Agent ;
+	foaf:name "Karsakov, S."^^xsd:string .
+
+_:node192p4hbhox551 phen:participantsNumber "96000"^^xsd:decimal ;
+	phen:nextEvent _:node192p4hbhox552 .
+
+_:node192p4hbhox552 a phen:War .
+
+_:node192p4hbhox560 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox552 phen:happensAt dbp:Vyazma ;
+	phen:participantsNumber "87000"^^xsd:decimal .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> maps:represents <http://uni-muenster.de/historicmaps/North_and_Ostsee> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2752844> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114870> maps:represents <http://uni-muenster.de/historicmaps/KarteVonBadajoz> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659934> ;
+	maps:mapSize "1.9 * 2.8 cm"^^xsd:string ;
+	maps:title "Karte von Badajoz"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114870/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114870/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1800" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114870> maps:hasScale "1:249606.2"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659934/4976072882> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114870> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659934/4976072882> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659934/4976072882> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-7.002836265173881 38.88427447753995,-6.963137885317835 38.89603312162086,-6.944056155023768 38.87073037988354,-6.984112898374831 38.85907413349851,-7.002836265173881 38.88427447753995))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114870> terms:description "[Karte von Badajoz] / gez. von ... v. Faber. Auf Stein gez. von G. Börner"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/badajoz> , <http://uni-muenster.de/historicmaps/Spain> , dbp:Badajoz ;
+	terms:references dbp:Badajoz .
+
+_:node192p4hbhox460 a phen:Agriculture .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114870> maps:mapsPhenomenon _:node192p4hbhox460 .
+
+_:node192p4hbhox461 a phen:Building .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114870> maps:mapsPhenomenon _:node192p4hbhox461 .
+
+_:node192p4hbhox462 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114870> maps:mapsPhenomenon _:node192p4hbhox462 .
+
+_:node192p4hbhox464 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114870> maps:mapsPhenomenon _:node192p4hbhox464 .
+
+_:node192p4hbhox463 a phen:Village .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114870> maps:mapsPhenomenon _:node192p4hbhox463 .
+
+<http://uni-muenster.de/historicmaps/badajoz> a maps:Place ;
+	foaf:name "badajoz"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Spain> a maps:Place ;
+	foaf:name "Spain"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114870> terms:creator <http://d-nb.info/gnd/100238963> , <http://d-nb.info/gnd/103766413> ;
+	maps:mapsPhenomenon dbp:Spain , dbp:Badajoz , dbp:Guadiana_River .
+
+dbp:Guadiana_River a dbp:River .
+
+dbp:Badajoz a phen:City .
+
+dbp:Spain a phen:Territory .
+
+_:node192p4hbhox831 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> maps:mapsPhenomenon _:node192p4hbhox831 .
+
+_:node192p4hbhox830 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> maps:mapsPhenomenon _:node192p4hbhox830 .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001/mapRepresentationTime> xsd:gYear "1812" ;
+	a time:Interval .
+
+<http://uni-muenster.de/historicmaps/France> a maps:Place ;
+	foaf:name "France"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Italy> a maps:Place ;
+	foaf:name "Italy"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> terms:creator <http://d-nb.info/gnd/104279192> , <http://d-nb.info/gnd/182887839> ;
+	maps:mapsPhenomenon dbp:Amsterdam , dbp:London , dbp:United_Kingdom , dbp:North_Sea , dbp:Paris , dbp:Copenhagen , dbp:France , dbp:Germany .
+
+dbp:Amsterdam a phen:City .
+
+dbp:London a phen:City .
+
+dbp:Paris a phen:City .
+
+dbp:United_Kingdom a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> maps:mapsPhenomenon dbp:Kingdom_of_Italy .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon <http://dbpedia.org/page/Europe> .
+
+_:node192p4hbhox827 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> maps:mapsPhenomenon _:node192p4hbhox827 .
+
+_:node192p4hbhox828 a phen:King .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> maps:mapsPhenomenon _:node192p4hbhox828 .
+
+_:node192p4hbhox829 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> maps:mapsPhenomenon _:node192p4hbhox829 .
+
+_:node192p4hbhox832 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121306> maps:mapsPhenomenon _:node192p4hbhox832 .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299> maps:mapSize "4.3 * 4.2 cm"^^xsd:string ;
+	maps:title "General-Charte vom Alten Griechenland nebst den angränzenden Gegenden von Illyrien, Macedonien, Thracien und Klein-Asien, : mit Hinzufügung der neuern Orts- und anderer Namen, nach den besten alten und neuern Schriftstellern entworfen ; [nebst 2 Nebenkarten:] Creta Insula ; Ebene von Troia / von D. Fr. Kruse. Gest. von H. Kliewer und E. Leidenfrost"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1823" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299> maps:hasScale "1:18674990.3"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2660414/4976929859> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2660414/4976929859> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2660414/4976929859> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((20.56730073274832 41.35509024324494,28.903975940752737 41.48507158613204,28.3735766579962 36.55410156155179,19.70190837972555 36.28017297182724,20.56730073274832 41.35509024324494))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299> terms:description "General's Charter of Ancient Greece and the adjacent regions of Illyria, Macedonia, Thrace and Asia Minor,: with the addition of modern town and other names, designed by the best ancient and modern writers; [plus two side cards:] Creta Insulation; Level of Troia / D. Ms. Kruse. Gest. H. Kliewer and E. Leidenfrost"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Asia> , dbp:Asia , dbp:Pashalik_of_Scutari ;
+	terms:references dbp:Illyria , dbp:Asia_Minor , dbp:Crete .
+
+_:node192p4hbhox797 a phen:City .
+
+dbp:United_Kingdom a dbpedia-owl:Country .
+
+dbp:Copenhagen a phen:State , dbpedia-owl:Country .
+
+dbp:France a phen:State , dbpedia-owl:Country .
+
+dbp:Germany a phen:State , dbpedia-owl:Country .
+
+dbp:North_Sea a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> maps:mapsPhenomenon dbp:North_Sea , dbp:Rhein .
+
+dbp:France a phen:Territory , phen:State , dbpedia-owl:Country .
+
+dbp:United_Kingdom a phen:Territory , phen:State , dbpedia-owl:Country .
+
+dbp:Poland a phen:Territory , phen:State , dbpedia-owl:Country .
+
+dbp:Belgium a phen:Territory , phen:State , dbpedia-owl:Country .
+
+dbp:Netherlands a phen:Territory , phen:State , dbpedia-owl:Country .
+
+dbp:Denmark a phen:Territory , phen:State , dbpedia-owl:Country .
+
+dbp:Norway a phen:Territory , phen:State , dbpedia-owl:Country .
+
+dbp:Sweden a phen:Territory , phen:State , dbpedia-owl:Country .
+
+dbp:Russia a phen:Territory , phen:State , dbpedia-owl:Country .
+
+dbp:Rostok a phen:Village .
+
+dbp:Brugges a phen:Village .
+
+dbp:Brussels a phen:City .
+
+dbp:London a phen:City .
+
+dbp:Dublin a phen:City .
+
+dbp:Paris a phen:City .
+
+dbp:Warsow a phen:City .
+
+dbp:Copenhagen a phen:City .
+
+dbp:Baltic_Sea a phen:Sea .
+
+dbp:North_Sea a phen:Sea .
+
+dbp:Rhein a phen:River .
+
+_:node192p4hbhox552 phen:nextEvent _:node192p4hbhox553 .
+
+_:node192p4hbhox553 a phen:War .
+
+_:node192p4hbhox561 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox553 phen:happensAt dbp:Dorogobusch ;
+	phen:participantsNumber "55000"^^xsd:decimal ;
+	phen:temperature "-9"^^dbp-de:Réaumur-Skala ;
+	phen:nextEvent _:node192p4hbhox554 .
+
+_:node192p4hbhox554 a phen:War .
+
+_:node192p4hbhox562 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox554 phen:happensAt dbp:Smolensk ;
+	phen:participantsNumber "37000"^^xsd:decimal ;
+	phen:temperature "-21"^^dbp-de:Réaumur-Skala ;
+	phen:nextEvent _:node192p4hbhox555 .
+
+_:node192p4hbhox555 a phen:War .
+
+_:node192p4hbhox563 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox555 phen:happensAt dbp:Orscha ;
+	phen:participantsNumber "24000"^^xsd:decimal ;
+	phen:nextEvent _:node192p4hbhox556 .
+
+_:node192p4hbhox556 a phen:War .
+
+_:node192p4hbhox564 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox556 phen:happensAt dbp:Baryssau ;
+	phen:participantsNumber "24000"^^xsd:decimal ;
+	phen:temperature "-11"^^dbp-de:Réaumur-Skala ;
+	phen:nextEvent _:node192p4hbhox557 .
+
+_:node192p4hbhox557 a phen:War .
+
+_:node192p4hbhox544 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox557 phen:happensAt dbp:Smalyavichy ;
+	phen:participantsNumber "50000"^^xsd:decimal ;
+	phen:temperature "-20"^^dbp-de:Réaumur-Skala ;
+	phen:nextEvent _:node192p4hbhox558 .
+
+_:node192p4hbhox558 a phen:War .
+
+_:node192p4hbhox565 phen:partOfEvent <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox558 phen:happensAt dbp:Smalyavichy ;
+	phen:participantsNumber "28000"^^xsd:decimal ;
+	phen:temperature "-24"^^dbp-de:Réaumur-Skala ;
+	phen:nextEvent _:node192p4hbhox559 .
+
+_:node192p4hbhox559 a phen:War .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> terms:references <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+_:node192p4hbhox559 phen:happensAt dbp:Minsk .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-111976> maps:represents <http://uni-muenster.de/historicmaps/Karte_von_Hannibal> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2627744> ;
+	maps:mapSize "2.5 * 3.4 cm"^^xsd:string ;
+	maps:title "Übersichts Karte von Hannibal's Zug über die Alpen"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-111976/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-111976/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1759" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-111976> maps:hasScale "1:14130528.3"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2627744/4972441100> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-111976> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2627744/4972441100> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105739> maps:represents <http://uni-muenster.de/historicmaps/Paris> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549239> ;
+	maps:mapSize "3.5 * 3.4 cm"^^xsd:string ;
+	maps:title "Paris"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105739/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105739/mapRepresentationTime> a time:Interval .
+
+_:node192p4hbhox624 time:hasEnd _:node192p4hbhox975 .
+
+_:node192p4hbhox976 time:inXSDDateTime "1648-01-01T12:00:00"^^xsd:dateTime .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105739/mapRepresentationTime/start> a time:Instant ;
+	xsd:gYear "" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105739/mapRepresentationTime/end> a time:Instant ;
+	xsd:gYear "" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105739> maps:hasScale "1:10648422.8"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549239/4935743950> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105739> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549239/4935743950> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549239/4935743950> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((0.4882363911492096 49.45785569342172,4.3327995613197645 49.838392112713905,4.200792663361218 48.56672847101635,0.30349084402386195 48.19708597398416,0.4882363911492096 49.45785569342172))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105739> terms:description "Atlas von Frankreich"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/France> , <http://uni-muenster.de/historicmaps/Paris> , <http://dbpedia.org/page/Europe> .
+
+_:node192p4hbhox883 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105739> maps:mapsPhenomenon _:node192p4hbhox883 .
+
+_:node192p4hbhox884 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105739> maps:mapsPhenomenon _:node192p4hbhox884 .
+
+_:node192p4hbhox885 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105739> maps:mapsPhenomenon _:node192p4hbhox885 .
+
+<http://uni-muenster.de/historicmaps/France> a maps:Place ;
+	foaf:name "France"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Paris> a maps:Place ;
+	foaf:name "Paris"^^xsd:string .
+
+<http://dbpedia.org/page/Europe> a maps:Place ;
+	foaf:name "Europe"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105739> maps:represents <http://uni-muenster.de/historicmaps/Paris> ;
+	maps:mapsPhenomenon dbp:Paris , dbp:France .
+
+dbp:Paris a phen:City , dbpedia-owl:Country .
+
+dbp:France a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> maps:mapSize "4.5 * 4.1 cm"^^xsd:string ;
+	maps:title "Übersichts-Karte der Länder um die Nord- & Ostsee"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1854" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> maps:hasScale "1:85832008.8"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2752844/5014955660> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2752844/5014955660> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2752844/5014955660> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-19.450353068523135 57.88815274986712,37.064671243079914 63.49517615569376,42.60559537639024 52.04020349464827,-12.89101064511689 46.42786348936441,-19.450353068523135 57.88815274986712))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> terms:description "Outline map of the countries around the North & Baltic Sea / Red. V. Herm. Berghaus"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Asia> , dbp:Asia .
+
+_:node192p4hbhox886 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> maps:mapsPhenomenon _:node192p4hbhox886 .
+
+_:node192p4hbhox887 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299> maps:mapsPhenomenon _:node192p4hbhox797 .
+
+_:node192p4hbhox798 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299> maps:mapsPhenomenon _:node192p4hbhox798 .
+
+_:node192p4hbhox799 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299> maps:mapsPhenomenon _:node192p4hbhox799 .
+
+_:node192p4hbhox802 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299> maps:mapsPhenomenon _:node192p4hbhox802 .
+
+_:node192p4hbhox801 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299> maps:mapsPhenomenon _:node192p4hbhox801 .
+
+_:node192p4hbhox800 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299> maps:mapsPhenomenon _:node192p4hbhox800 .
+
+<http://uni-muenster.de/historicmaps/Asia> a maps:Place ;
+	foaf:name "Asia"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115299> terms:creator <http://d-nb.info/gnd/123967023> , <http://d-nb.info/gnd/183449029> ;
+	maps:mapsPhenomenon dbp:Greece , dbp:Macedonia , dbp:Pindus , dbp:Crete , dbp:Dodecanese , dbp:Ionian_Sea , dbp:Cyclades , dbp:Corfu , dbp:Turkey , dbp:Rhodes , dbp:Achelous_River , dbp:Aegean_Sea .
+
+dbp:Greece a phen:State , dbpedia-owl:Country .
+
+dbp:Macedonia a phen:State , dbpedia-owl:Country .
+
+dbp:Turkey a phen:State , dbpedia-owl:Country .
+
+dbp:Ionian_Sea a phen:Sea .
+
+dbp:Aegean_Sea a phen:Sea .
+
+dbp:Achelous_River a phen:River .
+
+dbp:Athens a phen:City .
+
+dbp:Pindus a phen:Landform .
+
+dbp:Crete a phen:Landform .
+
+dbp:Rhodes a phen:Landform .
+
+dbp:Corfu a phen:Landform .
+
+dbp:Cyclades a phen:Landform .
+
+dbp:Dodecanese a phen:Landform .
+
+_:node192p4hbhox560 a phen:War .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121582> maps:represents <http://uni-muenster.de/historicmaps/Prussia_Content> ;
+	a maps:Map ;
+	maps:medium maps:Paper .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108203> maps:represents <http://uni-muenster.de/historicmaps/AsienII> .
+
+_:node192p4hbhox919 a phen:City .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> maps:mapsPhenomenon _:node192p4hbhox919 .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110442> maps:represents <http://uni-muenster.de/historicmaps/North_Sea> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2607547> ;
+	maps:mapSize "2.5 * 3.5 cm"^^xsd:string ;
+	maps:title "Wege-Karte durch das Südwestliche Europa mit den neuesten Grenzen von Deutschland und Preussen, Oesterreich, Italien und Frankreich"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110442/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110442/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1819" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110442> maps:hasScale "1:32593797.8"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2607547/4970067083> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110442> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2607547/4970067083> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2607547/4970067083> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-1.6686548494446927 55.98191026270979,6.265354738018122 55.99203158124686,6.283522223018062 51.02184692440242,-1.6498427579869952 50.97913706000257,-1.6686548494446927 55.98191026270979))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110442> terms:description "Wege-Karte durch das Südwestliche Europa mit den neuesten Grenzen von Deutschland und Preussen, Oesterreich, Italien und Frankreich : zufolge des Wiener Congresses, des Pariser Friedens vom 21ten Novemb. 1815 und der nachherigen Austauschungen / gezeichnet von J. M. F. Schmidt (9 Blat), Way map by Southwest Europe with the latest frontiers of Germany and Prussia, Austria, Italy and France: According to the Vienna Congress, the Peace of Paris from the 21th Novemb. 1815 and the ex post Interchanges / drawn by JMF Schmidt (9 Blat)"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Asia> , dbp:Asia ;
+	terms:references dbp:Denmark .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:mapsPhenomenon <http://dbpedia.org/page/Europe> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110442> terms:references dbp:Germany , dbp:Austria , dbp:France , dbp:Iberian_Peninsula , dbp:Prussia , dbp:Italy .
+
+_:node192p4hbhox813 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110442> maps:mapsPhenomenon _:node192p4hbhox813 .
+
+_:node192p4hbhox814 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110442> maps:mapsPhenomenon _:node192p4hbhox814 .
+
+_:node192p4hbhox815 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110442> maps:mapsPhenomenon _:node192p4hbhox815 .
+
+<http://uni-muenster.de/historicmaps/Asia> a maps:Place ;
+	foaf:name "Asia"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110442> terms:creator <http://d-nb.info/gnd/104361409> ;
+	maps:mapsPhenomenon dbp:London , dbp:York , dbp:United_Kingdom , dbp:North_Sea , dbp:Amsterdam , dbp:Antwerp .
+
+dbp:United_Kingdom a phen:State , dbpedia-owl:Country .
+
+dbp:North_Sea a phen:Sea .
+
+dbp:London a phen:City .
+
+dbp:York a phen:City .
+
+dbp:Amsterdam a phen:City .
+
+dbp:Antwerp a phen:City .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2627744/4972441100> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((4.460653748474021 46.05302950026792,8.20897585759826 45.83709731868933,8.17857629654814 43.355226395275864,4.44940629472882 43.509142093911116,4.460653748474021 46.05302950026792))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-111976> terms:description "Overview map of Hannibal's train across the Alps"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Asia> ;
+	terms:references dbp:Hannibal , dbp:Alps .
+
+_:node192p4hbhox878 a phen:Agriculture .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-111976> maps:mapsPhenomenon _:node192p4hbhox878 .
+
+_:node192p4hbhox879 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-111976> maps:mapsPhenomenon _:node192p4hbhox879 .
+
+_:node192p4hbhox880 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-111976> maps:mapsPhenomenon _:node192p4hbhox880 .
+
+_:node192p4hbhox882 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-111976> maps:mapsPhenomenon _:node192p4hbhox882 .
+
+_:node192p4hbhox881 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-111976> maps:mapsPhenomenon _:node192p4hbhox881 .
+
+<http://uni-muenster.de/historicmaps/Alps> a maps:Place ;
+	foaf:name "Alps"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-111976> a maps:TopographicMap ;
+	maps:mapsPhenomenon dbp:France , dbp:Gap , dbp:Moûtiers , dbp:Turin , dbp:Briançon , dbp:Nice , dbp:Lac_de_Castillon , dbp:Lac_du_Chambon , dbp:Mediterranean_Sea , dbp:Lac_de_Serre-Ponçon , dbp:Alps .
+
+dbp:France a phen:Territory , phen:State , dbpedia-owl:Country .
+
+dbp:Gap a phen:Village .
+
+dbp:Moûtiers a phen:Village .
+
+dbp:Briançon a phen:Village .
+
+dbp:Turin a phen:City .
+
+dbp:Nice a phen:City .
+
+dbp:Lac_de_Castillon a phen:Lake .
+
+dbp:Lac_du_Chambon a phen:Lake .
+
+dbp:Lac_de_Serre-Ponçon a phen:Lake .
+
+dbp:Mediterranean_Sea a phen:Sea .
+
+dbp:Rhône a phen:River .
+
+dbp:Alps a phen:Landform .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> maps:mapsPhenomenon _:node192p4hbhox887 .
+
+_:node192p4hbhox888 a phen:Pasture .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> maps:mapsPhenomenon _:node192p4hbhox888 .
+
+_:node192p4hbhox891 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> maps:mapsPhenomenon _:node192p4hbhox891 .
+
+_:node192p4hbhox890 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> maps:mapsPhenomenon _:node192p4hbhox890 .
+
+_:node192p4hbhox889 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> maps:mapsPhenomenon _:node192p4hbhox889 .
+
+<http://uni-muenster.de/historicmaps/Asia> a maps:Place ;
+	foaf:name "Asia"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> terms:creator <http://d-nb.info/gnd/116132469> .
+
+<http://d-nb.info/gnd/116132469> a terms:Agent ;
+	foaf:name "Red. v. Herm. Berghaus"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> maps:mapsPhenomenon dbp:France , dbp:United_Kingdom , dbp:Poland , dbp:Belgium , dbp:Netherlands , dbp:Denmark , dbp:Norway , dbp:Sweden , dbp:Russia , dbp:Rostok , dbp:Brugges , dbp:Brussels , dbp:London , dbp:Dublin , dbp:Paris .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> maps:mapsPhenomenon dbp:Caspian_Sea , dbp:Italy , dbp:Norway , dbp:Black_Sea .
+
+<http://dbpedia.org/page/French_invasion_of_Russia> a phen:Invasion .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> maps:mapsPhenomenon <http://dbpedia.org/page/French_invasion_of_Russia> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115995> maps:represents <http://uni-muenster.de/historicmaps/Westphalen> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2664768> ;
+	maps:mapSize "2.8 * 2.6 cm"^^xsd:string ;
+	maps:title "General-Charte von dem Königreiche Westphalen"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115995/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115995/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1812" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115995> maps:hasScale "1:31607741.8"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2664768/4977077043> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115995> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2664768/4977077043> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2664768/4977077043> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((3.377321638598982 51.33279147049951,5.133339205862425 52.503529735055324,18.022070557309696 52.78885681869415,16.545020026957957 51.61615134057872,3.377321638598982 51.33279147049951))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115995> terms:description "General's Charter of the kingdom of Westphalia: at the same time as Tableau d'assemblage for the on royal. Command issued Departments Atlas, and to use them as full postal chart of the kingdom/ entw. and signed. C. F. Weiland"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Hanover> , <http://uni-muenster.de/historicmaps/Berlin> , <http://uni-muenster.de/historicmaps/Leipzig> , dbp:Province_of_Hanover , dbp:East_Berlin , dbp:Leipzig .
+
+_:node192p4hbhox873 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115995> maps:mapsPhenomenon _:node192p4hbhox873 .
+
+_:node192p4hbhox874 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115995> maps:mapsPhenomenon _:node192p4hbhox874 .
+
+_:node192p4hbhox875 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115995> maps:mapsPhenomenon _:node192p4hbhox875 .
+
+_:node192p4hbhox877 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115995> maps:mapsPhenomenon _:node192p4hbhox877 .
+
+_:node192p4hbhox876 a phen:Village .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115995> maps:mapsPhenomenon _:node192p4hbhox876 .
+
+<http://uni-muenster.de/historicmaps/Hanover> a maps:Place ;
+	foaf:name "Hanover"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Berlin> a maps:Place ;
+	foaf:name "Berlin"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Leipzig> a maps:Place ;
+	foaf:name "Leipzig"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-115995> terms:creator <http://d-nb.info/gnd/121494233> ;
+	maps:mapsPhenomenon dbp:Germany , <http://dbpedia.org/resource/> .
+
+<http://dbpedia.org/resource/> a phen:City .
+
+dbp:Germany a phen:State , dbpedia-owl:Country .
+
+dbp:Indus_River a phen:River .
+
+_:node192p4hbhox567 geo-1-0:asWKT """<http://www.opengis.net/def/crs/EPSG/0/4326>
+POLYGON((9.874690102339652 52.25156096729222, 9.874324681594004 52.126487663211606, 10.07547489355107 52.1268449901813, 10.073392224324136 52.252405987705664, 9.874690102339652 52.25156096729222))"""^^sf:wktLiteral .
+
+_:node192p4hbhox568 phen:connects _:node192p4hbhox569 , dbp:Hildesheim .
+
+dbp:Hildesheim a phen:City .
+
+_:node192p4hbhox569 a phen:Village .
+
+_:node192p4hbhox570 a phen:Block .
+
+_:node192p4hbhox571 a phen:Building .
+
+_:node192p4hbhox570 phen:partOfObject dbp:Hildesheim .
+
+_:node192p4hbhox572 a phen:Elevation .
+
+_:node192p4hbhox573 a phen:Wood .
+
+_:node192p4hbhox574 a phen:Pasture .
+
+_:node192p4hbhox575 a phen:Non-inhabited .
+
+dbp:Innerste a phen:River ;
+	phen:connects dbp:Hildesheim .
+
+_:node192p4hbhox568 a phen:Chaussee .
+
+_:node192p4hbhox576 a phen:Footpath .
+
+<http://lodum.uni-muenster.de/historicmaps/prussia> maps:represents <http://ifgi.uni-muenster.de/lodum/historicmaps/prussia> ;
+	maps:mapsTime "1783"^^xsd:gYear .
+
+_:node192p4hbhox607 time:hasBeginning _:node192p4hbhox976 .
+
+_:node192p4hbhox578 a time:Instant .
+
+_:node192p4hbhox980 time:inXSDDateTime "1618-01-01T12:00:00"^^xsd:dateTime .
+
+dbp:Hinterpommern phen:wasAcquiredBy dbp:Friedrich_of_Brandenburg ;
+	phen:partOfObject dbp:Prussia .
+
+dbp:Bistum_Minden phen:wasAcquiredBy dbp:Friedrich_of_Brandenburg ;
+	phen:partOfObject dbp:Prussia .
+
+dbp:Zinna phen:wasAcquiredBy dbp:Friedrich_of_Brandenburg ;
+	phen:partOfObject dbp:Prussia .
+
+dbp:Bistum_Halberstadt phen:wasAcquiredBy dbp:Friedrich_of_Brandenburg ;
+	phen:partOfObject dbp:Prussia .
+
+dbp:Lauenburg phen:wasAcquiredBy dbp:Friedrich_of_Brandenburg ;
+	phen:partOfObject dbp:Prussia .
+
+dbp:Duchy_of_Prussia phen:wasAcquiredBy dbp:Johann_Sigismund .
+
+dbp:North_Sea a phen:Sea .
+
+<http://lodum.uni-muenster.de/historicmaps/hildesheim_map> a maps:Map ;
+	maps:digitalImageVersion _:node192p4hbhox566 ;
+	maps:represents <http://ifgi.uni-muenster.de/lodum/historicmaps/hildesheim> ;
+	maps:hasScale "1:28526.1"^^xsd:string ;
+	maps:mapSize "62.4 * 55.5 cm"^^xsd:string ;
+	maps:medium maps:Paper ;
+	maps:mapsTime "1840"^^xsd:gYear ;
+	maps:mapsArea _:node192p4hbhox567 .
+
+_:node192p4hbhox567 a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116103> maps:represents <http://uni-muenster.de/historicmaps/UmbgebungVonCoeln> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2664831> ;
+	maps:mapSize "2 * 2.8 cm"^^xsd:string ;
+	maps:title "Umgebung von Cöln"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116103/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116103/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1830" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116103> maps:hasScale "1:470537.6"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2664831/4977078026> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116103> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2664831/4977078026> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2664831/4977078026> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((6.887365461843258 51.004928983080525,7.018695488727542 51.001266585369414,7.016639344231228 50.88967654789308,6.882341479620065 50.89214865585491,6.887365461843258 51.004928983080525))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116103> terms:description "Titel:Umgebung von Cöln Erschienen: s.l., um 1830?"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Germany> , <http://uni-muenster.de/historicmaps/Cologne> .
+
+_:node192p4hbhox501 a phen:Building .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116103> maps:mapsPhenomenon _:node192p4hbhox501 .
+
+_:node192p4hbhox502 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116103> maps:mapsPhenomenon _:node192p4hbhox502 .
+
+_:node192p4hbhox503 a phen:Railway .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116103> maps:mapsPhenomenon _:node192p4hbhox503 .
+
+_:node192p4hbhox506 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116103> maps:mapsPhenomenon _:node192p4hbhox506 .
+
+_:node192p4hbhox505 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116103> maps:mapsPhenomenon _:node192p4hbhox505 .
+
+_:node192p4hbhox504 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116103> maps:mapsPhenomenon _:node192p4hbhox504 .
+
+<http://uni-muenster.de/historicmaps/Germany> a maps:Place ;
+	foaf:name "Germany"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Cologne> a maps:Place ;
+	foaf:name "Cologne"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-116103> terms:creator <http://d-nb.info/gnd/1014927757> ;
+	maps:mapsPhenomenon dbp:Cologne , dbp:Germany , dbp:Rhein .
+
+dbp:Cologne a phen:City .
+
+dbp:Rhein a phen:River .
+
+<http://uni-muenster.de/historicmaps/Germany> foaf:name "Germany"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Italy> a maps:Place ;
+	foaf:name "Italy"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Spain> a maps:Place ;
+	foaf:name "Spain"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/United_Kingdom> a maps:Place ;
+	foaf:name "United_Kingdom"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Denmark> a maps:Place ;
+	foaf:name "Denmark"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Austria> a maps:Place ;
+	foaf:name "Austria"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Luxemburg> a maps:Place ;
+	foaf:name "Luxemburg"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/> a maps:Place ;
+	foaf:name ""^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218> terms:creator <http://d-nb.info/gnd/183617770> , <http://d-nb.info/gnd/116841524> , <http://d-nb.info/gnd/118563343> ;
+	maps:mapsPhenomenon dbp:Elbe , dbp:France , dbp:Italy , dbp:United_Kingdom , dbp:Paris , dbp:London , dbp:Germany , dbp:Spain , dbp:Barcelona , dbp:Ebro , dbp:Atlantic_Ocean , dbp:Mediterranean_Sea , dbp:North_Sea , dbp:Denmark .
+
+dbp:Elbe a phen:River .
+
+dbp:Ebro a phen:River .
+
+dbp:Mediterranean_Sea a phen:Sea .
+
+dbp:North_Sea a phen:Sea .
+
+dbp:Atlantic_Ocean a phen:WaterBody .
+
+dbp:Barcelona a phen:City .
+
+dbp:London a phen:City .
+
+dbp:Paris a phen:City .
+
+dbp:Germany a phen:State , dbpedia-owl:Country .
+
+dbp:France a phen:State , dbpedia-owl:Country .
+
+dbp:United_Kingdom a phen:State , dbpedia-owl:Country .
+
+dbp:Denmark a phen:State , dbpedia-owl:Country .
+
+dbp:Spain a phen:State , dbpedia-owl:Country .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2751271/5014913285> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2751271/5014913285> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-1.8338766174927408 55.88431856130525,14.626650441242887 56.51353298803761,15.287014516950048 40.738258281626834,-1.5413715666868562 40.32032312174008,-1.8338766174927408 55.88431856130525))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218> terms:description "Way map by Western Europe: from the Elbe to the Atlantic oceans and from the Thames to the Ebro; 6 Blat. / Drawn by IMF Schmidt, the ways and local distances registered by WH Matthias, the avenues of C. Klöden"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Spain , dbp:Denmark , dbp:Luxembourg , dbp:Grand_Duchy_of_Baden , dbp:Bourbon_Restoration , dbp:Duchy_of_Schleswig , dbp:Hohenzollern-Sigmaringen , dbp:Neutral_Moresnet , dbp:Papal_States , dbp:Hohenzollern-Hechingen , dbp:Gorizia_and_Gradisca , dbp:Duchy_of_Krnov ;
+	terms:references dbp:Western_Europe , dbp:Elbe , dbp:Atlantic_Ocean .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon dbp:United_kingdom , dbp:Greece , dbp:Ireland , dbp:Portugal , dbp:Denmark , dbp:France , dbp:Poland , dbp:Russia .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655771> ;
+	maps:mapSize "2.3 * 2.3 cm"^^xsd:string ;
+	maps:title "Afrika"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1820" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> maps:hasScale "1:493889619.3"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655771/4975927085> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655771/4975927085> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655771/4975927085> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-32.74697663490632 39.543468698807516,66.13251861668097 39.96285957910763,68.22106986010914 -37.85321920574567,-30.310863567212337 -37.322051324951936,-32.74697663490632 39.543468698807516))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> terms:description "Neuhaldensleben : Eyraud, [um 1820],  entworfen und gezeichnet nach den besten Hülfsmitteln, designed and drawn by the best tools"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Africa .
+
+_:node192p4hbhox611 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> maps:mapsPhenomenon _:node192p4hbhox611 .
+
+_:node192p4hbhox612 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> maps:mapsPhenomenon _:node192p4hbhox612 .
+
+_:node192p4hbhox613 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> maps:mapsPhenomenon _:node192p4hbhox613 .
+
+_:node192p4hbhox618 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> maps:mapsPhenomenon _:node192p4hbhox618 .
+
+_:node192p4hbhox617 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> maps:mapsPhenomenon _:node192p4hbhox617 .
+
+_:node192p4hbhox616 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> maps:mapsPhenomenon _:node192p4hbhox616 .
+
+_:node192p4hbhox615 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> maps:mapsPhenomenon _:node192p4hbhox615 .
+
+_:node192p4hbhox614 a phen:Village .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> maps:mapsPhenomenon _:node192p4hbhox614 .
+
+<http://uni-muenster.de/historicmaps/Africa> a maps:Place ;
+	foaf:name "Africa"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> maps:mapsPhenomenon dbp:Africa , dbp:Arabian_Peninsula , dbp:Iran , dbp:Atanltic_Ocean , dbp:Mediterranean_Sea .
+
+dbp:Africa a phen:Territory .
+
+dbp:Iran a phen:Territory .
+
+dbp:Arabian_Peninsula a phen:Territory .
+
+dbp:Atanltic_Ocean a phen:WaterBody .
+
+dbp:Mediterranean_Sea a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114561> maps:represents <http://uni-muenster.de/historicmaps/WeltchartederRegierungsformen> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659784> ;
+	maps:mapSize "4.6 * 4.3 cm"^^xsd:string ;
+	maps:title "Allgemeine Weltcharte der Regierungsformen vom Jahre 1817"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114561/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114561/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1817" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114561> maps:hasScale "1:705315347.8"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659784/4976070869> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114561> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659784/4976070869> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2659784/4976070869> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-31.39633290511418 95.98458037004144,335.132275243781 106.11475751646233,337.15950535484274 -47.67370823695717,227.1432811670504 -53.556830807460756,158.41816802645582 -29.54739741840754,114.84818052178227 -36.00110125222945,76.38024149487885 -59.912955705870544,14.618469000075606 -64.07535330596379,13.462081736970845 -28.83641613437348,-28.696319757555536 -32.29976921523752,-31.39633290511418 95.98458037004144))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114561> terms:description "Titel:Allgemeine Weltcharte der Regierungsformen vom Jahre 1817 Erschienen: Weimar : Landes Industrie Comptoir, 1817 Online-Ausg.Münster : Univ.- und Landesbibliothek, 2014"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/america> , <http://uni-muenster.de/historicmaps/Australia> , <http://uni-muenster.de/historicmaps/Brasil> , <http://uni-muenster.de/historicmaps/Russia> .
+
+_:node192p4hbhox518 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114561> maps:mapsPhenomenon _:node192p4hbhox518 .
+
+_:node192p4hbhox519 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114561> maps:mapsPhenomenon _:node192p4hbhox519 .
+
+_:node192p4hbhox520 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114561> maps:mapsPhenomenon _:node192p4hbhox520 .
+
+_:node192p4hbhox521 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114561> maps:mapsPhenomenon _:node192p4hbhox521 .
+
+<http://uni-muenster.de/historicmaps/america> a maps:Place ;
+	foaf:name "america"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Australia> a maps:Place ;
+	foaf:name "Australia"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Brasil> a maps:Place ;
+	foaf:name "Brasil"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Russia> a maps:Place ;
+	foaf:name "Russia"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114561> terms:creator <http://d-nb.info/gnd/1014927757> .
+
+_:node192p4hbhox920 a phen:March .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> maps:mapsPhenomenon _:node192p4hbhox920 .
+
+_:node192p4hbhox921 a phen:River .
+
+<http://lodum.uni-muenster.de/historicmaps/minardmap001> maps:mapsPhenomenon _:node192p4hbhox921 .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110964> maps:represents <http://uni-muenster.de/historicmaps/DerRegierungsbezirkStettin> ;
+	maps:mapsPhenomenon dbp:Berlin , dbp:Germany .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121289> maps:mapsPhenomenon dbp:Warsow , dbp:Copenhagen , dbp:Baltic_Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114018> maps:represents <http://uni-muenster.de/historicmaps/Mexico> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655723> ;
+	maps:mapSize "2.6 * 2.7 cm"^^xsd:string ;
+	maps:title "Westindien"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114018/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114018/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1824" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114018> maps:hasScale "1:221033618.9"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655723/4975926922> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114018> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655723/4975926922> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655723/4975926922> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-103.08212318527347 35.1068291777322,-52.039783522668785 33.89693012799398,-53.54173786814331 -2.46708341245699,-105.28527725206406 -0.7841417298484696,-103.08212318527347 35.1068291777322))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114018> maps:mapsPhenomenon dbp:Mexico .
+
+_:node192p4hbhox892 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114018> maps:mapsPhenomenon _:node192p4hbhox892 .
+
+_:node192p4hbhox893 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114018> maps:mapsPhenomenon _:node192p4hbhox893 .
+
+_:node192p4hbhox894 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114018> maps:mapsPhenomenon _:node192p4hbhox894 .
+
+dbp:Mexico a maps:Place ;
+	foaf:name "Mejico"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114018> maps:mapsPhenomenon dbp:Mexico , dbp:Atlantic_Sea , dbp:Florida , dbp:Merida , dbp:Havanna , dbp:Cuba .
+
+dbp:Cuba a phen:State , dbpedia-owl:Country .
+
+dbp:Mexico a phen:State , dbpedia-owl:Country .
+
+dbp:Florida a phen:Territory .
+
+dbp:Atlantic_Sea a phen:WaterBody .
+
+dbp:Merida a phen:City .
+
+dbp:Havanna a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon dbp:Turkey .
+
+_:node192p4hbhox602 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon _:node192p4hbhox602 .
+
+_:node192p4hbhox603 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon _:node192p4hbhox603 .
+
+_:node192p4hbhox604 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon _:node192p4hbhox604 .
+
+_:node192p4hbhox610 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon _:node192p4hbhox610 .
+
+_:node192p4hbhox609 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon _:node192p4hbhox609 .
+
+_:node192p4hbhox608 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon _:node192p4hbhox608 .
+
+dbp:Spain a maps:Place ;
+	foaf:name "Spain"^^xsd:string .
+
+dbp:Finland a maps:Place ;
+	foaf:name "Finland"^^xsd:string .
+
+dbp:Mediterranean_Sea a maps:Place ;
+	foaf:name "Mediterranean_Sea"^^xsd:string .
+
+dbp:Italy a maps:Place ;
+	foaf:name "Italy"^^xsd:string .
+
+dbp:Caspian_Sea a maps:Place ;
+	foaf:name "Caspian_Sea"^^xsd:string .
+
+dbp:Norway a maps:Place ;
+	foaf:name "Norway"^^xsd:string .
+
+dbp:Germany a maps:Place ;
+	foaf:name "germany"^^xsd:string .
+
+dbp:United_kingdom a maps:Place ;
+	foaf:name "United_kingdom"^^xsd:string .
+
+dbp:Greece a maps:Place ;
+	foaf:name "Greece"^^xsd:string .
+
+dbp:Ireland a maps:Place ;
+	foaf:name "Ireland"^^xsd:string .
+
+dbp:Portugal a maps:Place ;
+	foaf:name "Porugal"^^xsd:string .
+
+dbp:Denmark a maps:Place ;
+	foaf:name "Denmark"^^xsd:string .
+
+dbp:France a maps:Place ;
+	foaf:name "France"^^xsd:string .
+
+dbp:Poland a maps:Place ;
+	foaf:name "Poland"^^xsd:string .
+
+dbp:Russia a maps:Place ;
+	foaf:name "Russia"^^xsd:string .
+
+dbp:Turkey a maps:Place ;
+	foaf:name "Turkei"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114149> maps:represents <http://uni-muenster.de/historicmaps/Africa2> .
+
+dbp:Turkey foaf:name "Turky"^^xsd:string .
+
+dbp:Mediterranean_Sea a maps:Place ;
+	foaf:name "Mediterranean_Sea"^^xsd:string .
+
+dbp:Caspian_Sea a maps:Place ;
+	foaf:name "Caspian_Sea"^^xsd:string .
+
+dbp:Finland a maps:Place ;
+	foaf:name "Finland"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> terms:creator <http://d-nb.info/gnd/1014927757> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-120483> maps:mapsPhenomenon <http://dbpedia.org/page/Europe> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110648> maps:mapsPhenomenon dbp:Italy , dbp:Spain .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-104130> maps:represents <http://uni-muenster.de/historicmaps/Africa_AlbrechtPlatt> ;
+	a maps:Map ;
+	maps:medium maps:Paper .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-114129> maps:represents dbp:America .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218> maps:represents <http://uni-muenster.de/historicmaps/Elbe> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2751271> ;
+	maps:mapSize "2.7 * 3.6 cm"^^xsd:string ;
+	maps:title "Wege-Karte durch das Westliche Europa"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1820" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121218> maps:hasScale "1:56044398.7"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2751271/5014913285> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368> maps:represents <http://uni-muenster.de/historicmaps/Deutschland> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2752886> ;
+	maps:mapSize "2.7 * 3.4 cm"^^xsd:string ;
+	maps:title "Wege-Karte durch Deutschland, Frankreich, Holland, die Schweiz und Ober-Italien"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1809" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368> maps:hasScale "1:50246403.6"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2752886/5014955794> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2752886/5014955794> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2752886/5014955794> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-2.791242304143104 56.084704579415686,12.614909774766593 56.14181659748748,14.662813756254259 45.08479265668374,-1.2566765733410612 45.07399234461754,-2.791242304143104 56.084704579415686))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-121368> terms:description "Way map by Germany, France, Holland, Switzerland and Upper Italy: 4 Blat / drawn by JMF Schmidt. The paths and local distances registered by WH Matthias. The avenues of C. Klöden. Engraved by Heinrich Kliewer"^^xsd:string ;
+	maps:mapsPhenomenon <http://uni-muenster.de/historicmaps/Deutschland> , <http://uni-muenster.de/historicmaps/Frankreich> , <http://uni-muenster.de/historicmaps/Schweitz> , <http://uni-muenster.de/historicmaps/Italy> , <http://uni-muenster.de/historicmaps/Holland> , <http://uni-muenster.de/historicmaps/> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> maps:represents <http://uni-muenster.de/historicmaps/Battle_Boehmen> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2578869> ;
+	maps:mapSize "3.2 * 3.3 cm"^^xsd:string ;
+	maps:title "Gefecht bey Reichenberg in Böhmen"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1757" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> maps:hasScale "1:834759.1"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2578869/4939272409> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2578869/4939272409> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2578869/4939272409> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((9.826892265261488 49.78707280526359,10.059301647202481 49.74044200326114,10.055503005409593 49.59102874805014,9.820038527874356 49.637386925261296,9.826892265261488 49.78707280526359))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> terms:description "Bey battle Reichenberg in Bohemia the 21th April 1757: woselbst the Prussian General Lieutenant Duke of Bevern back to Austria. General Feldzeugmeister Graf v. Konigseck won the victory"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Reichenberg , dbp:Bohemia , dbp:Czech_Republic , dbp:Liberec ;
+	terms:references dbp:Liberec , dbp:Bohemia , dbp:Prussia .
+
+<http://dbpedia.org/page/Gefecht_bei_Reichenberg> a phen:Battle .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> maps:mapsPhenomenon <http://dbpedia.org/page/Gefecht_bei_Reichenberg> .
+
+_:node192p4hbhox922 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> maps:mapsPhenomenon _:node192p4hbhox922 .
+
+_:node192p4hbhox923 a phen:Duke .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> maps:mapsPhenomenon _:node192p4hbhox923 .
+
+_:node192p4hbhox924 a phen:Landparcel .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> maps:mapsPhenomenon _:node192p4hbhox924 .
+
+_:node192p4hbhox929 a phen:Pasture .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> maps:mapsPhenomenon _:node192p4hbhox929 .
+
+_:node192p4hbhox928 a phen:RulingSituation .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> maps:mapsPhenomenon _:node192p4hbhox928 .
+
+_:node192p4hbhox927 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> maps:mapsPhenomenon _:node192p4hbhox927 .
+
+dbp:Reichenberg a maps:Place ;
+	foaf:name "Reichenberg"^^xsd:string .
+
+dbp:Bohemia a maps:Place ;
+	foaf:name "Bohemia"^^xsd:string .
+
+dbp:Czech_Republic a maps:Place ;
+	foaf:name "Czech_Republic"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-108239> maps:mapsPhenomenon _:node192p4hbhox926 , _:node192p4hbhox925 .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113880> maps:represents <http://uni-muenster.de/historicmaps/Asien> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655673> ;
+	maps:mapSize "3 * 2.7 cm"^^xsd:string ;
+	maps:title "Asien"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113880/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113880/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1806" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113880> maps:hasScale "1:294571530.6"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655673/4975925998> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113880> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655673/4975925998> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2655673/4975925998> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((14.11926509462841 73.96491044819393,160.17612849254192 82.72038141937489,171.14668074489435 -13.200275643159351,20.893788131107335 -20.85997252912477,14.11926509462841 73.96491044819393))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113880> terms:description "Asien : nach seinem neuesten geographischen Zustande / [von Karl Joseph Kipferling], Asia: after his latest geographic state / [by Charles Joseph Kipferling]"^^xsd:string ;
+	terms:references dbp:Karl_Haushofer , dbp:Joseph_and_the_Amazing_Technicolor_Dreamcoat , dbp:Asia , dbp:Geography .
+
+_:node192p4hbhox930 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113880> maps:mapsPhenomenon _:node192p4hbhox930 .
+
+_:node192p4hbhox931 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113880> maps:mapsPhenomenon _:node192p4hbhox931 .
+
+_:node192p4hbhox932 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113880> maps:mapsPhenomenon _:node192p4hbhox932 .
+
+_:node192p4hbhox934 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113880> maps:mapsPhenomenon _:node192p4hbhox934 .
+
+_:node192p4hbhox933 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113880> maps:mapsPhenomenon _:node192p4hbhox933 .
+
+<http://uni-muenster.de/historicmaps/Asia> a maps:Place ;
+	foaf:name "Asia"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/Turkey> a maps:Place ;
+	foaf:name "Turkey"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/China> a maps:Place ;
+	foaf:name "China"^^xsd:string .
+
+<http://uni-muenster.de/historicmaps/India> a maps:Place ;
+	foaf:name "India"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-113880> terms:creator <http://d-nb.info/gnd/129098485> ;
+	maps:mapsPhenomenon dbp:Russia , dbp:Persian , dbp:China , dbp:Hindustan , dbp:Indian_Ocean , dbp:Mongolia , dbp:Corea , dbp:Indian_subcontinent , dbp:Borneo , dbp:New_Guinea , dbp:Japan .
+
+dbp:Russia a phen:Territory .
+
+dbp:Persian a phen:Territory .
+
+dbp:China a phen:Territory .
+
+dbp:Hindustan a phen:Territory .
+
+dbp:Indian_Ocean a phen:Territory .
+
+dbp:Mongolia a phen:Territory .
+
+dbp:Corea a phen:Territory .
+
+dbp:Indian_subcontinent a phen:Territory .
+
+dbp:Borneo a phen:Territory .
+
+dbp:New_Guinea a phen:Territory .
+
+dbp:Japan a phen:Territory .
+
+dbp:Indian_Ocean a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846> maps:represents <http://ifgi.uni-muenster.de/historicmaps/Calais> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549386> ;
+	maps:mapSize "2.7 * 2.6 cm"^^xsd:string ;
+	maps:title "Calais"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846/mapRepresentationTime> a time:Interval .
+
+_:node192p4hbhox977 time:inXSDDateTime "1789-01-01T12:00:00"^^xsd:dateTime .
+
+_:node192p4hbhox607 time:hasEnd _:node192p4hbhox977 .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846/mapRepresentationTime/start> a time:Instant ;
+	xsd:gYear "" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846/mapRepresentationTime/end> a time:Instant ;
+	xsd:gYear "" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846> maps:hasScale "1:16315747.6"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549386/4935745201> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549386/4935745201> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549386/4935745201> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-0.16419038065517721 51.21486049880133,3.8095342800372745 51.55236375804445,4.983831775244482 50.15993913261137,1.1578003790593359 49.78551355534791,-0.16419038065517721 51.21486049880133))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846> terms:description "Atlas von Frankreich"^^xsd:string ;
+	maps:mapsPhenomenon dbp:Calais .
+
+_:node192p4hbhox935 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846> maps:mapsPhenomenon _:node192p4hbhox935 .
+
+_:node192p4hbhox936 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846> maps:mapsPhenomenon _:node192p4hbhox936 .
+
+_:node192p4hbhox937 a phen:Sand .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846> maps:mapsPhenomenon _:node192p4hbhox937 .
+
+_:node192p4hbhox939 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846> maps:mapsPhenomenon _:node192p4hbhox939 .
+
+_:node192p4hbhox938 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846> maps:mapsPhenomenon _:node192p4hbhox938 .
+
+<http://uni-muenster.de/historicmaps/calais> a maps:Place ;
+	foaf:name "calais"^^xsd:string .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105846> terms:creator <http://d-nb.info/gnd/1014927757> .
+
+<http://uni-muenster.de/historicmaps/Calais> maps:mapsPhenomenon dbp:Calais , dbp:France , dbp:North_Sea .
+
+dbp:Calais a phen:City .
+
+dbp:France a phen:State , dbpedia-owl:country .
+
+dbp:North_Sea a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110657> maps:represents <http://uni-muenster.de/historicmaps/DrittePeriode> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619160> ;
+	maps:mapSize "4.1 * 4 cm"^^xsd:string ;
+	maps:title "Dritte Periode"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110657/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110657/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1801" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110657> maps:hasScale "1:123931120.7"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619160/4971320581> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110657> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619160/4971320581> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619160/4971320581> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-11.861253450502398 67.95127876511015,42.767522615861026 70.26739038695918,43.99381266745446 33.03818567665439,-12.807033708348511 29.650552283265682,-11.861253450502398 67.95127876511015))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110657> terms:description "Dritte Periode : von der Französischen Revolution bis jetzt, 1789 - 1843 ; Übersichtskarte für das Jahr 1801, Third period: from the French Revolution to now, 1789 - 1843; Overview map for the year 1801"^^xsd:string .
+
+_:node192p4hbhox940 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110657> maps:mapsPhenomenon _:node192p4hbhox940 .
+
+_:node192p4hbhox941 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110657> maps:mapsPhenomenon _:node192p4hbhox941 .
+
+_:node192p4hbhox942 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110657> maps:mapsPhenomenon _:node192p4hbhox942 .
+
+_:node192p4hbhox944 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110657> maps:mapsPhenomenon _:node192p4hbhox944 .
+
+_:node192p4hbhox943 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110657> maps:mapsPhenomenon _:node192p4hbhox943 ;
+	terms:creator <http://d-nb.info/gnd/1014927757> ;
+	maps:mapsPhenomenon dbp:Europe , dbp:Italy , dbp:Spain , dbp:Portugal , dbp:Turkey , dbp:Germany , dbp:Denmark , dbp:Sweden , dbp:France , dbp:United_Kingdom , dbp:Poland , dbp:Ukraine , dbp:Norway , dbp:Finland , dbp:Caspian_Sea , dbp:Mediterranean_Sea , dbp:North_Sea , dbp:Peace_of_Westphalia , dbp:French_Revolution .
+
+dbp:Europe a phen:Territory .
+
+dbp:Italy a phen:State , dbpedia-owl:Country .
+
+dbp:Spain a phen:State , dbpedia-owl:Country .
+
+dbp:Portugal a phen:State , dbpedia-owl:Country .
+
+dbp:Turkey a phen:State , dbpedia-owl:Country .
+
+dbp:Germany a phen:State , dbpedia-owl:Country .
+
+dbp:Denmark a phen:State , dbpedia-owl:Country .
+
+dbp:Sweden a phen:State , dbpedia-owl:Country .
+
+dbp:France a phen:State , dbpedia-owl:Country .
+
+dbp:United_Kingdom a phen:State , dbpedia-owl:Country .
+
+dbp:Poland a phen:State , dbpedia-owl:Country .
+
+dbp:Ukraine a phen:State , dbpedia-owl:Country .
+
+dbp:Norway a phen:State , dbpedia-owl:Country .
+
+dbp:Finland a phen:State , dbpedia-owl:Country .
+
+dbp:Caspian_Sea a phen:Sea .
+
+dbp:Mediterranean_Sea a phen:Sea .
+
+dbp:North_Sea a phen:Sea .
+
+dbp:Peace_of_Westphalia a dbp:Peace_treaty .
+
+dbp:French_Revolution a phen:Event , dbpedia-owl:Event , dbpedia-owl:MilitaryConflict , <http://dbpedia.org/class/yago/18th-centuryRebellions> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110665> maps:represents <http://uni-muenster.de/historicmaps/DrittePeriode2> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619165> ;
+	maps:mapSize "2.6 * 2.6 cm"^^xsd:string ;
+	maps:title "Dritte Periode"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110665/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110665/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1812" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110665> maps:hasScale "1:155243489.3"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619165/4971320586> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110665> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619165/4971320586> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2619165/4971320586> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-13.235706450177961 67.77197818535234,42.32057423080401 69.57300369021075,44.93079303703021 31.74546942949207,-12.609747490377773 29.886595505659674,-13.235706450177961 67.77197818535234))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110665> terms:description "Dritte Periode : von der Französischen Revolution bis jetzt, 1789 - 1843 ; Übersichtskarte für das Jahr 1812, Historischer Atlas : Folge 3,"^^xsd:string .
+
+_:node192p4hbhox945 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110665> maps:mapsPhenomenon _:node192p4hbhox945 .
+
+_:node192p4hbhox946 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110665> maps:mapsPhenomenon _:node192p4hbhox946 .
+
+_:node192p4hbhox947 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110665> maps:mapsPhenomenon _:node192p4hbhox947 .
+
+_:node192p4hbhox950 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110665> maps:mapsPhenomenon _:node192p4hbhox950 .
+
+_:node192p4hbhox949 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110665> maps:mapsPhenomenon _:node192p4hbhox949 .
+
+_:node192p4hbhox948 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110665> maps:mapsPhenomenon _:node192p4hbhox948 ;
+	terms:creator <http://d-nb.info/gnd/1014927757> ;
+	maps:mapsPhenomenon dbp:Europe , dbp:Italy , dbp:Spain , dbp:Portugal , dbp:Turkey , dbp:Germany , dbp:Denmark , dbp:Sweden , dbp:France , dbp:United_Kingdom , dbp:Poland , dbp:Ukraine , dbp:Norway , dbp:Finland , dbp:Caspian_Sea , dbp:Mediterranean_Sea , dbp:North_Sea , dbp:Peace_of_Westphalia , dbp:French_Revolution .
+
+dbp:Europe a phen:State , dbpedia-owl:Country .
+
+dbp:Italy a phen:State , dbpedia-owl:Country .
+
+dbp:Spain a phen:State , dbpedia-owl:Country .
+
+dbp:Portugal a phen:State , dbpedia-owl:Country .
+
+dbp:Turkey a phen:State , dbpedia-owl:Country .
+
+dbp:Germany a phen:State , dbpedia-owl:Country .
+
+dbp:Denmark a phen:State , dbpedia-owl:Country .
+
+dbp:Sweden a phen:State , dbpedia-owl:Country .
+
+dbp:France a phen:State , dbpedia-owl:Country .
+
+dbp:United_Kingdom a phen:State , dbpedia-owl:Country .
+
+dbp:Poland a phen:State , dbpedia-owl:Country .
+
+dbp:Ukraine a phen:State , dbpedia-owl:Country .
+
+dbp:Norway a phen:State , dbpedia-owl:Country .
+
+dbp:Finland a phen:State , dbpedia-owl:Country .
+
+dbp:Caspian_Sea a phen:Sea .
+
+dbp:Mediterranean_Sea a phen:Sea .
+
+dbp:North_Sea a phen:Sea .
+
+dbp:Peace_of_Westphalia a dbp:Peace_treaty .
+
+dbp:French_Revolution a phen:Event , dbpedia-owl:Event , dbpedia-owl:MilitaryConflict , <http://dbpedia.org/class/yago/18th-centuryRebellions> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-107375> maps:represents <http://uni-muenster.de/historicmaps/Erste_Periode> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2573587> ;
+	maps:mapSize "3.4 * 3.4 cm"^^xsd:string ;
+	maps:title "Erste Periode : von der Reformation bis zum Westfälischen Frieden"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-107375/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-107375/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1843" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-107375> maps:hasScale "1:818981290"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2573587/4939089521> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-107375> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2573587/4939089521> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2573587/4939089521> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-178.38583432716712 77.96181386303653,66.028680933428 79.39650521043393,78.52616260511712 -60.24170451914581,-170.9828744430882 -63.85602744947676,-178.38583432716712 77.96181386303653))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-107375> terms:description "Erste Periode : von der Reformation bis zum Westfälischen Frieden ; 1517 - 1648 ; Uebersicht der spanischen u. portugiesischen Besitzungen z. Zeit Charls V., First period: from the Reformation to the Peace of Westphalia; 1517 - 1648; Overview of Spanish u. Portuguese possessions z. Charls V. Time, Historischer Atlas : Folge 3"^^xsd:string .
+
+_:node192p4hbhox951 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-107375> maps:mapsPhenomenon _:node192p4hbhox951 .
+
+_:node192p4hbhox952 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-107375> maps:mapsPhenomenon _:node192p4hbhox952 .
+
+_:node192p4hbhox953 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-107375> maps:mapsPhenomenon _:node192p4hbhox953 .
+
+_:node192p4hbhox955 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-107375> maps:mapsPhenomenon _:node192p4hbhox955 .
+
+_:node192p4hbhox954 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-107375> maps:mapsPhenomenon _:node192p4hbhox954 ;
+	terms:creator <http://d-nb.info/gnd/1014927757> ;
+	maps:mapsPhenomenon dbp:Africa , dbp:Europe , dbp:Brasil , dbp:Saudi_Arabia , dbp:Canada , dbp:America , dbp:Atlantic_Ocean .
+
+dbp:Africa a phen:Territory , phen:Continent .
+
+dbp:Europe a phen:Territory , phen:Continent .
+
+dbp:America a phen:Continent , phen:Territory .
+
+dbp:Brasil a dbpedia-owl:Country , phen:State .
+
+dbp:Saudi_Arabia a dbpedia-owl:Country , phen:State .
+
+dbp:Canada a dbpedia-owl:Country .
+
+dbp:Atlantic_Ocean a phen:WaterBody .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> maps:represents <http://uni-muenster.de/historicmaps/europaischeRussland> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549167> ;
+	maps:mapSize "2.9 * 3.1 cm"^^xsd:string ;
+	maps:title "Das europäische Rußland, politisch und administrativ"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1820" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> maps:hasScale "1:119554366.8"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549167/4935742958> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549167/4935742958> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2549167/4935742958> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((9.688932681927355 72.03628791306912,66.63222785970898 70.09006912053319,64.91893429325569 35.647226737086655,7.955846057779983 37.132083797409045,9.688932681927355 72.03628791306912))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> terms:description "Das europäische Rußland, politisch und administrativ / mutmaßl. Stecher:S. Karsakov, The European Russia, political and administrative / conjecture. Engraver: S. Korsakov"^^xsd:string .
+
+_:node192p4hbhox956 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> maps:mapsPhenomenon _:node192p4hbhox956 .
+
+_:node192p4hbhox957 a phen:Lake .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> maps:mapsPhenomenon _:node192p4hbhox957 .
+
+_:node192p4hbhox958 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> maps:mapsPhenomenon _:node192p4hbhox958 .
+
+_:node192p4hbhox960 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> maps:mapsPhenomenon _:node192p4hbhox960 .
+
+_:node192p4hbhox959 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-105581> maps:mapsPhenomenon _:node192p4hbhox959 ;
+	terms:creator <http://d-nb.info/gnd/183449002> ;
+	maps:mapsPhenomenon dbp:Caspian_Sea , dbp:Italy , dbp:Russia , dbp:Norway , dbp:Finland , dbp:Germany , dbp:Black_Sea .
+
+dbp:Russia a phen:State , dbpedia-owl:Country .
+
+dbp:Italy a phen:State , dbpedia-owl:Country .
+
+dbp:Norway a phen:State , dbpedia-owl:Country .
+
+dbp:Finland a phen:State , dbpedia-owl:Country .
+
+dbp:Germany a phen:State , dbpedia-owl:Country .
+
+dbp:Caspian_Sea a phen:Sea .
+
+dbp:Black_Sea a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-109000> maps:represents <http://uni-muenster.de/historicmaps/KartevonGallien> ;
+	a maps:Map ;
+	maps:medium maps:Paper ;
+	maps:digitalImageVersion <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2589033> ;
+	maps:mapSize "2.6 * 3.6 cm"^^xsd:string ;
+	maps:title "Karte von Gallien"^^xsd:string ;
+	maps:mapsTime <http://nbn-resolving.de/urn:nbn:de:hbz:6:1-109000/mapRepresentationTime> .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-109000/mapRepresentationTime> a time:Instant ;
+	xsd:gYear "1800" .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-109000> maps:hasScale "1:46469882.3"^^xsd:string .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2589033/4940485450> a geo-1-0:Geometry .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-109000> maps:mapsArea <http://sammlungen.ulb.uni-muenster.de/hd/image/view/2589033/4940485450> .
+
+<http://sammlungen.ulb.uni-muenster.de/hd/image/view/2589033/4940485450> geo-1-0:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326>POLYGON((-4.55211995071485 52.64671361508553,8.782312244337371 52.40289991223578,8.812670785139188 42.4355916418753,-4.08872692679658 42.48670357276971,-4.55211995071485 52.64671361508553))"^^sf:wktLiteral .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-109000> maps:mapsPhenomenon dbp:Paris .
+
+_:node192p4hbhox961 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-109000> maps:mapsPhenomenon _:node192p4hbhox961 .
+
+_:node192p4hbhox962 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-109000> maps:mapsPhenomenon _:node192p4hbhox962 .
+
+_:node192p4hbhox963 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-109000> maps:mapsPhenomenon _:node192p4hbhox963 .
+
+_:node192p4hbhox964 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-109000> maps:mapsPhenomenon _:node192p4hbhox964 ;
+	terms:creator <http://d-nb.info/gnd/1014927757> ;
+	maps:mapsPhenomenon dbp:Gaul , dbp:Gallia_Aquitania , dbp:Gallia_Narbonensis , dbp:Britannia , dbp:Gallia_Belgica , dbp:Germania , dbp:Mediterranean_Sea .
+
+dbp:Mediterranean_Sea a phen:Sea .
+
+dbp:Germania a phen:Territory .
+
+dbp:Gaul a phen:Territory .
+
+dbp:Gallia_Aquitania a phen:Territory .
+
+dbp:Gallia_Narbonensis a phen:Territory .
+
+dbp:Britannia a phen:Territory .
+
+dbp:Gallia_Belgica a phen:Territory .
+
+_:node192p4hbhox965 a phen:City .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon _:node192p4hbhox965 .
+
+_:node192p4hbhox966 a phen:Continent .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon _:node192p4hbhox966 .
+
+_:node192p4hbhox967 a phen:River .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon _:node192p4hbhox967 .
+
+_:node192p4hbhox973 a phen:Sea .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon _:node192p4hbhox973 .
+
+_:node192p4hbhox972 a phen:State .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon _:node192p4hbhox972 .
+
+_:node192p4hbhox971 a phen:Territory .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsPhenomenon _:node192p4hbhox971 , dbp:Europe , dbp:Portugal , dbp:Ireland .
+
+dbp:Europe a phen:State .
+
+dbp:Italy a dbpedia-owl:Country .
+
+dbp:Spain a dbpedia-owl:Country .
+
+dbp:Portugal a dbpedia-owl:Country .
+
+dbp:Turkey a dbpedia-owl:Country .
+
+dbp:Germany a dbpedia-owl:Country .
+
+dbp:Denmark a dbpedia-owl:Country .
+
+dbp:Swedena a phen:State , dbpedia-owl:Country .
+
+dbp:France a dbpedia-owl:Country .
+
+dbp:United_Kingdom a dbpedia-owl:Country .
+
+dbp:Poland a dbpedia-owl:Country .
+
+dbp:Ukraine a dbpedia-owl:Country .
+
+dbp:Norway a dbpedia-owl:Country .
+
+dbp:Finland a dbpedia-owl:Country .
+
+dbp:Ireland a dbpedia-owl:Country .
+
+<http://nbn-resolving.de/urn:nbn:de:hbz:6:1-110630> maps:mapsTime _:node192p4hbhox970 .
+
+_:node192p4hbhox970 a time:Interval .
+
+_:node192p4hbhox580 time:hasEnd _:node192p4hbhox981 .
+
+<http://www.ontotext.com/owlim/lucene#include> <http://www.ontotext.com/owlim/lucene#setParam> "literal" .
+
+<http://www.ontotext.com/owlim/lucene#languages> <http://www.ontotext.com/owlim/lucene#setParam> "en,de,none" .
+
+<http://www.ontotext.com/owlim/lucene#index> <http://www.ontotext.com/owlim/lucene#setParam> "literals, bnodes" .
+
+<http://www.ontotext.com/owlim/lucene#mapsLiteralIndex> <http://www.ontotext.com/owlim/lucene#createIndex> "true" .
+
+<http://www.ontotext.com/owlim/lucene#index> <http://www.ontotext.com/owlim/lucene#setParam> "literals" .
+
+<http://www.ontotext.com/owlim/lucene#include> <http://www.ontotext.com/owlim/lucene#setParam> "literal uri" .

@@ -15,7 +15,7 @@ var Constants = (function(){
 		var DBPEDIA_SPARQL = 'http://dbpedia.org/sparql';
 		var HOME_URI = 'http://uni-muenster.de/historicmaps';
 		var HOME_GRAPH = 'http://ifgi.uni-muenster.de/lodum/historicmaps/';
-		var HOME_SPARQLENDPOINT = 'http://giv-siidemo.uni-muenster.de:8081/parliament/sparql';
+		var HOME_SPARQLENDPOINT = 'http://giv-lodum.uni-muenster.de:8081/parliament/sparql';
 		var PREFIXES =	'PREFIX owl: <http://www.w3.org/2002/07/owl#> ' + newline +
 						'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> ' + newline +
 						'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ' + newline +

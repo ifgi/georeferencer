@@ -384,9 +384,15 @@ $(document).ready(function () {
 			var paperW = imgModelScaled.getImageModel().getWidth() / imageDistance;
 			var paperH = imgModelScaled.getImageModel().getHeight() / imageDistance;
 			
-			paperMapSize = roundNumber(paperW,1) + " * " + roundNumber(paperH,1) + " cm";//74 * 95 cm
+
+			paperW = paperW + 38;
+			paperH = paperH + 28;
+
+			paperMapSize = roundNumber(paperW,1) + " x " + roundNumber(paperH,1) + " cm";//74 * 95 cm
 			paperMapScale = "1:" + roundNumber(mapScaleFactor,1);
-			
+
+			console.log(roundNumber(paperW,1) + " x " + roundNumber(paperH,1) + " cm");//74 * 95 cm);
+
 			$("#rulerDetails").html("<b><i>Ruler distance (1 cm):</i></b><br>");
 			$("#rulerDetails").append(roundNumber(imageDistance,1) + " pixels (approximated)<br>");
 			$("#rulerDetails").append(roundNumber(mapDistance,1) + " meters (approx)<br><br>");
@@ -774,7 +780,7 @@ $(document).ready(function () {
 				win.document.write(wincode);
 				win.document.close(); 
 			}else{
-				alert("Please add at least 3 control points to continue!");
+				alert("Please add at least 3 control points to continue.");
 			}
 			
 		});
@@ -786,6 +792,7 @@ $(document).ready(function () {
 			if(validateMetadata()){
 				paperMapUri = $("#paperMapUri").val();
 				var imageMapUri = imgModelOriginal.getUrl()
+				//alert(imageMapUri);
 				var c = Constants.getInstance();	
 				var graph = createGraphName(c.getConstant("HOME_URI"), paperMapUri);
 				var queryInsert = buildTriples(graph);
@@ -818,6 +825,7 @@ $(document).ready(function () {
 	$(function(){
 		$( "#btLoadImage" ).click(function(){
 			var imageUrl = $( "#imgMapInput" ).val();
+			
 			if(isUrlOfImage(imageUrl)){
 				var image = new Image();
 				image.onload = function(){
@@ -837,6 +845,7 @@ $(document).ready(function () {
 				image.src = imageUrl;
 				var md = MapDescription.getInstance();
 				md.setImageUrl(imageUrl);
+
 			}else{
 				alert("Invalid URL!");
 			}
@@ -848,81 +857,90 @@ $(document).ready(function () {
 
 	$(function(){
 		$( "#btOAI" ).click(function(){
-			var oaiURL = "http://sammlungen.ulb.uni-muenster.de/oai/?verb=GetRecord&metadataPrefix=mets&identifier="+$( "#oaiInput" ).val();
+			//var oaiURL = "http://sammlungen.ulb.uni-muenster.de/oai/?verb=GetRecord&metadataPrefix=mets&identifier="+$( "#oaiInput" ).val();
+			var oaiURL = $( "#oaiBaseURI" ).val()+$( "#oaiInput" ).val();
+			console.log("Image URL: " + oaiURL);
 
 		    $.get(oaiURL, {}, function(xml) {
 
-		    var images = $("mets\\:fileGrp", xml);
+				    var images = $("mets\\:fileGrp", xml);
 
-		    for (i = 0; i < images.length; i++) {
-		 
-			if($(images[i]).attr("USE")=="MAX"){
-				var map=$($(images[i]).find("mets\\:file").find("mets\\:FLocat"));
-		               	var image_front = $(map[0]).attr("xlink:href");
-		               	var image_back = $(map[1]).attr("xlink:href");
-			}
-		    }
-			
-		    console.log("Map (Front): " + image_front);
-		    console.log("Map (Back): " + image_back);
+				    for (i = 0; i < images.length; i++) {
+				 
+						if($(images[i]).attr("USE")=="MAX"){
+							var map=$($(images[i]).find("mets\\:file").find("mets\\:FLocat"));
+					               	var image_front = $(map[0]).attr("xlink:href");
+					               	var image_back = $(map[1]).attr("xlink:href");
+						}
 
-		    $( "#imgMapInput" ).val(image_front);
+				    }
+					
+				    console.log("Map (Front): " + image_front);
+				    console.log("Map (Back): " + image_back);
 
-		    var title = $("mods\\:title", xml).text();
-		    console.log("Title: " + title);
-		    $( "#paperMapTitle" ).val(title);
+				    $( "#imgMapInput" ).val(image_front);
 
+				    //console.log("Image URL: "+$( "#imgMapInput" ).val());
 
-		    var subtitle = $("mods\\:subTitle", xml).text();
-		    console.log("Subtitle: " + subtitle);
-			
-		    var identifier = $("mods\\:identifier", xml);
-		    for (i = 0; i < identifier.length; i++) {	
-			if($(identifier[i]).attr("type")=="hbz-idn"){
-				console.log("Identifier: http://lobid.org/resource/"+identifier[i].textContent);
-				$("#paperMapUri").val("http://lobid.org/resource/"+identifier[i].textContent);
-		        }
-		    }
-		    //1617753
-
-		    var creator = $("mods\\:name", xml);
-		    var creatorString ="";
-		    for (i = 0; i < creator.length; i++) {
-
-		       console.log("Author: "+$(creator[i]).attr("valueURI"));
-		       if(creatorString == ""){
-		       		creatorString = $(creator[i]).attr("valueURI");
-		       } else {
-		       		creatorString = creatorString + "," + $(creator[i]).attr("valueURI");
-		       }
-		    }
-
-		    $( "#paperMapCreator" ).val(creatorString);
-
-		    var places = $("mods\\:subject", xml);	
-		    var res = new Array();
-		    $("#subjectTags").empty();
-
-		    for (i = 0; i < places.length; i++) {
-		       if (typeof $(places[i]).find("mods\\:geographic").attr("valueURI") !== "undefined") {
-		          console.log("Place URI (Geographic): "+$(places[i]).find("mods\\:geographic").attr("valueURI"));
-		          console.log("Place Name (Geographic): "+$(places[i]).find("mods\\:geographic").text());
-
-		          var entryURI = $(places[i]).find("mods\\:geographic").attr("valueURI");
-		          var entryName = $(places[i]).find("mods\\:geographic").text();
-		          $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='chkPlaceGeo" + i + "' value='" + encodeURI(entryName) + "' class='chSubjectSuggestion' >" + entryName + " - <a href='" + entryURI + "' target='_blank'>view</a> </p>");
-		          $('#chkPlaceGeo'+i).prop('checked', true);
-		          $('#chkPlaceGeo'+i).prop('disabled', true);
-
-		          res.push(entryURI);
-
-		       }
-		    }
+				    var title = $("mods\\:title", xml).text();
+				    console.log("Title: " + title);
+				    $( "#paperMapTitle" ).val(title);
 
 
-			var md = MapDescription.getInstance();
-			md.setMapLinksSubjects(res);
-		
+				    var subtitle = $("mods\\:subTitle", xml).text();
+				    console.log("Subtitle: " + subtitle);
+					
+				    var identifier = $("mods\\:identifier", xml);
+				    for (i = 0; i < identifier.length; i++) {	
+
+						if($(identifier[i]).attr("type")=="hbz-idn"){
+						
+							console.log("Identifier: http://lobid.org/resource/"+identifier[i].textContent);
+							$("#paperMapUri").val("http://lobid.org/resource/"+identifier[i].textContent);
+
+				        }
+
+				    }
+				    //1617753
+
+				    var creator = $("mods\\:name", xml);
+				    var creatorString ="";
+				    for (i = 0; i < creator.length; i++) {
+
+				       console.log("Author: "+$(creator[i]).attr("valueURI"));
+				       if(creatorString == ""){
+				       		creatorString = $(creator[i]).attr("valueURI");
+				       } else {
+				       		creatorString = creatorString + "," + $(creator[i]).attr("valueURI");
+				       }
+				    }
+
+				    $( "#paperMapCreator" ).val(creatorString);
+
+				    var places = $("mods\\:subject", xml);	
+				    var res = new Array();
+				    $("#subjectTags").empty();
+
+				    for (i = 0; i < places.length; i++) {
+				       if (typeof $(places[i]).find("mods\\:geographic").attr("valueURI") !== "undefined") {
+				          console.log("Place URI (Geographic): "+$(places[i]).find("mods\\:geographic").attr("valueURI"));
+				          console.log("Place Name (Geographic): "+$(places[i]).find("mods\\:geographic").text());
+
+				          var entryURI = $(places[i]).find("mods\\:geographic").attr("valueURI");
+				          var entryName = $(places[i]).find("mods\\:geographic").text();
+				          $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='chkPlaceGeo" + i + "' value='" + encodeURI(entryName) + "' class='chSubjectSuggestion' >" + entryName + " - <a href='" + entryURI + "' target='_blank'>view</a> </p>");
+				          $('#chkPlaceGeo'+i).prop('checked', true);
+				          $('#chkPlaceGeo'+i).prop('disabled', true);
+
+				          res.push(entryURI);
+
+				       }
+				    }
+
+
+					var md = MapDescription.getInstance();
+					md.setMapLinksSubjects(res);
+				
 
 
 
@@ -932,42 +950,42 @@ $(document).ready(function () {
 
 
 
-		    var places2 = $("mods\\:subject", xml);	
-		    for (i = 0; i < places2.length; i++) {
+				    var places2 = $("mods\\:subject", xml);	
+				    for (i = 0; i < places2.length; i++) {
 
-		       if (typeof $(places2[i]).attr("valueURI") !== "undefined") {
-		          console.log("Place (hierarchicalGeographic): "+$(places2[i]).attr("valueURI"));
+				       if (typeof $(places2[i]).attr("valueURI") !== "undefined") {
+				          console.log("Place (hierarchicalGeographic): "+$(places2[i]).attr("valueURI"));
 
-    		      var entryURI = $(places2[i]).attr("valueURI");
-		          var entryName = $(places2[i]).text();
+		    		      var entryURI = $(places2[i]).attr("valueURI");
+				          var entryName = $(places2[i]).text();
 
-				  console.log("Place URI (hierarchicalGeographic): "+$(places2[i]).text());
-				  console.log("Place Name (hierarchicalGeographic): "+$(places2[i]).attr("valueURI"));
+						  console.log("Place URI (hierarchicalGeographic): "+$(places2[i]).text());
+						  console.log("Place Name (hierarchicalGeographic): "+$(places2[i]).attr("valueURI"));
 
-				  $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='chkPlace" + i + "' value='" + encodeURI(entryName) + "' class='chSubjectSuggestion' >" + entryName + " - <a href='" + entryURI + "' target='_blank'>view</a> </p>");
-		          $('#chkPlace'+i).prop('checked', true);
-		          $('#chkPlace'+i).prop('disabled', true);
+						  $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='chkPlace" + i + "' value='" + encodeURI(entryName) + "' class='chSubjectSuggestion' >" + entryName + " - <a href='" + entryURI + "' target='_blank'>view</a> </p>");
+				          $('#chkPlace'+i).prop('checked', true);
+				          $('#chkPlace'+i).prop('disabled', true);
 
-		       } 
+				       } 
 
-		    }
+				    }
 
-		    $( "#btLoadImage" ).click();
-		    $( "#btToggleSuggestionTags" ).click();
+				    $( "#btLoadImage" ).click();
+				    $( "#btToggleSuggestionTags" ).click();
 
-		    $( "#imgMapInput" ).prop("disabled",true);
-		    $( "#paperMapUri" ).prop("disabled",true);		    
-		    $( "#paperMapTitle" ).prop("disabled",true);
-		    $( "#paperMapCreator" ).prop("disabled",true);
-		    $( "#paperMapSubjects" ).prop("disabled",true);		    
+				    $( "#imgMapInput" ).prop("disabled",true);
+				    $( "#paperMapUri" ).prop("disabled",true);		    
+				    $( "#paperMapTitle" ).prop("disabled",true);
+				    $( "#paperMapCreator" ).prop("disabled",true);
+				    $( "#paperMapSubjects" ).prop("disabled",true);		    
 
-		    $( "#btFindSubjectMatches" ).prop("disabled",true);
-		    $( "#btLoadImage" ).prop("disabled",true);
-		    $( "#btSearchMapUri" ).prop("disabled",true);
-			$( "#btToggleSubjectTags" ).prop("disabled",true);
-		    
+				    $( "#btFindSubjectMatches" ).prop("disabled",true);
+				    $( "#btLoadImage" ).prop("disabled",true);
+				    $( "#btSearchMapUri" ).prop("disabled",true);
+					$( "#btToggleSubjectTags" ).prop("disabled",true);
+				    
 
-}, "xml");
+		}, "xml");
 
 
 		});
