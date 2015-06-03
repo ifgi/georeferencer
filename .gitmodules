@@ -1,9 +1,0 @@
-[submodule "js/sylvester"]
-	path = js/sylvester
-	url = ../../jcoglan/sylvester.git
-[submodule "js/Leaflet.draw"]
-	path = js/Leaflet.draw
-	url = ../../Leaflet/Leaflet.draw.git
-[submodule "js/Leaflet"]
-	path = js/Leaflet
-	url = ../../Leaflet/Leaflet.git

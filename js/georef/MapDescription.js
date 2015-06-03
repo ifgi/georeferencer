@@ -135,6 +135,7 @@ var MapDescription = (function(){
 		var buildTriples = function(){
 			var res;
 			var c = Constants.getInstance();
+			mapUri = $("#paperMapUri").val();
 			var graph = createGraphName(c.getConstant("HOME_URI"), mapUri);
 			var baseUri = c.getConstant("HOME_URI");
 			var prefix = c.getConstant("PREFIXES");

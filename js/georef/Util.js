@@ -598,6 +598,7 @@ function removeElement(id){
 */
 function createGraphName(prefix, mapURI){
 	var res = "";
+
 	if(prefix.length > 1 && mapURI.length > 1){
 		var tmp = djb2Code(mapURI);
 		if(prefix.substr(prefix.length - 1) == "/"){

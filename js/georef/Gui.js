@@ -723,26 +723,45 @@ $(document).ready(function () {
 	//Button - store. Gets the data, creates a new graph, builds triples and send them to the triple store
 	$(function(){
 		$( "#btStoreTriples" ).click(function(){
+			
 			paperMapUri = $("#paperMapUri").val();
+			var graph = createGraphName(c.getConstant("HOME_URI"), paperMapUri);
+
 			var imageMapUri;
-			var c = Constants.getInstance();
+			
 			if(imgModelOriginal != null){
 				imageMapUri = imgModelOriginal.getUrl()
 			}
+			
 			if(isUrlOfImage(imageMapUri)){
+			
 				if(isUrlValid(paperMapUri)){
-					var graph = createGraphName(c.getConstant("HOME_URI"), paperMapUri);
-					var queryCreate = c.getConstant("QUERY_CREATE_GRAPH");
-					queryCreate = queryCreate.replace("PARAM_GRAPH", graph);
-					var queryInsert = buildTriples(graph);
+					
+
 					try{
 
-						//Creates a new SPARQL GRAPH
-						var sq = new SparqlQuery();
-						var js = sq.sendSparqlUpdate(queryCreate, c.getConstant("HOME_SPARQLENDPOINT"), graph);
+						if(validateMetadata()){
+
+							var queryInsert = buildTriples(graph);
+							console.log(queryInsert);
+
+			 			    $.ajax({
+				                type:       "post",
+				                url:        "http://giv-lodum.uni-muenster.de:8081/parliament/sparql",
+				                data:       {action:'add', update:queryInsert}});
+			 			    
+		 			    }
+
+						
+
+						//var sq = new SparqlQuery();
+						//var js = sq.sendSparqlUpdate(queryCreate, c.getConstant("HOME_SPARQLENDPOINT"), graph);
 						//Insert the triples in the new GRAPH
-						sq = new SparqlQuery();
-						var js = sq.sendSparqlUpdate(queryInsert, c.getConstant("HOME_SPARQLENDPOINT"), graph);
+						//sq = new SparqlQuery();
+						//var js = sq.sendSparqlUpdate(queryInsert, c.getConstant("HOME_SPARQLENDPOINT"), graph);
+
+
+
 						alert("Map data inserted!");
 					}catch(err){
 						alert(err);
@@ -792,7 +811,7 @@ $(document).ready(function () {
 			if(validateMetadata()){
 				paperMapUri = $("#paperMapUri").val();
 				var imageMapUri = imgModelOriginal.getUrl()
-				//alert(imageMapUri);
+
 				var c = Constants.getInstance();	
 				var graph = createGraphName(c.getConstant("HOME_URI"), paperMapUri);
 				var queryInsert = buildTriples(graph);
@@ -835,6 +854,7 @@ $(document).ready(function () {
 					var scaleBounds = new Array();
 					scaleBounds[0] = imgModelScaled.getScaledImage().getCartesianLowerLeft_Image1Q().reverse();
 					scaleBounds[1] = imgModelScaled.getScaledImage().getCartesianUpperRight_Image1Q().reverse();
+
 					if(imageMapLayer != null){
 						mapImage.removeLayer(imageMapLayer);//Removes the last loaded image
 					}
