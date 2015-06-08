@@ -88,7 +88,18 @@
 		<script src="./js/georef/SparqlQuery.js"></script>
 		<script src="./js/georef/MapDescription.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/georef.css" />
-		
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+			  $(window).keydown(function(event){
+			    if(event.keyCode == 13) {
+			      event.preventDefault();
+			      return false;
+			    }
+			  });
+			});
+			
+		</script>
 		
 	</head>
 	
@@ -220,7 +231,7 @@
 								<fieldset id="fsSubjectTags">
 									<legend>GND Info</legend>
 									<p>Please type a comma separated list of subjects. The application will retrieve suggestions from <a href="http://lobid.org/" target="_blank">LOBID</a>.</p>
-									<input type="text" id="paperMapSubjects" title="Authority data (GND)." />
+									<input type="text" id="paperMapSubjects" onkeydown="" title="Authority data (GND)." />
 									<button type="button" id="btFindSubjectMatches">Find matches</button><br>
 									<button type="button" id="btToggleSubjectTags">Toggle all</button><br>									
 									<div id="subjectTags">
