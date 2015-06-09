@@ -61,7 +61,7 @@ var Constants = (function(){
 							'		LIMIT 10  ' + newline +
 							'	} ' + newline +
 							'	FILTER (  ' + newline +
-							'		lang(?label) = "en" ' + newline +
+							'		lang(?label) = "de" ' + newline +
 							'	) ' + newline +
 							'}ORDER BY DESC(xsd:integer(?population)) ';
 		var QUERY_CITYS_2 =	'SELECT ?subject ?label (AVG(?lat) AS ?lt) (AVG(?long) AS ?lg) ' + newline +
@@ -88,7 +88,7 @@ var Constants = (function(){
 							'		LIMIT 10  ' + newline +
 							'	} ' + newline +
 							'	FILTER (  ' + newline +
-							'		lang(?label) = "en" ' + newline +
+							'		lang(?label) = "de" ' + newline +
 							'	) ' + newline +
 							'}ORDER BY DESC(xsd:integer(?population)) ';
 		var QUERY_COMPLETE_SUBJECT = 	'SELECT ?subject ?label ?abst ' + newline + 
@@ -97,8 +97,8 @@ var Constants = (function(){
 											'?subject dbpedia-owl:abstract ?abst . ' + newline +
 											'FILTER( ' + newline +
 											'	str(?subject) = "<PARAM_URI>" && ' + newline +
-											'	lang(?label) = "en" && ' + newline +
-											'	lang(?abst) = "en" ' + newline +
+											'	lang(?label) = "de" && ' + newline +
+											'	lang(?abst) = "de" ' + newline +
 											') ' + newline +
 										'} LIMIT 1' + newline;
 		var QUERY_BOX_YEAR = 	'SELECT ?subject ?label ?abst ' + newline +
@@ -123,8 +123,8 @@ var Constants = (function(){
 								'		}LIMIT 10 ' + newline +
 								'	} ' + newline +
 								'	FILTER( ' + newline +
-								'		lang(?label) = "en"	&& ' + newline +
-								'		lang(?abst) = "en" ' + newline +
+								'		lang(?label) = "de"	&& ' + newline +
+								'		lang(?abst) = "de" ' + newline +
 								'	) ' + newline +
 								'}' + newline;					
 		var KML_OVERLAY = 	'<?xml version="1.0" encoding="UTF-8"?> ' + newline +

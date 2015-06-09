@@ -430,6 +430,7 @@ $(document).ready(function () {
 		
 		try{
 			//Fails when DBpedia is offline - You don't say!
+			console.log("queryDbpediaST -> "+query);
 			var js = sq.sendSparqlQuery(query, c.getConstant("DBPEDIA_SPARQL"), "");
 			if(js.results.bindings.length < 1){
 				alert("No spatio-temporal related  results were found!");
