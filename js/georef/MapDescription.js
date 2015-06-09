@@ -161,6 +161,9 @@ var MapDescription = (function(){
 				cMapTriples += paperMapUri + '<http://www.geographicknowledge.de/vocab/maps#title> "' + getMapTitle() + '"^^xsd:string' + tripleSeparator;
 			}
 			
+			//Online Map Presentation
+			cMapTriples += paperMapUri + "<http://www.geographicknowledge.de/vocab/maps#presentation> '" + presentation + "'^^xsd:anyURI" + tripleSeparator;
+
 			//paper map time
 			if(mapTime != null && mapTime.length > 0){
 				var dateArray = mapTime.split("-");

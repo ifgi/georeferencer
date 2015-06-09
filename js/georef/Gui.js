@@ -32,6 +32,7 @@ var paperMapScale;
 var paperMapPlaces;
 var paperMapDescription;
 var mapAreawkt;
+var presentation;
 
 $(document).ready(function () {
 	c = Constants.getInstance();
@@ -901,6 +902,9 @@ $(document).ready(function () {
 				    $( "#imgMapInput" ).val(image_front);
 
 				    //console.log("Image URL: "+$( "#imgMapInput" ).val());
+				    presentation="";
+				    presentation = $("dv\\:presentation", xml).text();
+    				console.log("Presentation: " + presentation);
 
 				    var title = $("mods\\:title", xml).text();
 				    console.log("Title: " + title);
