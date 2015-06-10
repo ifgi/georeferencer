@@ -33,6 +33,7 @@ var paperMapPlaces;
 var paperMapDescription;
 var mapAreawkt;
 var presentation;
+var lobidSubjectCounter = 0;
 
 $(document).ready(function () {
 	c = Constants.getInstance();
@@ -947,18 +948,19 @@ $(document).ready(function () {
 				    $("#subjectTags").empty();
 
 				    for (i = 0; i < places.length; i++) {
+				    	lobidSubjectCounter = lobidSubjectCounter +1;
 				       if (typeof $(places[i]).find("mods\\:geographic").attr("valueURI") !== "undefined") {
 				          console.log("Place URI (Geographic): "+$(places[i]).find("mods\\:geographic").attr("valueURI"));
 				          console.log("Place Name (Geographic): "+$(places[i]).find("mods\\:geographic").text());
 
 				          var entryURI = $(places[i]).find("mods\\:geographic").attr("valueURI");
 				          var entryName = $(places[i]).find("mods\\:geographic").text();
-				          $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='chkPlaceGeo" + i + "' value='" + encodeURI(entryName) + "' class='chSubjectSuggestion' >" + entryName + " - <a href='" + entryURI + "' target='_blank'>view</a> </p>");
-				          $('#chkPlaceGeo'+i).prop('checked', true);
-				          $('#chkPlaceGeo'+i).prop('disabled', true);
+				          $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='" + encodeURI(entryURI) + "' value='" + encodeURI(entryName) + "' class='chSubjectSuggestionOAI' checked disabled>" + entryName + " - <a href='" + entryURI + "' target='_blank'>view</a> </p>");
+				          //$('#chkPlaceGeo'+i).prop('checked', true);
+				          //$('#chkPlaceGeo'+i).prop('disabled', true);
 
 				          res.push(entryURI);
-
+				          console.log(res);
 				       }
 				    }
 
@@ -977,7 +979,7 @@ $(document).ready(function () {
 
 				    var places2 = $("mods\\:subject", xml);	
 				    for (i = 0; i < places2.length; i++) {
-
+				    	
 				       if (typeof $(places2[i]).attr("valueURI") !== "undefined") {
 				          console.log("Place (hierarchicalGeographic): "+$(places2[i]).attr("valueURI"));
 
@@ -987,9 +989,9 @@ $(document).ready(function () {
 						  console.log("Place URI (hierarchicalGeographic): "+$(places2[i]).text());
 						  console.log("Place Name (hierarchicalGeographic): "+$(places2[i]).attr("valueURI"));
 
-						  $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='chkPlace" + i + "' value='" + encodeURI(entryName) + "' class='chSubjectSuggestion' >" + entryName + " - <a href='" + entryURI + "' target='_blank'>view</a> </p>");
-				          $('#chkPlace'+i).prop('checked', true);
-				          $('#chkPlace'+i).prop('disabled', true);
+						  $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='" + encodeURI(entryURI) + "' value='" + encodeURI(entryName) + "' class='chSubjectSuggestionOAI' disabled checked>" + entryName + " - <a href='" + entryURI + "' target='_blank'>view</a> </p>");
+				          //$('#chkPlace'+i).prop('checked', true);
+				          //$('#chkPlace'+i).prop('disabled', true);
 
 				       } 
 
@@ -1002,12 +1004,12 @@ $(document).ready(function () {
 				    $( "#paperMapUri" ).prop("disabled",true);		    
 				    $( "#paperMapTitle" ).prop("disabled",true);
 				    $( "#paperMapCreator" ).prop("disabled",true);
-				    $( "#paperMapSubjects" ).prop("disabled",true);		    
+				    //$( "#paperMapSubjects" ).prop("disabled",true);		    
 
-				    $( "#btFindSubjectMatches" ).prop("disabled",true);
+				    //$( "#btFindSubjectMatches" ).prop("disabled",true);
 				    $( "#btLoadImage" ).prop("disabled",true);
 				    $( "#btSearchMapUri" ).prop("disabled",true);
-					$( "#btToggleSubjectTags" ).prop("disabled",true);
+					//$( "#btToggleSubjectTags" ).prop("disabled",true);
 				    
 
 		}, "xml");
@@ -1131,6 +1133,7 @@ $(document).ready(function () {
 		$( "#btToggleSuggestionTags" ).click(function(){
 			var checkBoxes = $(".chMapLinkSuggestion")
 			checkBoxes.prop("checked", !checkBoxes.prop("checked"));
+
 		});
 	});
 
@@ -1139,6 +1142,7 @@ $(document).ready(function () {
 		$( "#btTogglePlaceTags" ).click(function(){
 			var checkBoxes = $(".chPlaceSuggestion")
 			checkBoxes.prop("checked", !checkBoxes.prop("checked"));
+
 		});
 	});
 
@@ -1150,6 +1154,16 @@ $(document).ready(function () {
 		});
 	});	
 	
+
+	//Button - btTogglePlaceTags - Toggles checkboxes on/off
+	$(function(){
+		$( "#btToggleSubjectTags" ).click(function(){
+			var checkBoxes = $(".chSubjectSuggestion")
+			checkBoxes.prop("checked", !checkBoxes.prop("checked"));
+			updateLOBIDSubjectsArray();
+
+		});
+	});
 
 	/**
 	* Metadata tab events
@@ -1230,7 +1244,15 @@ $(document).ready(function () {
 		var md = MapDescription.getInstance();
 		md.setMapLinksDescription(res);
 	});
+
 	$("body").on("change", ".chSubjectSuggestion", function() {
+		
+
+		updateLOBIDSubjectsArray();
+
+	});
+
+	function updateLOBIDSubjectsArray(){
 		var res = new Array();
 		$(".chSubjectSuggestion").each(function( index ){
 			if(this.checked){
@@ -1239,7 +1261,17 @@ $(document).ready(function () {
 		});	
 		var md = MapDescription.getInstance();
 		md.setMapLinksSubjects(res);
-	});
+
+		$(".chSubjectSuggestionOAI").each(function( index ){
+			if(this.checked){
+				res.push(this.id);
+			}
+		});	
+		md.setMapLinksSubjects(res);
+		console.log(res);
+
+
+	}
 
 	/**
 	* Query LOBID for subjects.
@@ -1255,10 +1287,13 @@ $(document).ready(function () {
 				format : "full"
 			},
 			success : function(data) {
-				$("#subjectTags").html("");
+				
+				//$("#subjectTags").html("");
+
 				var tmp = new Array();
 				if(data != null && data.length > 1){
 					for(var i = 1; i < data.length; i++){
+						//lobidSubjectCounter = lobidSubjectCounter + 1;
 						var obj = data[i];
 						var id = obj["@id"];
 						var graph0 = obj["@graph"][0];
@@ -1270,7 +1305,7 @@ $(document).ready(function () {
 								types = type.substring(type.lastIndexOf("#") + 1, type.length);
 							}
 							//Creates the checkboxes					
-							$("#subjectTags").append("<p id='pSuggestedSubjectTag" + tmp.length +"'><input type='checkbox' id='" + id + "' value='" + encodeURI(name) + "' class='chSubjectSuggestion' >" + name + " - <a href='" + id + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedSubjectTag" + tmp.length + "&quot;)'>remove</a></p>");
+							$("#subjectTags").append("<p id='pSuggestedSubjectTag" + tmp.length +"'><input type='checkbox' id='" + id.replace("/about","") + "' value='" + encodeURI(name) + "' class='chSubjectSuggestion' >" + name + " - <a href='" + i + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedSubjectTag" + tmp.length + "&quot;)'>remove</a></p>");
 						}
 					}
 				}else{
@@ -1295,7 +1330,7 @@ $(document).ready(function () {
 				"Content-Type": "text/plain; charset=utf-8"
 			},
 			}).done(function ( data ) {
-				$("#placeTags").html("");
+				//$("#placeTags").html("");
 				var tmp = new Array();
 				if(data != null && data.Resources != null){
 					for(var i = 0; i < data.Resources.length; i++){
