@@ -202,6 +202,8 @@ var MapDescription = (function(){
 			//paper map scale
 			if(this.getMapScale() != null && this.getMapScale().length > 0){
 				cMapTriples += paperMapUri + '<http://www.geographicknowledge.de/vocab/maps#hasScale> "' + getMapScale() + '"^^xsd:string' +  tripleSeparator;
+			} else {
+				cMapTriples += paperMapUri + '<http://www.geographicknowledge.de/vocab/maps#hasScale> "0:0000"^^xsd:string' +  tripleSeparator;
 			}
 			//paper map area in map coords
 			if(this.getMapArea() != null && this.getMapArea().length > 0){
