@@ -955,7 +955,7 @@ $(document).ready(function () {
 
 				          var entryURI = $(places[i]).find("mods\\:geographic").attr("valueURI");
 				          var entryName = $(places[i]).find("mods\\:geographic").text();
-				          $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='" + encodeURI(entryURI) + "' value='" + encodeURI(entryName) + "' class='chSubjectSuggestionOAI' checked disabled>" + encodeURI(entryName) + " - <a href='" + entryURI + "' target='_blank'>view</a> </p>");
+				          $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='" + decodeURI(entryURI) + "' value='" + decodeURI(entryName) + "' class='chSubjectSuggestionOAI' checked disabled>" + decodeURI(entryName) + " - <a href='" + decodeURI(entryURI) + "' target='_blank'>view</a> </p>");
 				          //$('#chkPlaceGeo'+i).prop('checked', true);
 				          //$('#chkPlaceGeo'+i).prop('disabled', true);
 
@@ -1347,7 +1347,7 @@ $(document).ready(function () {
 							//Gets the URL last part
 							var matchedText = subject.substring(subject.lastIndexOf("/") + 1, subject.length);
 							//Creates the checkboxes
-							
+
 							$("#placeTags").append("<p id='pSuggestedPlaceTag" + tmp.length +"'><input type='checkbox' id='" + subject + "' value='" + decodeURI(subject) + "' class='chPlaceSuggestion' >" + decodeURI(matchedText) + " - <a href='" + decodeURI(subject) + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedPlaceTag" + tmp.length + "&quot;)'>remove</a></p>");
 							//Completes the subject with the label and abstract -getDbpediaLabelAbstract();
 						}
