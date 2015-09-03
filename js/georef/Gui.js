@@ -955,7 +955,7 @@ $(document).ready(function () {
 
 				          var entryURI = $(places[i]).find("mods\\:geographic").attr("valueURI");
 				          var entryName = $(places[i]).find("mods\\:geographic").text();
-				          $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='" + encodeURI(entryURI) + "' value='" + encodeURI(entryName) + "' class='chSubjectSuggestionOAI' checked disabled>" + entryName + " - <a href='" + entryURI + "' target='_blank'>view</a> </p>");
+				          $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='" + encodeURI(entryURI) + "' value='" + encodeURI(entryName) + "' class='chSubjectSuggestionOAI' checked disabled>" + encodeURI(entryName) + " - <a href='" + entryURI + "' target='_blank'>view</a> </p>");
 				          //$('#chkPlaceGeo'+i).prop('checked', true);
 				          //$('#chkPlaceGeo'+i).prop('disabled', true);
 
@@ -989,7 +989,7 @@ $(document).ready(function () {
 						  console.log("Place URI (hierarchicalGeographic): "+$(places2[i]).text());
 						  console.log("Place Name (hierarchicalGeographic): "+$(places2[i]).attr("valueURI"));
 
-						  $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='" + encodeURI(entryURI) + "' value='" + encodeURI(entryName) + "' class='chSubjectSuggestionOAI' disabled checked>" + entryName + " - <a href='" + entryURI + "' target='_blank'>view</a> </p>");
+						  $("#subjectTags").append("<p id='pSuggestedSubjectTag" + i +"'><input type='checkbox' id='" + encodeURI(entryURI) + "' value='" + encodeURI(entryName) + "' class='chSubjectSuggestionOAI' disabled checked>" + encodeURI(entryName) + " - <a href='" + entryURI + "' target='_blank'>view</a> </p>");
 				          //$('#chkPlace'+i).prop('checked', true);
 				          //$('#chkPlace'+i).prop('disabled', true);
 
@@ -1305,7 +1305,7 @@ $(document).ready(function () {
 								types = type.substring(type.lastIndexOf("#") + 1, type.length);
 							}
 							//Creates the checkboxes
-							$("#subjectTags").append("<p id='pSuggestedSubjectTag" + tmp.length +"'><input type='checkbox' id='" + id.replace("/about","") + "' value='" + encodeURI(name) + "' class='chSubjectSuggestion' >" + name + " - <a href='" + id + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedSubjectTag" + tmp.length + "&quot;)'>remove</a></p>");
+							$("#subjectTags").append("<p id='pSuggestedSubjectTag" + tmp.length +"'><input type='checkbox' id='" + id.replace("/about","") + "' value='" + decodeURI(name) + "' class='chSubjectSuggestion' >" + decodeURI(name) + " - <a href='" + id + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedSubjectTag" + tmp.length + "&quot;)'>remove</a></p>");
 						}
 					}
 				}else{
@@ -1316,6 +1316,11 @@ $(document).ready(function () {
 		});
 	}
 
+	function decodeHtml(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+	}
 
 	/**
 	* Prints suggested places taken from DBPedia. Purely alphanumerical.
@@ -1342,7 +1347,8 @@ $(document).ready(function () {
 							//Gets the URL last part
 							var matchedText = subject.substring(subject.lastIndexOf("/") + 1, subject.length);
 							//Creates the checkboxes
-							$("#placeTags").append("<p id='pSuggestedPlaceTag" + tmp.length +"'><input type='checkbox' id='" + subject + "' value='" + subject + "' class='chPlaceSuggestion' >" + matchedText + " - <a href='" + subject + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedPlaceTag" + tmp.length + "&quot;)'>remove</a></p>");
+							alert("alert-> "+decodeURI(matchedText));
+							$("#placeTags").append("<p id='pSuggestedPlaceTag" + tmp.length +"'><input type='checkbox' id='" + subject + "' value='" + decodeURI(subject) + "' class='chPlaceSuggestion' >" + decodeURI(matchedText) + " - <a href='" + decodeURI(subject) + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedPlaceTag" + tmp.length + "&quot;)'>remove</a></p>");
 							//Completes the subject with the label and abstract -getDbpediaLabelAbstract();
 						}
 					}
