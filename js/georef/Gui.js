@@ -1347,7 +1347,7 @@ $(document).ready(function () {
 							//Gets the URL last part
 							var matchedText = subject.substring(subject.lastIndexOf("/") + 1, subject.length);
 							//Creates the checkboxes
-							alert("alert-> "+decodeURI(matchedText));
+							
 							$("#placeTags").append("<p id='pSuggestedPlaceTag" + tmp.length +"'><input type='checkbox' id='" + subject + "' value='" + decodeURI(subject) + "' class='chPlaceSuggestion' >" + decodeURI(matchedText) + " - <a href='" + decodeURI(subject) + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedPlaceTag" + tmp.length + "&quot;)'>remove</a></p>");
 							//Completes the subject with the label and abstract -getDbpediaLabelAbstract();
 						}
