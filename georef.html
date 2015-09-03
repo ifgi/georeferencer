@@ -8,12 +8,12 @@
 		<!--*********************************
 		Leaflet files
 		*********************************-->
-		
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="./js/Leaflet/dist/leaflet.js"></script>
 		<link rel="stylesheet" href="./js/Leaflet/dist/leaflet.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="./js/Leaflet/dist/leaflet.ie.css" /><![endif]-->
-		
+
 		<link rel="stylesheet" href="./js/Leaflet.draw/dist/leaflet.draw.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="./js/Leaflet.draw/dist/leaflet.draw.ie.css" /><![endif]-->
 		<script src="./js/Leaflet.draw/src/Leaflet.draw.js"></script>
@@ -38,9 +38,9 @@
 		<script src="./js/Leaflet.draw/src/draw/DrawToolbar.js"></script>
 		<script src="./js/Leaflet.draw/src/edit/EditToolbar.js"></script>
 		<script src="./js/Leaflet.draw/src/edit/handler/EditToolbar.Edit.js"></script>
-		<script src="./js/Leaflet.draw/src/edit/handler/EditToolbar.Delete.js"></script>		
+		<script src="./js/Leaflet.draw/src/edit/handler/EditToolbar.Delete.js"></script>
 
-	
+
 		<!--*********************************
 		JQuery files
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -54,22 +54,22 @@
 		*********************************
 		Datatable imports
 		*********************************
-		-->		
+		-->
 		<style type="text/css">
 			@import "./js/DataTables-1.9.4/media/css/demo_page.css";
 			@import "./js/DataTables-1.9.4/media/css/demo_table.css";
 		</style>
 		<script class="jsbin" src="./js/DataTables-1.9.4/media/js/jquery-dataTables.min.js"></script><!--<script class="jsbin" src="./js/DataTables-1.9.4/media/js/jquery-dataTables.js"></script>-->
-		
-		
+
+
 		<!--
 		*********************************
 		Sylvester (matrix operations)
 		*********************************
 		-->
 		<script src="./js/sylvester/lib/sylvester.js"></script>
-		
-		
+
+
 		<!--
 		*********************************
 		GeoReferencer files
@@ -98,18 +98,18 @@
 			    }
 			  });
 			});
-			
-		</script>
-		
-	</head>
-	
 
-	<body> 
+		</script>
+
+	</head>
+
+
+	<body>
 		<div id="container">
 			<div id="top">
 				<div id="top-left" ><img src="http://www.uni-muenster.de/imperia/md/images/allgemein/farbunabhaengig/wwu_logo.gif" alt="WWU"></div>
 				<div id="top-center"><p id="pTitle">Historic Maps Georeferencer</p></div>
-				<div id="top-right" ><img src="http://www.uni-muenster.de/imperia/md/images/ulb/_v/logo.gif" alt="ULB"></div>				
+				<div id="top-right" ><img src="http://www.uni-muenster.de/imperia/md/images/ulb/_v/logo.gif" alt="ULB"></div>
 			</div>
 			<div id="middle">
 				<div id="middle-left">
@@ -120,7 +120,7 @@
 
 							    <b>Load Map via URL image</b>
 								<br><br>
-								Image url: 
+								Image url:
 								<input id="imgMapInput" type="text">
 								<button id="btLoadImage">Load image</button>
 								<br/>
@@ -133,7 +133,7 @@
 								OAI Base URL
 								<input id="oaiBaseURI" type="text" value="http://sammlungen.ulb.uni-muenster.de/oai/?verb=GetRecord&metadataPrefix=mets&identifier=">
 								<br>OAI ID
-								
+
 								<input id="oaiInput" type="text">
 
 								<button id="btOAI">Load Map</button>
@@ -145,7 +145,7 @@
 						<h3 title="Click on the button 'Add an Image Control Point' on the left side map and create a matchinbg point on the right side map using the button 'Add a Map Control Point'.">2 - Control Points</h3>
 						<div>
 							<div>
-								<button type="button" id="btSuggestPois">Suggest POIs</button> 
+								<button type="button" id="btSuggestPois">Suggest POIs</button>
 								<div id="suggestedControlPointsTableDiv"></div>
 							</div>
 							<div id="controlPointsTableDiv"></div>
@@ -170,11 +170,11 @@
 							<br>
 							<br>
 							You can view the map on its approximated location on Google Earth by pressing this button:<bt>
-							<button id="btGenerateKml">Get KML</button> 
+							<button id="btGenerateKml">Get KML</button>
 							<br>
 							<br>
 							You can get the RDF representing the map's metadata by pressing this button:<bt>
-							<button id="btGenerateRdf">Get RDF</button> 
+							<button id="btGenerateRdf">Get RDF</button>
 						</div>
 					</div>
 				</div>
@@ -234,12 +234,12 @@
 
 									<input type="text" id="paperMapSubjects" onkeydown="" title="Authority data (GND)." />
 									<button type="button" id="btFindSubjectMatches">Find matches</button><br>
-									<button type="button" id="btToggleSubjectTags">Toggle all</button><br>									
+									<button type="button" id="btToggleSubjectTags">Toggle all</button><br>
 									<div id="subjectTags">
 									</div>
 								</fieldset>
 							</form>
-						</div>						
+						</div>
 						<div id="tabs-4">
 							<form id="frMapPlaces" autocomplete="off">
 								<fieldset id="fsPlaceTags">
@@ -247,7 +247,7 @@
 									<p>Please insert a place name and press 'Find matches' (Optionally, multiple place names can be entered separated by comma, e.g. "Münster, London, Paris"). The application will retrieve suggestions from <a href="http://dbpedia.org" target="_blank">DBpedia</a>.</p>
 									<input type="text" id="paperMapPlaces" title="Places (administrative or other) and geographic features represented in a map." />
 									<button type="button" id="btFindPlaceMatches">Find matches</button><br>
-									<button type="button" id="btTogglePlaceTags">Toggle all</button><br>									
+									<button type="button" id="btTogglePlaceTags">Toggle all</button><br>
 									<div id="placeTags">
 									</div>
 								</fieldset>
@@ -289,7 +289,7 @@
 								</fieldset>
 							</form>
 						</div>
-					</div>				
+					</div>
 				</div>
 			</div>
 			<div id="bottom">
@@ -299,8 +299,8 @@
 				<div id="bottom-center">
 				</div>
 				<div id="bottom-right" >
-				</div>				
+				</div>
 			</div>
 		</div>
 	</body>
-</html> 
+</html>

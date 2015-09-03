@@ -1,5 +1,5 @@
 /*
-Copyright © 2000 Alber Sanchez <albhasan@gmail.com>
+Copyright ï¿½ 2000 Alber Sanchez <albhasan@gmail.com>
 This work is free. You can redistribute it and/or modify it under the
 terms of the Do What The Fuck You Want To Public License, Version 2,
 as published by Sam Hocevar. See the COPYING file for more details.
@@ -38,12 +38,12 @@ var lobidSubjectCounter = 0;
 $(document).ready(function () {
 	c = Constants.getInstance();
 	$( document ).tooltip();//enables JQuery UI tooltips
-	
+
 	//------------------------------------------
 	// Initialization
 	//------------------------------------------
 	initmap();
-	
+
 	$('#controlPointsTableDiv').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="controlPointsTable"></table>' );
 	cpTable = $('#controlPointsTable').dataTable( {
 		"aaData": null,
@@ -54,8 +54,8 @@ $(document).ready(function () {
 			{ "sTitle": "Map X", "sClass": "center", "bVisible": false},
 			{ "sTitle": "Map Y", "sClass": "center", "bVisible": false}
 		]
-	} ); 
-	
+	} );
+
 	$('#mapAreaVertexTableDiv').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="mapAreaVertexTable"></table>' );
 	mapAreaVertexTable = $('#mapAreaVertexTable').dataTable( {
 		"bFilter": false,
@@ -67,23 +67,23 @@ $(document).ready(function () {
 			{ "sTitle": "X", "sClass": "center", "bVisible": false},
 			{ "sTitle": "Y", "sClass": "center", "bVisible": false},
 		]
-	} ); 
-	
-	
+	} );
+
+
 	//Adds the combo with the ontology classes
 	$.get(c.getConstant("ONTOLOGY_URL"), function(xmlResponse){
 		var rdfClasses = getRdfClasses(xmlResponse);
 		var counter = 0;
 		for(var i = 0; i < rdfClasses.length; i++){
 			if(rdfClasses[i].children.length == 0){
-				$("#contentTags").append("<p id='pOntologyContentTag" + counter +"'><input type='checkbox' id='" + rdfClasses[i].name + "' value='" + rdfClasses[i].uri + "' class='chOntologyContent' >" + rdfClasses[i].name + " - <a href='" + rdfClasses[i].uri + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pOntologyContentTag" + counter + "&quot;)'>remove</a></p>");				
+				$("#contentTags").append("<p id='pOntologyContentTag" + counter +"'><input type='checkbox' id='" + rdfClasses[i].name + "' value='" + rdfClasses[i].uri + "' class='chOntologyContent' >" + rdfClasses[i].name + " - <a href='" + rdfClasses[i].uri + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pOntologyContentTag" + counter + "&quot;)'>remove</a></p>");
 				counter++;
 			}
 		}
-	}) 
+	})
 
 
-	
+
 	//SPECIFIC AUTHOR NAME SEARCH ON THE LIBRARY OF MUENSTER
 	//Comment this function for deactivate the autocomplete
 	//Autocomplete functions for map creator from LOBID
@@ -104,16 +104,16 @@ $(document).ready(function () {
                 });
             }
         });
-    });	
-	
-	
-	
-	
+    });
+
+
+
+
 	//------------------------------------------
 	//LEAFLET http://leafletjs.com/
 	//------------------------------------------
-	
-	
+
+
 	/**
 	*Initialize the maps.
 	*/
@@ -123,21 +123,21 @@ $(document).ready(function () {
 		map = L.map('map').setView([51.96236,7.62571], 12);//Default CRS is EPSG3857 spherical mercator -- http://www.epsg-registry.org/report.htm?type=selection&entity=urn:ogc:def:crs:EPSG::3857&reportDetail=short&style=urn:uuid:report-style:default-with-code&style_name=OGP%20Default%20With%20Code&title=EPSG:3857
 		mapImage = L.map('mapImage', {center: [imageMapMaxSize/2, imageMapMaxSize/2],zoom: 12,crs: L.CRS.Simple});	//Plane SRS to put the map-image
 		mkManager = new MarkerManager(cpManager, drawnItemsImage, drawnItemsMap);
-		
+
 		//Adds layers
 		/*L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
 			maxZoom: 18,
-			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery ï¿½ <a href="http://cloudmade.com">CloudMade</a>'
 		}).addTo(map);*/
-		
-		
-		
+
+
+
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 			attribution: '&amp;copy; &lt;a href="http://osm.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors'
 		}).addTo(map);
-		
-		
-		
+
+
+
 		//Leaflet draw options
 		mapImage.addLayer(drawnItemsImage);
 		map.addLayer(drawnItemsMap);
@@ -193,7 +193,7 @@ $(document).ready(function () {
 		});
 		mapImage.addControl(drawControlImage);
 		map.addControl(drawControlMap);
-		
+
 		//Map event
 		mapImage.on('draw:created', function(e) {
 			var type = e.layerType;
@@ -221,7 +221,7 @@ $(document).ready(function () {
 				}
 			}
 			updateMetadata();
-		});	
+		});
 
 		//Map event
 		map.on('draw:created', function(e) {
@@ -231,7 +231,7 @@ $(document).ready(function () {
 				var ll = layer.getLatLng();
 				var cpId = mkManager.addMapMarker(layer);
 				updateMapControlPointInTable(cpTable, cpId, ll.lng, ll.lat);
-				projectImageBoundaries(cpManager, imgModelScaled, mkManager.getMapAreaCoords(), map);	
+				projectImageBoundaries(cpManager, imgModelScaled, mkManager.getMapAreaCoords(), map);
 			}
 		});
 
@@ -271,7 +271,7 @@ $(document).ready(function () {
 	/**
 	* Creates a transformation from the control points in the CP Manager object
 	* @param {ControlPointManager} cpManager - A control point manager object.
-	* @returns A transformation object (AffineTransformation, SimilarityTransformation) 
+	* @returns A transformation object (AffineTransformation, SimilarityTransformation)
 	*/
 	function createTransformation(cpManager){
 		var res;
@@ -290,7 +290,7 @@ $(document).ready(function () {
 		}
 		return res;
 	}
-	
+
 	/**
 	* Returns the limits of the image in map coordinates
 	* @param trans - A transformation object.
@@ -308,7 +308,7 @@ $(document).ready(function () {
 		var xyProjArrayBnd = trans.transform(imgBnd);
 		return xyProjArrayBnd;
 	}
-	
+
 	/**
 	* Draws the image boundaries and map area on the map.
 	* @param {ControlPointManager} cpManager - A control point manager object.
@@ -359,7 +359,7 @@ $(document).ready(function () {
 			}
 		}
 	}
-	
+
 	/**
 	* Prints calculation derived from the ruler drawn by the user
 	* @param {L.LatLng} rulerCoords - Array of LatLng objects representing the ruler's vertexs
@@ -382,10 +382,10 @@ $(document).ready(function () {
 			//Scales
 			var factor = 100;//var measurement = 1 / factor;//1 cm
 			var mapScaleFactor = mapDistance * factor;
-			
+
 			var paperW = imgModelScaled.getImageModel().getWidth() / imageDistance;
 			var paperH = imgModelScaled.getImageModel().getHeight() / imageDistance;
-			
+
 
 			paperW = paperW + 38;
 			paperH = paperH + 28;
@@ -402,8 +402,8 @@ $(document).ready(function () {
 			$("#rulerDetails").append("<b><i>Paper map size:</b></i> " + paperMapSize + " (approx)<br>");
 		}
 	}
-	
-	
+
+
 	/**
 	* Retrieves Dbpedia entries related in space and time
 	* @param xybbox - Array of [x,y] with the map area's vertexs.
@@ -413,11 +413,11 @@ $(document).ready(function () {
 	*/
 	function queryDbpediaST(xybbox, yearStart, yearEnd){
 		var res = new Array();
-		
+
 		var abstractLength = c.getConstant("ABSTRACT_LENGTH");
 		var sq = new SparqlQuery();
 		var query = c.getConstant("PREFIXES") + " " + c.getConstant("QUERY_BOX_YEAR");
-		
+
 		var xMin = xybbox[0];
 		var yMin = xybbox[1];
 		var xMax = xybbox[2];
@@ -428,7 +428,7 @@ $(document).ready(function () {
 		query = query.replace("<PARAM_YMAX>", yMax);
 		query = replaceAll("<PARAM_YEAR_START>", yearStart, query);
 		query = replaceAll("<PARAM_YEAR_END>", yearEnd, query);
-		
+
 		try{
 			//Fails when DBpedia is offline - You don't say!
 			console.log("queryDbpediaST -> "+query);
@@ -445,12 +445,12 @@ $(document).ready(function () {
 				res.push(tmpArray);
 			}
 		}catch(err){
-			console.log(err); 
+			console.log(err);
 		}
 		return res;
 	}
-	
-	
+
+
 	/**
 	* Prints suggested Points of Interest taken from DBPedia . Purely spatial.
 	* @param xybbox - Array of [x,y] with the map area's vertexs.
@@ -484,10 +484,10 @@ $(document).ready(function () {
 				paperMapPlaces = (paperMapPlaces != "") ? paperMapPlaces + " , " + js.results.bindings[i].label.value : paperMapPlaces;
 			}
 		}catch(err){
-			console.log(err); 
+			console.log(err);
 		}
 	}
-	
+
 	/**
 	* Updates the metadata form with some data derived from the georeferenciation.
 	*/
@@ -540,7 +540,7 @@ $(document).ready(function () {
 		return res;
 	}
 
-	
+
 	/**
 	* Build the triples to be sent to the triple store
 	*/
@@ -554,7 +554,7 @@ $(document).ready(function () {
 	}
 
 
-	
+
 	//------------------------------------------
 	//DataTables http://www.datatables.net
 	//------------------------------------------
@@ -578,7 +578,7 @@ $(document).ready(function () {
 			}
 		}
 	}
-	
+
 	/**
 	* Updates the table with data from a image control point.
 	* @param cpTable - Table for displaying control point data.
@@ -599,7 +599,7 @@ $(document).ready(function () {
 		}
 	}
 
-	
+
 	/**
 	* Returns the index and the row values from the table for a given control point
 	* @param cpTable - Table displaying control point data.
@@ -620,7 +620,7 @@ $(document).ready(function () {
 			}
 		}
 	}
-	
+
 	/**
 	* Returns the index of the row in the table (aoData array index)
 	* @param cpTable - Table displaying control point data.
@@ -640,9 +640,9 @@ $(document).ready(function () {
 		}
 		return res;
 	}
-	
-	
-    //Add a click handler to the rows - this could be used as a callback 
+
+
+    //Add a click handler to the rows - this could be used as a callback
     $("#controlPointsTableDiv").on('click', '#controlPointsTable tbody tr', function( e ) {
         if ( $(this).hasClass('row_selected') ) {
             $(this).removeClass('row_selected');
@@ -655,9 +655,9 @@ $(document).ready(function () {
         }
     });
 
-	
-	
-	
+
+
+
 
 	//------------------------------------------
 	//jQuery UI http://jqueryui.com/
@@ -696,7 +696,7 @@ $(document).ready(function () {
 			queryTripleStoreForMaps();
 		});
 	});
-	
+
 	//Searchs for exiting maps in a triple store using the MAP URI
 	function queryTripleStoreForMaps(){
 		var mapUri = $.trim($("#paperMapUri").val());
@@ -720,26 +720,26 @@ $(document).ready(function () {
 			if(graph.length == 0){
 				alert("No results found");
 			}
-		});		
+		});
 	}
-	
+
 	//Button - store. Gets the data, creates a new graph, builds triples and send them to the triple store
 	$(function(){
 		$( "#btStoreTriples" ).click(function(){
-			
+
 			paperMapUri = $("#paperMapUri").val();
 			var graph = createGraphName(c.getConstant("HOME_URI"), paperMapUri);
 
 			var imageMapUri;
-			
+
 			if(imgModelOriginal != null){
 				imageMapUri = imgModelOriginal.getUrl()
 			}
-			
+
 			if(isUrlOfImage(imageMapUri)){
-			
+
 				if(isUrlValid(paperMapUri)){
-					
+
 
 					try{
 
@@ -752,10 +752,10 @@ $(document).ready(function () {
 				                type:       "post",
 				                url:        "http://giv-lodum.uni-muenster.de:8081/parliament/sparql",
 				                data:       {action:'add', update:queryInsert}});
-			 			    
+
 		 			    }
 
-						
+
 
 						//var sq = new SparqlQuery();
 						//var js = sq.sendSparqlUpdate(queryCreate, c.getConstant("HOME_SPARQLENDPOINT"), graph);
@@ -768,7 +768,7 @@ $(document).ready(function () {
 						alert("Map data inserted!");
 					}catch(err){
 						alert(err);
-						console.log(err); 
+						console.log(err);
 					}
 				}else{
 					alert("The map URI is invalid. Please review it in the Map Metadata tab.");
@@ -787,24 +787,24 @@ $(document).ready(function () {
 				var imgUrl = imgModelScaled.getImageModel().getUrl();
 				var xyProjArrayBnd = getImageBoundariesInMapCoords(trans, imgModelScaled);
 				var xyProjmapAreaBnd = getBoundary(xyProjArrayBnd);
-				
+
 				var west = xyProjmapAreaBnd[0];
 				var south = xyProjmapAreaBnd[1];
 				var east = xyProjmapAreaBnd[2];
 				var north = xyProjmapAreaBnd[3];
 				var rotation = calculateRotation(xyProjArrayBnd);
-				
+
 				var kml = getOverlayText(imgUrl, north, south, east, west, rotation);
 				var wincode = c.getConstant("CODE_WINDOW_HTML_PREFIX");
 				wincode = wincode.replace("<PARAM_WINDOW_TITLE>", "Georeferencer - KML");
 				wincode += kml + c.getConstant("CODE_WINDOW_HTML_SUFIX");
 				var win = window.open(c.getConstant("CODE_WINDOW_PROPERTIES"));
 				win.document.write(wincode);
-				win.document.close(); 
+				win.document.close();
 			}else{
 				alert("Please add at least 3 control points to continue.");
 			}
-			
+
 		});
 	});
 
@@ -815,7 +815,7 @@ $(document).ready(function () {
 				paperMapUri = $("#paperMapUri").val();
 				var imageMapUri = imgModelOriginal.getUrl()
 
-				var c = Constants.getInstance();	
+				var c = Constants.getInstance();
 				var graph = createGraphName(c.getConstant("HOME_URI"), paperMapUri);
 				var queryInsert = buildTriples(graph);
 				var win = window.open(c.getConstant("CODE_WINDOW_PROPERTIES"));
@@ -824,11 +824,11 @@ $(document).ready(function () {
 				wincode += queryInsert + c.getConstant("CODE_WINDOW_HTML_SUFIX");
 				win.document.write(wincode);
 				win.document.write(queryInsert);
-				win.document.close(); 
+				win.document.close();
 			}
 		});
 	});
-	
+
 	//Button - Updates the suggested points of interest
 	$(function(){
 		$( "#btSuggestPois" ).click(function(){
@@ -840,14 +840,14 @@ $(document).ready(function () {
 				$("body").css("cursor", "default");
 			}
 		});
-	});	
-	
-	
+	});
+
+
 	//Button - load image. Loads the image to the map
 	$(function(){
 		$( "#btLoadImage" ).click(function(){
 			var imageUrl = $( "#imgMapInput" ).val();
-			
+
 			if(isUrlOfImage(imageUrl)){
 				var image = new Image();
 				image.onload = function(){
@@ -874,7 +874,7 @@ $(document).ready(function () {
 			}
 		});
 	});
-	
+
 
 //xxxxxxxxxxxxxxxxx
 
@@ -889,7 +889,7 @@ $(document).ready(function () {
 				    var images = $("mets\\:fileGrp", xml);
 
 				    for (i = 0; i < images.length; i++) {
-				 
+
 						if($(images[i]).attr("USE")=="MAX"){
 							var map=$($(images[i]).find("mets\\:file").find("mets\\:FLocat"));
 					               	var image_front = $(map[0]).attr("xlink:href");
@@ -897,7 +897,7 @@ $(document).ready(function () {
 						}
 
 				    }
-					
+
 				    console.log("Map (Front): " + image_front);
 				    console.log("Map (Back): " + image_back);
 
@@ -915,12 +915,12 @@ $(document).ready(function () {
 
 				    var subtitle = $("mods\\:subTitle", xml).text();
 				    console.log("Subtitle: " + subtitle);
-					
+
 				    var identifier = $("mods\\:identifier", xml);
-				    for (i = 0; i < identifier.length; i++) {	
+				    for (i = 0; i < identifier.length; i++) {
 
 						if($(identifier[i]).attr("type")=="hbz-idn"){
-						
+
 							console.log("Identifier: http://lobid.org/resource/"+identifier[i].textContent);
 							$("#paperMapUri").val("http://lobid.org/resource/"+identifier[i].textContent);
 
@@ -943,7 +943,7 @@ $(document).ready(function () {
 
 				    $( "#paperMapCreator" ).val(creatorString);
 
-				    var places = $("mods\\:subject", xml);	
+				    var places = $("mods\\:subject", xml);
 				    var res = new Array();
 				    $("#subjectTags").empty();
 
@@ -967,7 +967,6 @@ $(document).ready(function () {
 
 					var md = MapDescription.getInstance();
 					md.setMapLinksSubjects(res);
-				
 
 
 
@@ -977,9 +976,10 @@ $(document).ready(function () {
 
 
 
-				    var places2 = $("mods\\:subject", xml);	
+
+				    var places2 = $("mods\\:subject", xml);
 				    for (i = 0; i < places2.length; i++) {
-				    	
+
 				       if (typeof $(places2[i]).attr("valueURI") !== "undefined") {
 				          console.log("Place (hierarchicalGeographic): "+$(places2[i]).attr("valueURI"));
 
@@ -993,7 +993,7 @@ $(document).ready(function () {
 				          //$('#chkPlace'+i).prop('checked', true);
 				          //$('#chkPlace'+i).prop('disabled', true);
 
-				       } 
+				       }
 
 				    }
 
@@ -1001,16 +1001,16 @@ $(document).ready(function () {
 				    $( "#btToggleSuggestionTags" ).click();
 
 				    $( "#imgMapInput" ).prop("disabled",true);
-				    $( "#paperMapUri" ).prop("disabled",true);		    
+				    $( "#paperMapUri" ).prop("disabled",true);
 				    $( "#paperMapTitle" ).prop("disabled",true);
 				    $( "#paperMapCreator" ).prop("disabled",true);
-				    //$( "#paperMapSubjects" ).prop("disabled",true);		    
+				    //$( "#paperMapSubjects" ).prop("disabled",true);
 
 				    //$( "#btFindSubjectMatches" ).prop("disabled",true);
 				    $( "#btLoadImage" ).prop("disabled",true);
 				    $( "#btSearchMapUri" ).prop("disabled",true);
 					//$( "#btToggleSubjectTags" ).prop("disabled",true);
-				    
+
 
 		}, "xml");
 
@@ -1085,11 +1085,11 @@ $(document).ready(function () {
 		$('#btFindSubjectMatches').click(function() {
 			queryLobidSubject();
 		});
-	});		
-	
-	
-	
-	
+	});
+
+
+
+
 	//Button - Find matches to places typed by the user
 	$(function(){
 		$('#btFindPlaceMatches').click(function() {
@@ -1108,9 +1108,9 @@ $(document).ready(function () {
 				}
 			}
 		});
-	});		
-		
-		
+	});
+
+
 	//Button - btFindDescriptionMatches Find dbpedia matches to the description typed by the user
 	$(function(){
 		$( "#btFindDescriptionMatches" ).click(function(){
@@ -1152,8 +1152,8 @@ $(document).ready(function () {
 			var checkBoxes = $(".chDescriptionSuggestion")
 			checkBoxes.prop("checked", !checkBoxes.prop("checked"));
 		});
-	});	
-	
+	});
+
 
 	//Button - btTogglePlaceTags - Toggles checkboxes on/off
 	$(function(){
@@ -1200,7 +1200,7 @@ $(document).ready(function () {
 		var md = MapDescription.getInstance();
 		md.setMapDescription($.trim($("#taMapDescription").val()));
 	});
-	
+
 	/**
 	* Events of the dynamically created checkboxes
 	*/
@@ -1220,7 +1220,7 @@ $(document).ready(function () {
 			if(this.checked){
 				res.push(this.value);
 			}
-		});	
+		});
 		var md = MapDescription.getInstance();
 		md.setMapLinksTags(res);
 	});
@@ -1230,7 +1230,7 @@ $(document).ready(function () {
 			if(this.checked){
 				res.push(this.value);
 			}
-		});	
+		});
 		var md = MapDescription.getInstance();
 		md.setMapLinksPlaces(res);
 	});
@@ -1240,13 +1240,13 @@ $(document).ready(function () {
 			if(this.checked){
 				res.push(this.value);
 			}
-		});	
+		});
 		var md = MapDescription.getInstance();
 		md.setMapLinksDescription(res);
 	});
 
 	$("body").on("change", ".chSubjectSuggestion", function() {
-		
+
 
 		updateLOBIDSubjectsArray();
 
@@ -1258,7 +1258,7 @@ $(document).ready(function () {
 			if(this.checked){
 				res.push(this.id);
 			}
-		});	
+		});
 		var md = MapDescription.getInstance();
 		md.setMapLinksSubjects(res);
 
@@ -1266,7 +1266,7 @@ $(document).ready(function () {
 			if(this.checked){
 				res.push(this.id);
 			}
-		});	
+		});
 		md.setMapLinksSubjects(res);
 		console.log(res);
 
@@ -1287,7 +1287,7 @@ $(document).ready(function () {
 				format : "full"
 			},
 			success : function(data) {
-				
+
 				//$("#subjectTags").html("");
 
 				var tmp = new Array();
@@ -1304,18 +1304,18 @@ $(document).ready(function () {
 							for(type in graph0["@type"]){
 								types = type.substring(type.lastIndexOf("#") + 1, type.length);
 							}
-							//Creates the checkboxes					
-							$("#subjectTags").append("<p id='pSuggestedSubjectTag" + tmp.length +"'><input type='checkbox' id='" + id.replace("/about","") + "' value='" + encodeURI(name) + "' class='chSubjectSuggestion' >" + name + " - <a href='" + i + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedSubjectTag" + tmp.length + "&quot;)'>remove</a></p>");
+							//Creates the checkboxes
+							$("#subjectTags").append("<p id='pSuggestedSubjectTag" + tmp.length +"'><input type='checkbox' id='" + id.replace("/about","") + "' value='" + encodeURI(name) + "' class='chSubjectSuggestion' >" + name + " - <a href='" + id + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedSubjectTag" + tmp.length + "&quot;)'>remove</a></p>");
 						}
 					}
 				}else{
 					alert("No matches found");
 				}
-				
+
 			}
 		});
 	}
-	
+
 
 	/**
 	* Prints suggested places taken from DBPedia. Purely alphanumerical.
@@ -1325,7 +1325,7 @@ $(document).ready(function () {
 		$.ajax({
 			//Uses DBpedia spotlight
 			url: "http://spotlight.dbpedia.org/rest/annotate?text=" + escape(paperMapPlaces) + "&confidence=0.0&support=00&types=Place",
-			headers: { 
+			headers: {
 				Accept : "application/json; charset=utf-8",
 				"Content-Type": "text/plain; charset=utf-8"
 			},
@@ -1341,7 +1341,7 @@ $(document).ready(function () {
 							//var originalText = obj["@surfaceForm"];
 							//Gets the URL last part
 							var matchedText = subject.substring(subject.lastIndexOf("/") + 1, subject.length);
-							//Creates the checkboxes					
+							//Creates the checkboxes
 							$("#placeTags").append("<p id='pSuggestedPlaceTag" + tmp.length +"'><input type='checkbox' id='" + subject + "' value='" + subject + "' class='chPlaceSuggestion' >" + matchedText + " - <a href='" + subject + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedPlaceTag" + tmp.length + "&quot;)'>remove</a></p>");
 							//Completes the subject with the label and abstract -getDbpediaLabelAbstract();
 						}
@@ -1350,7 +1350,7 @@ $(document).ready(function () {
 					alert("No matches found");
 				}
 			}
-		);	
+		);
 	}
 
 
@@ -1366,9 +1366,9 @@ $(document).ready(function () {
 					dataType : "json",
 					data : {
 						q : request.term,
-						maxRows : "5", 
-						fuzzy : "0.8", 
-						username: "hamersson", 
+						maxRows : "5",
+						fuzzy : "0.8",
+						username: "hamersson",
 						format : "lat"
 					},
 					success : function(data) {
@@ -1394,7 +1394,7 @@ $(document).ready(function () {
 				zoomToSuggestion(lng, lat);
 			}
 		});
-	});	
+	});
 
 
 	/**
@@ -1407,7 +1407,7 @@ $(document).ready(function () {
 		var query = c.getConstant("PREFIXES") + " " + c.getConstant("QUERY_COMPLETE_SUBJECT");
 		var sq = new SparqlQuery();
 		var abstractLength = c.getConstant("getConstant");
-		
+
 		query = query.replace("<PARAM_URI>", uriSubject);
 		try{
 			var js = sq.sendSparqlQuery(query, c.getConstant("DBPEDIA_SPARQL"), "");
@@ -1423,12 +1423,12 @@ $(document).ready(function () {
 				alert("No suggestions were found!");
 			}
 		}catch(err){
-			console.log(err); 
+			console.log(err);
 		}
 		return res;
 	}
 
-	
+
 	/**
 	* Prints suggested places taken from DBPedia. Purely alphanumerical.
 	*/
@@ -1437,7 +1437,7 @@ $(document).ready(function () {
 		$.ajax({
 			//Uses DBpedia spotlight
 			url: "http://spotlight.dbpedia.org/rest/annotate?text=" + escape(paperMapDescription) + "&confidence=0.0&support=00",
-			headers: { 
+			headers: {
 				Accept : "application/json; charset=utf-8",
 				"Content-Type": "text/plain; charset=utf-8"
 			},
@@ -1453,19 +1453,19 @@ $(document).ready(function () {
 							//var originalText = obj["@surfaceForm"];
 							//Gets the URL last part
 							var matchedText = subject.substring(subject.lastIndexOf("/") + 1, subject.length);
-							//Creates the checkboxes					
+							//Creates the checkboxes
 							$("#descriptionTags").append("<p id='pDescriptionTag" + tmp.length +"'><input type='checkbox' id='" + subject + "' value='" + subject + "' class='chDescriptionSuggestion' >" + matchedText + " - <a href='" + subject + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pDescriptionTag" + tmp.length + "&quot;)'>remove</a></p>");
 							//Completes the subject with the label and abstract -getDbpediaLabelAbstract();
 						}
 					}
 				}
 			}
-		);	
+		);
 
 	}
 
 
-});	
+});
 
 
 
