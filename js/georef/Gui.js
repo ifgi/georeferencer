@@ -898,10 +898,10 @@ $(document).ready(function () {
 
 				    }
 
-				    console.log("Map (Front): " + image_front);
+				    console.log("Map (Front): " + image_front.replace("1504","6000"));
 				    console.log("Map (Back): " + image_back);
 
-				    $( "#imgMapInput" ).val(image_front);
+				    $( "#imgMapInput" ).val(image_front.replace("1504","6000"));
 
 				    //console.log("Image URL: "+$( "#imgMapInput" ).val());
 				    presentation="";
