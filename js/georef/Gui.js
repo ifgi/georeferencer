@@ -887,21 +887,23 @@ $(document).ready(function () {
 		    $.get(oaiURL, {}, function(xml) {
 
 				    var images = $("mets\\:fileGrp", xml);
+						var image_front = "";
+						var image_back = "";
 
 				    for (i = 0; i < images.length; i++) {
 
 						if($(images[i]).attr("USE")=="MAX"){
 							var map=$($(images[i]).find("mets\\:file").find("mets\\:FLocat"));
-					               	var image_front = $(map[0]).attr("xlink:href");
-					               	var image_back = $(map[1]).attr("xlink:href");
+					               	image_front = $(map[0]).attr("xlink:href");
+					               	image_back = $(map[1]).attr("xlink:href");
 						}
 
 				    }
 
-				    console.log("Map (Front): " + image_front.replace("1504","6000"));
+				    console.log("Map (Front): " + image_front.replace("/1504/","/0/"));
 				    console.log("Map (Back): " + image_back);
 
-				    $( "#imgMapInput" ).val(image_front.replace("1504","6000"));
+				    $( "#imgMapInput" ).val(image_front.replace("/1504/","/0/"));
 
 				    //console.log("Image URL: "+$( "#imgMapInput" ).val());
 				    presentation="";
