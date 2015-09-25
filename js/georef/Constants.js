@@ -9,13 +9,13 @@ var Constants = (function(){
 	var constantsInstance; //private variable to hold the only instance
 
 	var createConstants = function(){
-	
-	
+
+
 		var newline = " \n";
 		var DBPEDIA_SPARQL = 'http://dbpedia.org/sparql';
 		var HOME_URI = 'http://uni-muenster.de/historicmaps';
 		var HOME_GRAPH = 'http://ifgi.uni-muenster.de/lodum/historicmaps/';
-		var HOME_SPARQLENDPOINT = 'http://giv-lodum.uni-muenster.de:8081/parliament/sparql';
+		var HOME_SPARQLENDPOINT = 'http://linkeddata.uni-muenster.de:8081/parliament/sparql';
 		var PREFIXES =	'PREFIX owl: <http://www.w3.org/2002/07/owl#> ' + newline +
 						'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> ' + newline +
 						'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ' + newline +
@@ -32,9 +32,10 @@ var Constants = (function(){
 						'PREFIX geo: <http://www.opengis.net/ont/geosparql/1.0#> ' + newline +
 						'PREFIX geoWgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> ' + newline;
 		var QUERY_CREATE_GRAPH = 'CREATE GRAPH <PARAM_GRAPH>' + newline;
-		var QUERY_INSERT = 	'INSERT DATA{' + newline + 
-							'	GRAPH<PARAM_GRAPH>{' + newline + 
-							'	PARAM_TRIPLES' + newline + 
+		var QUERY_INSERT = 	'INSERT DATA{' + newline +
+							//'	GRAPH<PARAM_GRAPH>{' + newline +
+							'	GRAPH<http://ulb.uni-muenster.de/context/karten/muenster>{' + newline +
+							'	PARAM_TRIPLES' + newline +
 							'	}' + newline +
 							'}' + newline;
 		var QUERY_CITYS = 	'SELECT ?subject ?label (AVG(?lat) AS ?lt) (AVG(?long) AS ?lg) ' + newline +
@@ -91,7 +92,7 @@ var Constants = (function(){
 							'		lang(?label) = "de" ' + newline +
 							'	) ' + newline +
 							'}ORDER BY DESC(xsd:integer(?population)) ';
-		var QUERY_COMPLETE_SUBJECT = 	'SELECT ?subject ?label ?abst ' + newline + 
+		var QUERY_COMPLETE_SUBJECT = 	'SELECT ?subject ?label ?abst ' + newline +
 										'WHERE { ' + newline +
 											'?subject rdfs:label ?label . ' + newline +
 											'?subject dbpedia-owl:abstract ?abst . ' + newline +
@@ -126,7 +127,7 @@ var Constants = (function(){
 								'		lang(?label) = "de"	&& ' + newline +
 								'		lang(?abst) = "de" ' + newline +
 								'	) ' + newline +
-								'}' + newline;					
+								'}' + newline;
 		var KML_OVERLAY = 	'<?xml version="1.0" encoding="UTF-8"?> ' + newline +
 							'<!-- ' + newline +
 							'******************************************************************' + newline +
@@ -154,19 +155,19 @@ var Constants = (function(){
 							'	</Folder> ' + newline +
 							'</kml>' + newline;
 		var CODE_WINDOW_HTML_PREFIX = '<html><head><title><PARAM_WINDOW_TITLE></title></head><body><textarea rows="27" cols="400">';
-		var CODE_WINDOW_HTML_SUFIX = '</textarea></body></html>'; 
+		var CODE_WINDOW_HTML_SUFIX = '</textarea></body></html>';
 		var CODE_WINDOW_PROPERTIES = 'www.ulb.uni-muenster.de","_blank","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=yes, copyhistory=no, width=600, height=400';
 		var ABSTRACT_LENGTH = '197';
 		var IMAGE_BOUNDARY_POLYGON = {
-					"stroke" : false, 
-					"fill" : true, 
+					"stroke" : false,
+					"fill" : true,
 					"fillColor" : "#03f",
 					"fillOpacity" : 0.2,
 					"clickable" : false
 				}
 		var MAP_AREA_POLYGON = {
-						"stroke" : true, 
-						"fill" : false, 
+						"stroke" : true,
+						"fill" : false,
 						"fillColor" : "#03f",
 						"fillOpacity" : 0.2,
 						"clickable" : false
@@ -174,8 +175,8 @@ var Constants = (function(){
 		var SPATIAL_REFERENCE_SYSTEM = "http://www.opengis.net/def/crs/EPSG/0/4326";
 		var ONTOLOGY_URL = "./ontologies/historicmapsphen.rdf"; //Be aware of javascript's cross domain problem
 		var DATE_SEPARATOR = "-";
-		
-		
+
+
 
 		var getConstant = function(name){
 			var res;
@@ -221,7 +222,7 @@ var Constants = (function(){
 				res = QUERY_CREATE_GRAPH;
 			}
 			return res;
-		};			 
+		};
 
 		return {
 			getConstant: getConstant

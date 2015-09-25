@@ -32,7 +32,7 @@ var paperMapScale;
 var paperMapPlaces;
 var paperMapDescription;
 var mapAreawkt;
-var presentation;
+var presentation = "";
 var lobidSubjectCounter = 0;
 
 $(document).ready(function () {
@@ -750,7 +750,7 @@ $(document).ready(function () {
 
 			 			    $.ajax({
 				                type:       "post",
-				                url:        "http://giv-lodum.uni-muenster.de:8081/parliament/sparql",
+				                url:        "http://linkeddata.uni-muenster.de:8081/parliament/sparql",
 				                data:       {action:'add', update:queryInsert}});
 
 		 			    }
@@ -906,7 +906,7 @@ $(document).ready(function () {
 				    $( "#imgMapInput" ).val(image_front.replace("/1504/","/0/"));
 
 				    //console.log("Image URL: "+$( "#imgMapInput" ).val());
-				    presentation="";
+				    presentation = "";
 				    presentation = $("dv\\:presentation", xml).text();
     				console.log("Presentation: " + presentation);
 
