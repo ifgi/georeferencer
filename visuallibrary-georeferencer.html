@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Historic Maps Georeferencer</title>
+
+		<!--*********************************
+		Leaflet files
+		*********************************-->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="./js/Leaflet/dist/leaflet.js"></script>
+		<link rel="stylesheet" href="./js/Leaflet/dist/leaflet.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="./js/Leaflet/dist/leaflet.ie.css" /><![endif]-->
+
+		<link rel="stylesheet" href="./js/Leaflet.draw/dist/leaflet.draw.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="./js/Leaflet.draw/dist/leaflet.draw.ie.css" /><![endif]-->
+		<script src="./js/Leaflet.draw/src/Leaflet.draw.js"></script>
+		<script src="./js/Leaflet.draw/src/edit/handler/Edit.Poly.js"></script>
+		<script src="./js/Leaflet.draw/src/edit/handler/Edit.SimpleShape.js"></script>
+		<script src="./js/Leaflet.draw/src/edit/handler/Edit.Circle.js"></script>
+		<script src="./js/Leaflet.draw/src/edit/handler/Edit.Rectangle.js"></script>
+		<script src="./js/Leaflet.draw/src/draw/handler/Draw.Feature.js"></script>
+		<script src="./js/Leaflet.draw/src/draw/handler/Draw.Polyline.js"></script>
+		<script src="./js/Leaflet.draw/src/draw/handler/Draw.Polygon.js"></script>
+		<script src="./js/Leaflet.draw/src/draw/handler/Draw.SimpleShape.js"></script>
+		<script src="./js/Leaflet.draw/src/draw/handler/Draw.Rectangle.js"></script>
+		<script src="./js/Leaflet.draw/src/draw/handler/Draw.Circle.js"></script>
+		<script src="./js/Leaflet.draw/src/draw/handler/Draw.Marker.js"></script>
+		<script src="./js/Leaflet.draw/src/ext/LatLngUtil.js"></script>
+		<script src="./js/Leaflet.draw/src/ext/LineUtil.Intersect.js"></script>
+		<script src="./js/Leaflet.draw/src/ext/Polygon.Intersect.js"></script>
+		<script src="./js/Leaflet.draw/src/ext/Polyline.Intersect.js"></script>
+		<script src="./js/Leaflet.draw/src/Control.Draw.js"></script>
+		<script src="./js/Leaflet.draw/src/Tooltip.js"></script>
+		<script src="./js/Leaflet.draw/src/Toolbar.js"></script>
+		<script src="./js/Leaflet.draw/src/draw/DrawToolbar.js"></script>
+		<script src="./js/Leaflet.draw/src/edit/EditToolbar.js"></script>
+		<script src="./js/Leaflet.draw/src/edit/handler/EditToolbar.Edit.js"></script>
+		<script src="./js/Leaflet.draw/src/edit/handler/EditToolbar.Delete.js"></script>
+
+
+		<!--*********************************
+		JQuery files
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+		*********************************-->
+		<script src="./js/jquery-1.9.1.min.js"></script>
+		<script src="./js/jquery-ui-1.10.2/ui/minified/jquery-ui.min.js"></script><!--<script src="./js/jquery-ui-1.10.2/ui/jquery-ui.js"></script>-->
+		<link rel="stylesheet" type="text/css" href="./js/jquery-ui-1.10.2/themes/base/jquery-ui.css" />
+
+		<!--
+		*********************************
+		Datatable imports
+		*********************************
+		-->
+		<style type="text/css">
+			@import "./js/DataTables-1.9.4/media/css/demo_page.css";
+			@import "./js/DataTables-1.9.4/media/css/demo_table.css";
+		</style>
+		<script class="jsbin" src="./js/DataTables-1.9.4/media/js/jquery-dataTables.min.js"></script><!--<script class="jsbin" src="./js/DataTables-1.9.4/media/js/jquery-dataTables.js"></script>-->
+
+
+
+		<!--
+		*********************************
+		Sylvester (matrix operations)
+		*********************************
+		-->
+		<script src="./js/sylvester/lib/sylvester.js"></script>
+
+
+		<!--
+		*********************************
+		GeoReferencer files
+		*********************************
+		-->
+		<script src="./js/georef/ControlPointManager.js"></script>
+		<script src="./js/georef/MarkerManager.js"></script>
+		<script src="./js/georef/ImageModel.js"></script>
+		<script src="./js/georef/ScaledImage.js"></script>
+		<script src="./js/georef/Util.js"></script>
+		<script src="./js/georef/Coords.js"></script>
+		<script src="./js/georef/Gui.js"></script>
+		<script src="./js/georef/SimilarityTransformation.js"></script>
+		<script src="./js/georef/AffineTransformation.js"></script>
+		<script src="./js/georef/Constants.js"></script>
+		<script src="./js/georef/SparqlQuery.js"></script>
+		<script src="./js/georef/MapDescription.js"></script>
+
+		<!--<link rel="stylesheet" type="text/css" href="css/georef.css" />-->
+    <link rel="stylesheet" type="text/css" href="css/visuallibrary-extension.css" />
+		<link rel="stylesheet" type="text/css" href="css/tagedit.css" />
+
+
+
+
+		<script src="./js/visuallibrary/visuallibrary-extension.js"></script>
+		<script src="./js/visuallibrary/jquery-sparql/jquery.sparql.js"></script>
+
+		<script src='js/visuallibrary/spin.js'></script>
+		<script src="./js/visuallibrary/inputTags.jquery.js"></script>
+
+		<script src="./js/visuallibrary/popup/popupmodal-min.js"></script>
+
+		<link rel="stylesheet" href="css/inputTags.css"/>
+		<link rel="stylesheet" href="css/popupmodal.css"/>
+
+
+<!--
+		<script src="./js/visuallibrary/tagedit/jquery.tagedit.js"></script>
+		<script src="./js/visuallibrary/tagedit/jquery.autoGrowInput.js"></script>
+-->
+	</head>
+
+	<body>
+
+
+  <div id="container">
+
+		<div style="display: none;" id="mapAreaVertexTableDiv"></div>
+		<div style="display: none;" id="controlPointsTableDiv"></div>
+
+    <div id="toolbox">
+
+      <div id="vldata">
+
+				<form>
+
+					 <div>
+						 <input id="vlid" type="text" placeholder="VL ID">
+						 	<label for="vlid"></label>
+				 	</div>
+
+					 <div>
+						 <label for="paperMapTitle"></label>
+						 <input id="paperMapTitle" type="text" placeholder="Map title"><br>
+				 	 </div>
+
+					<div>
+						 <label for="taMapDescription">Description</label>
+						 <textarea id="taMapDescription" type="text" placeholder="Map description"></textarea>
+				 </div>
+
+					<div>
+						 <label for="paperMapTime"></label>
+						 <input id="paperMapTime" type="text" placeholder="Year">
+				  </div>
+
+				 	<div>
+						 <label for="paperMapScale"></label>
+						 <input id="paperMapScale" type="text" placeholder="Scale">
+				 	</div>
+
+					<div>
+						 <label for="paperMapSize"></label>
+						 <input id="paperMapSize" type="text" placeholder="Map size">
+				  </div>
+
+					<div>
+						 <label for="url">Presentation URL</label>
+						 <input id="url" type="text" placeholder="Map URL (Presentation)">
+				  </div>
+
+					<div>
+						<label for="sameAsTags">Identical Resources</label>
+						<input type="text" id="sameAsTags">
+					</div>
+
+
+				 </form>
+
+					<input type="hidden" id="mapAreawkt" title="The area in a spatial coordinate system which corresponds to the map window of the map" />
+
+      </div>
+
+      <div id="enrichment">
+				<form>
+
+					<div>
+						<label for="paperMapCreator">Author (GND)</label>
+						 <input type="text" id="paperMapCreator">
+				  </div>
+
+					<label for="gndInfo">Places (GND) <a href="javascript:void(0);" onclick = "openPopup('placesPopupGND')">Add</a></label>
+					<div id="gndInfoContainer">
+						 <input type="text" id="gndInfo">
+				  </div>
+
+					<div>
+						 <label for="dbpediaPlaces">Places (DBpedia) <a href="javascript:void(0);" onclick = "openPopup('placesPopupDBpedia')">Add</a></label>
+						 <input type="text" id="dbpediaPlaces">
+				  </div>
+
+					<div>
+						 <label for="gndInfo">Links to External Resources (DBpedia) <a href="http://google.de">Add</a></label>
+						 <input type="text" id="dbpediaLinks">
+				  </div>
+
+					<div>
+						 <label for="gndInfo">Citations (DBpedia Spotlight) <a href="http://google.de">Add</a></label>
+						 <input type="text" id="dbpediaSuggestions">
+				  </div>
+
+				</form>
+
+				<button id="btSave">Save</button>
+
+
+      </div>
+
+    </div>
+		<div id="mapImage"></div><div id="map"></div>
+  </div>
+
+
+
+	<div id="placesPopupGND" class="white_content">
+				<img src="img/hbz.png" style="width: 10%; height: auto;">
+
+				<input type="text" id="paperMapSubjects" placeholder="Enter a place name and press 'Find matches'."/>
+				<button type="button" id="btFindSubjectMatches" onclick='$("#subjectTags").html("");'>Find matches</button>
+				<button type="button" id="btToggleSubjectTags">Toggle all</button><br><br>
+
+				<div id="subjectTags"></div>
+
+				<div id="bottomPopup">
+					<button id="btSave" onclick = "addPlacesGND();">Add to Places</button>
+					<button onclick = "closePopup('placesPopupGND')">Close</button><br><br>
+				</div>
+				<br>
+	</div>
+
+	<div id="placesPopupDBpedia" class="white_content">
+				<img src="img/dbpedia.png" style="width: 8%; height: auto;">
+
+				<input type="text" id="paperMapSubjects" placeholder="Enter a place name and press 'Find matches'."/>
+				<button type="button" id="btFindSubjectMatches" onclick='$("#subjectTags").html("");'>Find matches</button>
+				<button type="button" id="btToggleSubjectTags">Toggle all</button><br><br>
+
+				<div id="placeTags"></div>
+
+				<div id="bottomPopup">
+					<button id="btSave" onclick = "addPlacesDBpedia();">Add to Places</button>
+					<button onclick = "closePopup('placesPopupDBpedia')">Close</button><br><br>
+				</div>
+				<br>
+	</div>
+
+	<div id="fade" class="black_overlay"></div>
+
+
+<script type="text/javascript">
+
+	$( document ).ready(function() {
+
+		init();
+
+	/*
+	$('input.search-person').each(function() {
+			var $input = $(this);
+			$input.autocomplete({
+					source : function(request, response) {
+							$.ajax({
+									url : "http://api.lobid.org/person",
+									dataType : "jsonp",
+									data : {
+											name : request.term,
+											format : "ids"
+									},
+									success : function(data) {
+											response(data);
+
+									}
+							});
+					}
+			});
+	});
+*/
+	});
+
+
+function init(){
+
+	if(getQueryVariable("id")!=null){
+
+		executeQuery(getQueryVariable("id"));
+		listSameAs(getQueryVariable("id"));
+		listAuthors(getQueryVariable("id"));
+		listGNDInfo(getQueryVariable("id"));
+
+		if(getQueryVariable("image")!=null){
+
+			loadVLimage(getQueryVariable("image"));
+
+		} else {
+
+			alert("Image URL not provided.")
+		}
+
+	}
+
+	$('#dbpediaPlaces').inputTags();
+	$('#dbpediaLinks').inputTags();
+	$('#dbpediaSuggestions').inputTags();
+
+
+}
+
+
+</script>
+
+	</body>
+</html>

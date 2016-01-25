@@ -489,11 +489,46 @@ $(document).ready(function () {
 	}
 
 	/**
-	* Updates the metadata form with some data derived from the georeferenciation.
+	* Updates the metadata form with some data derived from the georeferencing.
 	*/
 	function updateMetadata(){
-		$("#paperMapSize").val(paperMapSize);
-		$("#paperMapScale").val(paperMapScale);
+//		$("#paperMapSize").val(paperMapSize);
+
+		if($("#paperMapSize").val()!=""){
+
+			if(paperMapSize != null){
+
+				if (confirm('The field "Map Size" already contains a value. Would you like to replace it with the new map size? \n \nCurrent size: ' +
+				$("#paperMapSize").val() + '\nNew size: ' + paperMapSize)) {
+
+						$("#paperMapSize").val(paperMapSize);
+
+				}
+
+			}
+
+		} else {
+				$("#paperMapSize").val(paperMapSize);
+		}
+
+
+		if($("#paperMapScale").val()!=""){
+
+			if(paperMapScale != null){
+
+				if (confirm('The field "Map Scale" already contains a value. Would you like to replace it with the new scale? \n \nCurrent scale: ' +
+				$("#paperMapScale").val() + '\nNew scale: ' + paperMapScale)) {
+
+						$("#paperMapScale").val(paperMapScale);
+
+				}
+
+		}
+		} else {
+				$("#paperMapScale").val(paperMapScale);
+		}
+
+
 		$("#paperMapPlaces").val(paperMapPlaces);
 		$("#mapAreawkt").val(mapAreawkt);
 		//document.getElementById("img_ok_geometry").src="http://png.findicons.com/files/icons/2015/24x24_free_application/24/yes.png";

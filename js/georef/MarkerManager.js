@@ -14,10 +14,10 @@ function MarkerManager(cpMngr, dwItmImage, dwItmMap){
 	var drawnItemsImage = dwItmImage;
 	var drawnItemsMap = dwItmMap;
 
-	
-	
+
+
 	var controlPointIcon = L.icon({
-//TODO: Move to config	
+//TODO: Move to config
 		iconUrl: './js/Leaflet/dist/images/marker-icon.png',
 		shadowUrl: './js/Leaflet/dist/images/marker-shadow.png',
 		iconSize:     [25, 41], // size of the icon
@@ -25,7 +25,7 @@ function MarkerManager(cpMngr, dwItmImage, dwItmMap){
 		iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
 		shadowAnchor: [12, 40],  // the same for the shadow
 		popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
-	});	
+	});
 	var selectedCpIcon = L.icon({
 //TODO: Move to config
 		iconUrl: './js/Leaflet/dist/images/marker-icon-2x.png',
@@ -35,8 +35,8 @@ function MarkerManager(cpMngr, dwItmImage, dwItmMap){
 		iconAnchor:   [25, 81], // point of the icon which will correspond to marker's location
 		shadowAnchor: [12, 40],  // the same for the shadow
 		popupAnchor:  [0, -82] // point from which the popup should open relative to the iconAnchor
-	});	
-	
+	});
+
 	//---------------------------------------------------------
 	//PRIVATE
 	//---------------------------------------------------------
@@ -81,7 +81,7 @@ function MarkerManager(cpMngr, dwItmImage, dwItmMap){
 
 		return id;
 	}
-	
+
 	this.addImageMarkerImgScaled1Q = function(layer, aScaledImage){
 		var xyImgScl1Q = [layer.getLatLng().lng, layer.getLatLng().lat];
 		var xyImgScl = aScaledImage.getScaledImage().image1q2image(xyImgScl1Q[0], xyImgScl1Q[1]);
@@ -91,10 +91,10 @@ function MarkerManager(cpMngr, dwItmImage, dwItmMap){
 
 		drawnItemsImage.addLayer(layer);
 		layer.bindPopup(id).openPopup();
-		
+
 		return id;
 	}
-	
+
 	this.removeMarker = function(cpId){
 		cpManager.removeControlPoint(cpId);
 	}
@@ -118,7 +118,7 @@ function MarkerManager(cpMngr, dwItmImage, dwItmMap){
 			selectMapMarker(selectedMarkerMap, false);
 			selectedMarkerMap = null;
 		}
-	
+
 		if(cpId.length > 0){
 			//Changes the icons of the new selected markers
 			selectImageMarker(cpId, true);
@@ -127,7 +127,7 @@ function MarkerManager(cpMngr, dwItmImage, dwItmMap){
 			selectedMarkerMap = cpId;
 		}
 	}
-	
+
 	//Adds the map area polygon (drawn on the image)
 	this.addMapArea = function(newlayer){
 		//Removes any previous layers
@@ -135,13 +135,13 @@ function MarkerManager(cpMngr, dwItmImage, dwItmMap){
 			if(layer instanceof L.Polygon){
 				drawnItemsImage.removeLayer(layer);
 			}
-		});	
+		});
 		// add the new polygon
 		if(newlayer instanceof L.Polygon){
 			drawnItemsImage.addLayer(newlayer);
 		}
 	}
-	
+
 	//Adds the ruler distance (drawn on the image)
 	this.addRuler = function(layer){
 		//Removes any previous layers
@@ -151,13 +151,13 @@ function MarkerManager(cpMngr, dwItmImage, dwItmMap){
 					drawnItemsImage.removeLayer(layer);
 				}
 			}
-		});	
+		});
 		// add the new polyline
 		if(layer instanceof L.Polyline){
 			drawnItemsImage.addLayer(layer);
 		}
 	}
-	
+
 	//returns a L.LatLng array
 	this.getMapAreaCoords = function(){
 		var res;
@@ -167,7 +167,7 @@ function MarkerManager(cpMngr, dwItmImage, dwItmMap){
 			if(layer instanceof L.Polygon){
 				maArray.push(layer);
 			}
-		});	
+		});
 		if(maArray.length > 0){
 			mapArea = maArray[0];
 		}else{
@@ -176,11 +176,13 @@ function MarkerManager(cpMngr, dwItmImage, dwItmMap){
 		res = mapArea.getLatLngs();
 
 //xxxx
-		document.getElementById("img_ok_geometry").src="http://png.findicons.com/files/icons/2015/24x24_free_application/24/yes.png";
+		if(document.getElementById("img_ok_geometry")!=null){
+			document.getElementById("img_ok_geometry").src="http://png.findicons.com/files/icons/2015/24x24_free_application/24/yes.png";
+		}
 //xxxx
 		return res;
 	}
-	
+
 	//returns a L.LatLng array
 	this.getRulerCoords = function(){
 		var res;
@@ -192,7 +194,7 @@ function MarkerManager(cpMngr, dwItmImage, dwItmMap){
 					rlArray.push(layer);
 				}
 			}
-		});	
+		});
 		if(rlArray.length > 0){
 			ruler = rlArray[0];
 		}else{

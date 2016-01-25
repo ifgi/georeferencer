@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script src="js/visuallibrary/jquery/1.10.2/jquery-1.10.2.min.js"></script>
+<script src="js/visuallibrary/jquery/1.10.3/jquery-ui.min.js"></script>
+<script src="js/visuallibrary/jquery-sparql/jquery.sparql.js"></script>
+
+<script src='js/visuallibrary/visuallibrary.js'></script>
+<script src='js/visuallibrary/spin.js'></script>
+<link href="css/visuallibrary.css" rel="stylesheet">
+
+<title>Visual Library RDF Visualizer</title>
+
+</head>
+
+<body>
+
+<div id ="main">
+
+  <div id ="header">
+
+    <span>SPARQL Endpoint:</span>
+    <select id="cmbEndpoint" onchange="listGraphs()">
+      <option value="http://linkeddata.uni-muenster.de:8081/parliament/sparql">http://linkeddata.uni-muenster.de:8081/parliament/sparql</option>
+      <option value="" selected="selected">[Select a SPARQL Endpoint]</option>
+    </select>
+
+    <span>Named Graph:</span>
+    <select id="cmbNamedGraph" onchange="execute(0)">
+      <option value="" selected="selected">[Select a SPARQL Endpoint]</option>
+
+      <!--<option value="<http://ulb.uni-muenster.de/context/karten/muenster/historical>">http://ulb.uni-muenster.de/context/karten/muenster/historical</option>-->
+    </select>
+    <br><br>
+
+    <form>
+      <fieldset>
+        <input type="radio" id="ngeo" name="Zahlmethode" value="ngeo"><label for="vi"> Not georeferenced</label>
+        <input type="radio" id="geo" name="Zahlmethode" value="geo"><label for="mc"> Georeferenced</label>
+        <input type="radio" id="all" name="Zahlmethode" value="all" checked="checked"><label for="ae"> All records</label>
+      </fieldset>
+      <div id ="status"></div>
+    </form>
+
+    <br>
+    <input type="text" size="50 "id="searchField" class="form-control" placeholder="Enter title or description ...">
+    <input type="text" size="4"id="startDate" class="form-control">
+    <input type="text" size="4"id="endDate" class="form-control">
+    <input type="button" value="Load Records" onclick="execute(0)">
+
+    <br><br>
+
+
+  </div>
+
+  <div id ="paging">
+
+      <div id="p1"></div>
+      <div id="p2"></div>
+
+  </div>
+
+  <div id ="list">
+
+  </div>
+
+
+
+</div>
+
+</body>
+</html>
