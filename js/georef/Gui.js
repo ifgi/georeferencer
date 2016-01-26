@@ -1314,6 +1314,10 @@ $(document).ready(function () {
 	* Query LOBID for subjects.
 	*/
 	function queryLobidSubject(){
+
+		$("#subjectTags").html("<br><span>Loading matches for <b>'"+$("#paperMapSubjects").val()+"'</b> from the <a href='http://lobid.org/api' target='_blank'>LOBID API</a>, please wait...</span>");
+
+		showSpin("subjectTags");
 		paperMapPlaces = $.trim($("#paperMapSubjects").val());
 		$.ajax({
 			//Uses LOBID
@@ -1325,7 +1329,7 @@ $(document).ready(function () {
 			},
 			success : function(data) {
 
-				//$("#subjectTags").html("");
+				$("#subjectTags").html("");
 
 				var tmp = new Array();
 				if(data != null && data.length > 1){
@@ -1342,15 +1346,19 @@ $(document).ready(function () {
 								types = type.substring(type.lastIndexOf("#") + 1, type.length);
 							}
 							//Creates the checkboxes
-							$("#subjectTags").append("<p id='pSuggestedSubjectTag" + tmp.length +"'><input type='checkbox' id='" + id.replace("/about","") + "' value='" + decodeURI(name) + "' class='chSubjectSuggestion' >" + decodeURI(name) + " - <a href='" + id + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedSubjectTag" + tmp.length + "&quot;)'>remove</a></p>");
+							$("#subjectTags").append("<p id='pSuggestedSubjectTag" + tmp.length +"'><input type='checkbox' id='" + id.replace("/about","") + "' value='" + name.replace('<','[').replace('>',']') + "' class='chSubjectSuggestion' >" + decodeURI(name.replace("<","[").replace(">","]")) + " - <a href='" + id + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedSubjectTag" + tmp.length + "&quot;)'>remove</a></p>");
 						}
 					}
-				}else{
-					alert("No matches found");
+
+				} else {
+
+					$("#subjectTags").html("<p>No matches found for <b>'"+$("#paperMapSubjects").val()+"'</b>.</p>");
+
 				}
 
 			}
 		});
+		hideSpin();
 	}
 
 	function decodeHtml(html) {

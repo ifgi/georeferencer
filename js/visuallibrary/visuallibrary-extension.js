@@ -1,3 +1,41 @@
+var currentEndpoint = "";
+var currentNamedGraph = "";
+var currentMapID = "";
+var currentMapImage = "";
+var currentWKT = "";
+
+function init(){
+
+  currentMapID = getQueryVariable("id");
+  currentEndpoint = getQueryVariable("endpoint");
+  currentNamedGraph = getQueryVariable("graph");
+  currentMapImage = getQueryVariable("image");
+
+	if(getQueryVariable("id")!=null){
+
+		executeQuery(currentMapID);
+		listSameAs(currentMapID);
+		listAuthors(currentMapID);
+		listGNDInfo(currentMapID);
+
+		if(currentMapImage!=null){
+
+			//loadVLimage(getQueryVariable("image"));
+      loadVLimage(currentMapImage);
+
+		} else {
+
+			alert("Image URL not provided.")
+		}
+
+	}
+
+	$('#dbpediaPlaces').inputTags();
+	$('#dbpediaLinks').inputTags();
+	$('#dbpediaSuggestions').inputTags();
+
+
+}
 
 function loadVLimage(path){
 
@@ -47,7 +85,7 @@ function listGNDInfo(mapID) {
           .prefix("rdfs","http://www.w3.org/1999/02/22-rdf-syntax-ns#")
           .prefix("dct","http://purl.org/dc/terms/")
   			  .select(["?map", "?gndPlace", "?gndPlaceName"])
-  			  	.graph("<http://ulb.uni-muenster.de/context/karten/muenster/historical>")
+  			  	.graph("<"+currentNamedGraph+">")
   				  	.where("?map","a","maps:Map")
               .where("?map","rdfs:ID","?vlid")
               .where("?map","dct:references","?gndPlace")
@@ -61,7 +99,7 @@ function listGNDInfo(mapID) {
     console.log("Sending SPARQL...");
 
 
-    sparqlQueryJson(encode_utf8(sparqlQuery.serialiseQuery()), "http://linkeddata.uni-muenster.de:8081/parliament/sparql", gndInfoCallback, false);
+    sparqlQueryJson(encode_utf8(sparqlQuery.serialiseQuery()), currentEndpoint, gndInfoCallback, false);
 
     console.log("SPARQL executed");
 
@@ -103,7 +141,7 @@ function listSameAs(mapID) {
   			  .prefix("dnb","http://d-nb.info/standards/elementset/gnd#")
           .prefix("rdfs","http://www.w3.org/1999/02/22-rdf-syntax-ns#")
   			  .select(["?map", "?sameAs", "?authorName"])
-  			  	.graph("<http://ulb.uni-muenster.de/context/karten/muenster/historical>")
+  			  	.graph("<"+currentNamedGraph+">")
   				  	.where("?map","a","maps:Map")
               .where("?map","rdfs:ID","?vlid")
               .where("?map","owl:sameAs","?sameAs").end();
@@ -115,7 +153,7 @@ function listSameAs(mapID) {
     console.log("Sending SPARQL...");
 
 
-    sparqlQueryJson(encode_utf8(sparqlQuery.serialiseQuery()), "http://linkeddata.uni-muenster.de:8081/parliament/sparql", sameAsCallback, false);
+    sparqlQueryJson(encode_utf8(sparqlQuery.serialiseQuery()), currentEndpoint, sameAsCallback, false);
 
     console.log("SPARQL executed");
 
@@ -157,7 +195,7 @@ function listAuthors(mapID) {
   			  .prefix("dnb","http://d-nb.info/standards/elementset/gnd#")
           .prefix("rdfs","http://www.w3.org/1999/02/22-rdf-syntax-ns#")
   			  .select(["?map", "?author", "?authorName"])
-  			  	.graph("<http://ulb.uni-muenster.de/context/karten/muenster/historical>")
+  			  	.graph("<"+currentNamedGraph+">")
   				  	.where("?map","a","maps:Map")
               .where("?map","rdfs:ID","?vlid")
               .where("?map","dct:creator","?author")
@@ -170,7 +208,7 @@ function listAuthors(mapID) {
     console.log("Sending SPARQL...");
 
 
-    sparqlQueryJson(encode_utf8(sparqlQuery.serialiseQuery()), "http://linkeddata.uni-muenster.de:8081/parliament/sparql", authorsCallback, false);
+    sparqlQueryJson(encode_utf8(sparqlQuery.serialiseQuery()), currentEndpoint, authorsCallback, false);
 
     console.log("SPARQL executed");
 
@@ -224,7 +262,7 @@ function executeQuery(mapID) {
   			  .prefix("sf","http://www.opengis.net/ont/sf#")
           .prefix("rdfs","http://www.w3.org/1999/02/22-rdf-syntax-ns#")
   			  .select(["?map", "?title", "?scale", "?wkt", "?picture", "?year", "?description", "?presentation", "?size", "?vlid"])
-  			  	.graph("<http://ulb.uni-muenster.de/context/karten/muenster/historical>")
+  			  	.graph("<"+currentNamedGraph+">")
   				  	.where("?map","a","maps:Map")
   				  	.where("?map","maps:digitalImageVersion","?picture")
   				  	.where("?map","maps:title","?title")
@@ -244,7 +282,7 @@ function executeQuery(mapID) {
     console.log("Sending SPARQL...");
 
 
-    sparqlQueryJson(encode_utf8(sparqlQuery.serialiseQuery()), "http://linkeddata.uni-muenster.de:8081/parliament/sparql", queryCallback, false);
+    sparqlQueryJson(encode_utf8(sparqlQuery.serialiseQuery()), currentEndpoint, queryCallback, false);
 
     console.log("SPARQL executed");
 
@@ -338,11 +376,83 @@ function queryCallback(str) {
     }
 }
 
+function listDBpediaPlaces(placeName) {
+
+  	var sparqlQuery = $.sparql()
+  			  .prefix("dbp-ont","http://dbpedia.org/ontology/")
+  			  .prefix("geo","http://www.w3.org/2003/01/geo/wgs84_pos#")
+          .prefix("rdfs","http://www.w3.org/2000/01/rdf-schema#")
+          .prefix("xsd","http://www.w3.org/2001/XMLSchema#")
+  			  .select(["?place", "?label", "(CONCAT('POINT(', STR(?long), ' ', STR(?lat), ')') AS ?wkt)"])
+  				  	.where("?place","a","dbp-ont:PopulatedPlace")
+              .where("?place","rdfs:label","?label")
+              .optional().where("?place","geo:lat","?lat").end()
+              .optional().where("?place","geo:long","?long").end();
+
+              sparqlQuery.filter("REGEX(STR(LCASE(?label)), LCASE('"+$("#paperMapPlaces").val()+"'))");
+
+              if($('#languages').find('option:selected').val()!='all'){
+
+                sparqlQuery.filter("LANGMATCHES(LANG(?label), '"+$('#languages').find('option:selected').val()+"')");
+
+              }
+
+    console.log("SPARQL Encoded -> "+ sparqlQuery.serialiseQuery());
+    console.log("Sending SPARQL...");
+
+
+    sparqlQueryJson(encode_utf8(sparqlQuery.serialiseQuery()), "http://dbpedia.org/sparql", dbpediaPlacesCallback, false);
+
+    console.log("SPARQL executed");
+
+
+}
+
+function dbpediaPlacesCallback(str) {
+
+	console.log("#DEBUG query.js -> DBpedia places query executed.");
+
+
+	var jsonObj = eval('(' + str + ')');
+	console.log(jsonObj);
 
 
 
+  if(jsonObj.results.bindings.length>0){
+
+    $("#placeTags").html("");
+    for(var i = 0; i<  jsonObj.results.bindings.length; i++) {
+
+  		if (typeof jsonObj.results.bindings[i].place !== 'undefined') {
+
+        var place = jsonObj.results.bindings[i].place.value;
+        var label = jsonObj.results.bindings[i].label.value;
 
 
+        if(jsonObj.results.bindings[i].wkt.value != 'POINT( )'){
+
+          $("#placeTags").append("<p id='pSuggestedPlaceTag" + i +"'><input type='checkbox' id='" + decodeURI(place) + "' value='" + decodeURI(label) + "' class='chPlaceSuggestion' >" +
+                                  decodeURI(label) + " - <a href='" + decodeURI(place) + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedPlaceTag" + i
+                                  + "&quot;)'>remove</a> <a target='_blank' href='http://ifgi.uni-muenster.de/~j_jone02/istg/locator.html?wkt="+jsonObj.results.bindings[i].wkt.value+
+                                  "'> <img src='img/globe2.png' style='width: 2%; height: auto;'></a></p>");
+
+        } else {
+
+        $("#placeTags").append("<p id='pSuggestedPlaceTag" + i +"'><input type='checkbox' id='" + place + "' value='" + decodeURI(place) + "' class='chPlaceSuggestion' >" +
+                                decodeURI(label) + " - <a href='" + decodeURI(place) + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedPlaceTag" + i
+                                + "&quot;)'>remove</a></p>");
+        }
+
+      }
+
+    }
+
+  } else {
+
+    $("#placeTags").html("<p>No match found for '<b>"+$("#paperMapPlaces").val()+"</b>'</p>");
+
+  }
+}
 
 function closePopup(popup){
 
@@ -360,12 +470,14 @@ function openPopup(popup){
 
 }
 
+
+
+
 function addPlacesGND(){
 
-  //$( "#container" ).html( $( "input:checked" ).val() + " is checked!" );
-  //var selected = [];
   var placesString = "";
   var currenPlaces = $('#gndInfo').val();
+  var qt_items = 0;
 
   $('#subjectTags input:checked').each(function() {
       //selected.push($(this).attr('value'));
@@ -374,6 +486,7 @@ function addPlacesGND(){
       if(!currenPlaces.contains($(this).attr('id')) && !placesString.contains($(this).attr('id'))){
 
         placesString = placesString + $(this).attr('id') + ",";
+        qt_items++;
 
       } else {
 
@@ -382,9 +495,40 @@ function addPlacesGND(){
       }
   });
 
-  $('#gndInfoContainer').html('<input type="text" id="gndInfo">');
-  $('#gndInfo').val(currenPlaces + placesString);
-  $('#gndInfo').inputTags();
+    $('#gndInfoContainer').html('<input type="text" id="gndInfo">');
+    $('#gndInfo').val(currenPlaces + placesString);
+    $('#gndInfo').inputTags();
+
+    alert("Total places inserted: "+ qt_items);
+
+}
+
+function addPlacesDBpedia(){
+
+  var placesString = "";
+  var currenPlaces = $('#gndInfo').val();
+  var qt_items = 0;
+
+  $('#placeTags input:checked').each(function() {
+
+      if(!currenPlaces.contains($(this).attr('id')) && !placesString.contains($(this).attr('id'))){
+
+        placesString = placesString + $(this).attr('id') + ",";
+        qt_items++;
+
+      } else {
+
+        alert("Place already inserted!\n\nDBpedia Subject: " + $(this).attr('id') + "\nPlace Name: " +  $(this).attr('value')+"\n");
+
+      }
+  });
+
+    $('#gndInfoContainer').html('<input type="text" id="gndInfo">');
+    $('#gndInfo').val(currenPlaces + placesString);
+    $('#gndInfo').inputTags();
+
+    alert("Total places inserted: "+ qt_items);
+
 }
 
 function encode_utf8(rohtext) {
@@ -485,9 +629,10 @@ var opts = {
   left: '50%' // Left position relative to parent
 };
 
-function showSpin(){
+function showSpin(div){
 
-	target = document.getElementById('mapImage');
+
+	target = document.getElementById(div);
 	spinner = new Spinner(opts).spin(target);
 
 	target.appendChild(spinner.el);

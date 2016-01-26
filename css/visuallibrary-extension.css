@@ -71,9 +71,11 @@ body, html { height:100%;}
 
 }
 
-#subjectTags{ height: 75%; overflow-y:scroll;}
+#subjectTags{ height: 73%; overflow-y:scroll;}
+#placeTags{ height: 73%; overflow-y:scroll;}
 #bottomPopup {position: absolute; bottom: 0;}
 #paperMapSubjects { width: 99%; margin: 0px 5px 5px 0px}
+#paperMapPlaces { width: 99%; margin: 0px 5px 5px 0px}
 
 .black_overlay{
     display: none;
@@ -96,8 +98,28 @@ body, html { height:100%;}
     width: 50%;
     height: 50%;
     padding: 16px;
-    border: 16px solid grey;
+    border: 16px solid #7689A9;
     background-color: white;
     z-index:1002;
     overflow: auto;
+}
+
+button {
+
+  color: #FFF;
+  background-color: #19bc9c;
+  font-size: 13px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+
+  border: 1px solid #19bc9c;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+
+}
+
+button:disabled {
+    background: #dddddd;
+    border: 1px solid #dddddd;
 }
