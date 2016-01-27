@@ -118,10 +118,10 @@ var Constants = (function(){
 								'				xsd:double(?lat) <= <PARAM_YMAX> && ' + newline +
 								'				xsd:double(?long) >= <PARAM_XMIN> && ' + newline +
 								'				xsd:double(?long) <= <PARAM_XMAX> && ' + newline +
-								'				year(?start) < <PARAM_YEAR_START> && ' + newline +
-								'				year(?end) > <PARAM_YEAR_END> ' + newline +
+								'				year(?start) <= <PARAM_YEAR_START> && ' + newline +
+								'				year(?end) >= <PARAM_YEAR_END> ' + newline +
 								'			). ' + newline +
-								'		}LIMIT 10 ' + newline +
+								'		} ' + newline +
 								'	} ' + newline +
 								'	FILTER( ' + newline +
 								'		lang(?label) = "de"	&& ' + newline +

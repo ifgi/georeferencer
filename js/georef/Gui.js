@@ -332,7 +332,7 @@ $(document).ready(function () {
 			}
 			//Draws the image boundaries
 			imageBoundaryOnMap = L.polygon(xySwap(xyProjArrayBnd), c.getConstant("IMAGE_BOUNDARY_POLYGON")).addTo(map);
-			var xyProjmapAreaBnd = getBoundary(xyProjArrayBnd);
+			var xyProjmapAreaBnd = getBBOX(xyProjArrayBnd);
 			//Draws the map area
 			if(mapAreaLatLonArray != null){
 				//Gets an XY number array from L.Latlng objects
@@ -531,6 +531,7 @@ $(document).ready(function () {
 
 		$("#paperMapPlaces").val(paperMapPlaces);
 		$("#mapAreawkt").val(mapAreawkt);
+		currentWKT = mapAreawkt;
 		//document.getElementById("img_ok_geometry").src="http://png.findicons.com/files/icons/2015/24x24_free_application/24/yes.png";
 	}
 
