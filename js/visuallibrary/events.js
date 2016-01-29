@@ -74,6 +74,29 @@ $(function(){
 
 $(function(){
 
+  $( "#spotlightLinks" ).click(function(){
+
+    var qt_items = 0;
+
+    $('#spotlightLinks input:checked').each(function() {
+        qt_items++;
+    });
+
+    if(qt_items == 0){
+
+      $('#btAddDBpediaCitations').prop('disabled', true);
+
+    } else {
+
+      $('#btAddDBpediaCitations').prop('disabled', false);
+
+    }
+
+  });
+});
+
+$(function(){
+
   $( "#btFindDBpediaPlaces" ).click(function(){
 
     if($("#paperMapPlaces").val()!=''){
@@ -104,6 +127,16 @@ $(function(){
 
 
 $(function(){
+  $('#btSpotlight').click(function() {
+
+    $("#spotlightLinks").html("<br><span>Looking for 'things' in the given text, please wait...</span>");
+    queryDbpediaSpotlight();
+
+  });
+});
+
+
+$(function(){
   $( "#btSuggestions" ).click(function(){
 
     //$("#stSuggestions").html("<br><span>Loading resources matching the given map area and year, please wait ... </span>");
@@ -114,6 +147,21 @@ $(function(){
   });
 });
 
+
+$(function(){
+  $('#btSave').click(function() {
+
+
+    updateEntry();
+
+  });
+});
+
+$("#mapAreawkt").change(function(){
+  var md = MapDescription.getInstance();
+  md.setMapArea($.trim($("#mapAreawkt").val()));
+  alert("changed")
+});
 
 /*$(function(){
   $( "#btSuggestions" ).click(function(){

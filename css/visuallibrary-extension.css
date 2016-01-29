@@ -1,6 +1,6 @@
 
 
-body, html { height:100%;}
+body, html { height:100%; font-size: 13px; font-family: sans-serif;}
 
 #container {
 
@@ -9,11 +9,6 @@ body, html { height:100%;}
 }
 
 
-#toolbox {
-
-	height:30%;
-		margin:0;
-}
 
 			#vldata{
 				float:left;
@@ -22,18 +17,15 @@ body, html { height:100%;}
 
       }
 
-          #vlid {  width: 10%; float: left; margin: 5px 5px 5px 5px}
-          #paperMapTitle {  width: 84%; float: left; margin: 5px 5px 5px 5px}
-          #taMapDescription {  width: 96%;  margin: 5px 5px 5px 5px}
-          #paperMapTime {  width: 10%; float: left; margin: 5px 5px 5px 5px}
-          #paperMapScale {  width: 30%; float: left; margin: 5px 5px 5px 5px}
-          #paperMapSize {  width: 52%; float: left; margin: 5px 5px 5px 5px}
-          #url { 	 width: 96%; margin: 5px 5px 5px 5px}
-          #btURL { 	 width: 15%; margin: 5px 5px 5px 5px}
-          #paperMapCreator { width: 94%; margin: 5px 5px 5px 5px}
-          #sameAsTags { width: 92%; margin: 5px 5px 5px 5px}
-
-
+        #vlid {  width: 10%; float: left; margin: 5px 5px 5px 5px}
+        #paperMapTitle {  width: 84%; margin: 5px 5px 5px 5px}
+        #taMapDescription {  width: 96%;  margin: 5px 5px 5px 5px}
+        #paperMapTime {  width: 10%; float: left; margin: 5px 5px 5px 5px}
+        #paperMapScale {  width: 30%; float: left; margin: 5px 5px 5px 5px}
+        #paperMapSize {  width: 52%; float: left; margin: 5px 5px 5px 5px}
+        #sameAsTags {  width: 52%; !important float: left; margin: 5px 5px 5px 5px}
+        #url { 	 width: 96%; margin: 5px 5px 5px 5px}
+        #btURL { 	 width: 15%; margin: 5px 5px 5px 5px}
 
 			#enrichment{
 				float:left;
@@ -56,7 +48,8 @@ body, html { height:100%;}
 	width:50%;
 	height: 60%;
 	overflow:hidden;
-
+  border-style: solid;
+  border-width: 1px;
 
 
 	}
@@ -68,12 +61,15 @@ body, html { height:100%;}
 	overflow:hidden;
 	height: 60%;
   position: absolute;
+  border-style: solid;
+  border-width: 1px;
 
 }
 
 #subjectTags{ height: 73%; overflow-y:scroll;}
 #placeTags{ height: 73%; overflow-y:scroll;}
 #stSuggestions{ height: 67%; overflow-y:scroll;}
+#spotlightLinks{ height: 53%; overflow-y:scroll;}
 #bottomPopup {position: absolute; bottom: 0;}
 #paperMapSubjects { width: 99%; margin: 0px 5px 5px 0px}
 #paperMapPlaces { width: 99%; margin: 0px 5px 5px 0px}
@@ -124,4 +120,10 @@ button {
 button:disabled {
     background: #dddddd;
     border: 1px solid #dddddd;
+}
+
+#credits img{
+    float: right;
+    position: relative;
+    padding: 0px 8px 0px 0px;
 }

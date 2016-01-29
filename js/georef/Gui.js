@@ -132,7 +132,7 @@ $(document).ready(function () {
 
 
 
-		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
 			attribution: '&amp;copy; &lt;a href="http://osm.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors'
 		}).addTo(map);
 
@@ -531,8 +531,8 @@ $(document).ready(function () {
 
 		$("#paperMapPlaces").val(paperMapPlaces);
 		$("#mapAreawkt").val(mapAreawkt);
-		currentWKT = mapAreawkt;
-		//document.getElementById("img_ok_geometry").src="http://png.findicons.com/files/icons/2015/24x24_free_application/24/yes.png";
+		newWKT = mapAreawkt;
+
 	}
 
 	/**
@@ -1488,7 +1488,7 @@ $(document).ready(function () {
 		paperMapDescription = $.trim($("#taMapDescription").val());
 		$.ajax({
 			//Uses DBpedia spotlight
-			url: "http://spotlight.dbpedia.org/rest/annotate?text=" + escape(paperMapDescription) + "&confidence=0.0&support=00",
+			url: "http://spotlight.sztaki.hu:2222/rest/annotate?text=" + escape(paperMapDescription) + "&confidence=0.0&support=00",
 			headers: {
 				Accept : "application/json; charset=utf-8",
 				"Content-Type": "text/plain; charset=utf-8"

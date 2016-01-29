@@ -101,7 +101,7 @@ function isUriValid(uri){
 function padNumber(number, size) {
     var res = "0000000000" + number;
     return res.substr(res.length - size);
-}	
+}
 
 /**
 * Round a number
@@ -196,7 +196,7 @@ function calculatePolygonArea(xyArray){
 
 /**
 * Gets the bounding box coordinates from a set of coordinates
-* @param xyArray - Array of points [x,y] 
+* @param xyArray - Array of points [x,y]
 * @returns An 1-dimension array [xMin, yMin, xMax, yMax]
 */
 function getBoundary(xyArray){
@@ -213,7 +213,7 @@ function getBoundary(xyArray){
 		var yMax = (yMax < xy[1]) ? xy[1] : yMax;
 	}
 	var res = new Array(xMin, yMin, xMax, yMax);
-	return res;	
+	return res;
 }
 
 /**
@@ -231,14 +231,14 @@ function zoomToSuggestion(lng, lat){
 		var imgScaledCoords = imgModelScaled.scaleCoords(imgCoords[0][0], imgCoords[0][1]);
 		mapImage.panTo(new L.LatLng(imgScaledCoords[1], imgScaledCoords[0]));
 	}
-	
-}	
+
+}
 
 /**
 * Gets the bounding box coordinates from a set of coordinates
-* @param xyArray - Array of points [x,y] 
+* @param xyArray - Array of points [x,y]
 * @param proj - Projection object
-* @returns An array of points [x,y] 
+* @returns An array of points [x,y]
 */
 function xyProject(xyArray, proj){
 	var res = new Array();
@@ -255,7 +255,7 @@ function xyProject(xyArray, proj){
 /**
 * Converts latlong objects to a 2-dimension array
 * @param latlonArray - Array of latlong objects
-* @returns An array of points [x,y] 
+* @returns An array of points [x,y]
 */
 function latlon2xyArray(latlonArray){
 	var res = new Array();
@@ -269,7 +269,7 @@ function latlon2xyArray(latlonArray){
 
 /**
 * Converts a 2-dimension array [x,y] to an array of latlong objects
-* @param xyArray - An array of points [x,y] 
+* @param xyArray - An array of points [x,y]
 * @returns A 1-dimension array of latlong objects
 */
 function xyArray2latlon(xyArray){
@@ -283,9 +283,9 @@ function xyArray2latlon(xyArray){
 }
 
 /**
-* Converts an array of point objects to an array of points [x,y] 
+* Converts an array of point objects to an array of points [x,y]
 * @param pointArray - An array of point objects
-* @returns An array of points [x,y] 
+* @returns An array of points [x,y]
 */
 function point2xyArray(pointArray){
 	var res = new Array();
@@ -299,7 +299,7 @@ function point2xyArray(pointArray){
 
 /**
 * Converts an array of points [x,y] to point an array of point objects
-* @param xyArray - An array of points [x,y] 
+* @param xyArray - An array of points [x,y]
 * @returns An array of point objects
 */
 function xyArray2point(xyArray){
@@ -356,14 +356,14 @@ function getOverlayText(imgUrl, north, south, east, west, rotation){
 	var res = "";
 	var c = Constants.getInstance();
 	var template = c.getConstant("KML_OVERLAY");
-	
+
 	res = template.replace("<PARAM_URL>", imgUrl);
 	res = res.replace("<PARAM_NORTH>", north);
 	res = res.replace("<PARAM_SOUTH>", south);
 	res = res.replace("<PARAM_EAST>", east);
 	res = res.replace("<PARAM_WEST>", west);
 	res = res.replace("<PARAM_ROTATION>", rotation);
-	
+
 	return res;
 }
 
@@ -391,14 +391,14 @@ function calculateRotation(xyImgProjectedBorders){
 		count++;
 	}
 	res = sum/count;
-	
+
 	return res;
 }
 
 /**
 
 * Encodes an xyArray [x,y] as Well Known Text. NOTE 1: An xyArray [x,y] can only represent a single polygon. NOTE 2: Some srs require you to switch xy to yx. This function does not check for that
-* @param xyArray - An array of points [x,y] 
+* @param xyArray - An array of points [x,y]
 * @param srsUrl - URL of a Spatial Reference System
 * @returns A polygon encoded as WKT
 */
@@ -440,7 +440,7 @@ function xyArray2wktPolygon(xyArray, srsUrl){
 * @param commaSeparatedValuesString - A text of comma separated values
 * @returns An array
 */
-function csv2array(commaSeparatedValuesString){	
+function csv2array(commaSeparatedValuesString){
 	var res;
 	if(commaSeparatedValuesString != null && commaSeparatedValuesString.length > 0){
 		//var tmp = commaSeparatedValuesString.replace(" , ", "@@@");
@@ -473,16 +473,16 @@ function isPositiveInteger(n){
 * @returns An array of javascript objects
 */
 function getRdfClasses(rdfTxt){
-	var rdfClasses = rdfTxt.getElementsByTagName("owl:Class"); 
+	var rdfClasses = rdfTxt.getElementsByTagName("owl:Class");
 	var classArray = new Array();
 	for(var i = 0 ; i < rdfClasses.length; i++){
 		var uri = rdfClasses[i].getAttribute("rdf:about");
-		
+
 		var tmp = new Object();
 		tmp.type = "Class";
 		tmp.uri = uri;
 		tmp.name = getLastStringAfterHash(uri);
-		
+
 		var childNodes = rdfClasses[i].childNodes;
 		var tmpParents = new Array();
 		for(var j = 0 ; j < childNodes.length; j++){
@@ -501,7 +501,7 @@ function getRdfClasses(rdfTxt){
 
 /**
 * Takes a set of RdfClasses (javascript objects) and fills the array of each one with its children
-* @param rdfClasses - An array of RdfClasses 
+* @param rdfClasses - An array of RdfClasses
 */
 function getChildrenClasses(rdfClasses){
 	for(var i = 0; i < rdfClasses.length; i++){
@@ -574,7 +574,7 @@ function djb2Code(str){
 
 
 
-//Taken from http://www.w3schools.com/dom/dom_loadxmldoc.asp 
+//Taken from http://www.w3schools.com/dom/dom_loadxmldoc.asp
 function loadXMLString(txt){
 	if (window.DOMParser){
 		parser=new DOMParser();
@@ -625,6 +625,3 @@ function countErrorMessages(messageArray){
 	}
 	return [ecount, wcount];
 }
-
-
-

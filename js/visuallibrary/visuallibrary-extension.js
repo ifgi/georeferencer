@@ -3,15 +3,34 @@ var currentNamedGraph = "";
 var currentMapID = "";
 var currentMapImage = "";
 var currentWKT = "";
+var newWKT="";
 var currentMinBBOX = "";
 
+var currentMapSubject = "";
+var currentDescription ="";
+var currentYear="";
+var currentScale="";
+var currentSize="";
+var currentPresentation="";
+var currentPlaces="";
+var currentLinks="";
+var currentCitations ="";
+
 function init(){
+
+
+  $('#paperMapCreator').tagit();
+  $('#sameAsTags').tagit();
+	$('#dbpediaPlaces').tagit();
+	$('#dbpediaLinks').tagit();
+	$('#dbpediaSuggestions').tagit();
+  $('#gndInfo').tagit();
+
 
   currentMapID = getQueryVariable("id");
   currentEndpoint = getQueryVariable("endpoint");
   currentNamedGraph = getQueryVariable("graph");
   currentMapImage = getQueryVariable("image");
-
 
 	if(getQueryVariable("id")!=null){
 
@@ -19,22 +38,18 @@ function init(){
 		listSameAs(currentMapID);
 		listAuthors(currentMapID);
 		listGNDInfo(currentMapID);
+    listLinks(currentMapID);
 
 		if(currentMapImage!=null){
 
-			//loadVLimage(getQueryVariable("image"));
       loadVLimage(currentMapImage);
 
 		} else {
 
-			alert("Image URL not provided.")
+			alert("Image URL not provided.");
 		}
 
 	}
-
-	$('#dbpediaPlaces').inputTags();
-	$('#dbpediaLinks').inputTags();
-	$('#dbpediaSuggestions').inputTags();
 
 
 }
@@ -76,6 +91,107 @@ function loadVLimage(path){
 }
 
 
+
+function updateEntry(mapID){
+
+  var sparqlUpdate = "";
+
+  if(currentDescription != $('#taMapDescription').val()){
+
+     sparqlUpdate = "DELETE DATA FROM <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://purl.org/dc/terms/description> \"" + encode_utf8(currentDescription) + "\"^^<http://www.w3.org/2001/XMLSchema#string>}\n";
+     sparqlUpdate = sparqlUpdate + "INSERT DATA INTO <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://purl.org/dc/terms/description> \"" + encode_utf8($('#taMapDescription').val()) + "\"^^<http://www.w3.org/2001/XMLSchema#string>}\n";
+
+  }
+
+  if(currentScale != $('#paperMapScale').val()){
+
+    sparqlUpdate = sparqlUpdate + "DELETE DATA FROM <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://www.geographicknowledge.de/vocab/maps#hasScale> \"" + encode_utf8(currentScale) + "\"^^<http://www.w3.org/2001/XMLSchema#string>}\n";
+    sparqlUpdate = sparqlUpdate + "INSERT DATA INTO <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://www.geographicknowledge.de/vocab/maps#hasScale> \"" + encode_utf8($('#paperMapScale').val()) + "\"^^<http://www.w3.org/2001/XMLSchema#string>}\n";
+
+  }
+
+  if(currentSize != $('#paperMapSize').val()){
+
+    sparqlUpdate = sparqlUpdate + "DELETE DATA FROM <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://www.geographicknowledge.de/vocab/maps#mapSize> \"" + encode_utf8(currentSize) + "\"^^<http://www.w3.org/2001/XMLSchema#string>}\n";
+    sparqlUpdate = sparqlUpdate + "INSERT DATA INTO <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://www.geographicknowledge.de/vocab/maps#mapSize> \"" + encode_utf8($('#paperMapSize').val()) + "\"^^<http://www.w3.org/2001/XMLSchema#string>}\n";
+
+  }
+
+  if(currentPresentation != $('#url').val()){
+
+    sparqlUpdate = sparqlUpdate + "DELETE DATA FROM <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://www.geographicknowledge.de/vocab/maps#presentation> \"" + encode_utf8(currentPresentation) + "\"^^<http://www.w3.org/2001/XMLSchema#string>}\n";
+    sparqlUpdate = sparqlUpdate + "INSERT DATA INTO <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://www.geographicknowledge.de/vocab/maps#presentation> \"" + encode_utf8($('#url').val()) + "\"^^<http://www.w3.org/2001/XMLSchema#string>}\n";
+
+  }
+
+
+  if(currentPlaces != $('#gndInfo').val()){
+
+    var placesArray = currentPlaces.split(",");
+
+    for (var i = 0; i < placesArray.length; i++) {
+
+      if(placesArray[i].trim()!="" ){
+
+          sparqlUpdate = sparqlUpdate + "DELETE DATA FROM <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://purl.org/dc/terms/references> <" + placesArray[i].trim() + ">}\n";
+
+      }
+
+    }
+
+    var newPlacesArray = $('#gndInfo').val().split(",");
+
+    for (var i = 0; i < newPlacesArray.length; i++) {
+
+      if(newPlacesArray[i].trim()!=""){
+
+          sparqlUpdate = sparqlUpdate + "INSERT DATA INTO <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://purl.org/dc/terms/references> <" + newPlacesArray[i].trim() + ">}\n";
+
+        }
+
+    }
+
+
+  }
+
+  if(currentLinks != $('#dbpediaLinks').val()){
+
+    var linksArray = currentLinks.split(",");
+
+    for (var i = 0; i < linksArray.length; i++) {
+
+      if(linksArray[i].trim()!=""){
+
+          sparqlUpdate = sparqlUpdate + "DELETE DATA FROM <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://www.geographicknowledge.de/vocab/maps#mapsPhenomenon> <" + linksArray[i].trim() + ">}\n";
+
+      }
+
+    }
+
+    var newLinksArray = $('#dbpediaLinks').val().split(",");
+
+    for (var i = 0; i < newLinksArray.length; i++) {
+
+      if(newLinksArray[i].trim()!=""){
+
+          sparqlUpdate = sparqlUpdate + "INSERT DATA INTO <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://www.geographicknowledge.de/vocab/maps#mapsPhenomenon> <" + newLinksArray[i].trim() + ">}\n";
+
+      }
+
+    }
+
+  }
+
+
+  if(currentWKT!=newWKT){
+
+      sparqlUpdate = sparqlUpdate + "DELETE WHERE { GRAPH <"+currentNamedGraph+"> {<"+currentMapSubject+"> <http://www.geographicknowledge.de/vocab/maps#mapsArea> ?geometry . ?geometry <http://www.opengis.net/ont/geosparql/1.0#asWKT> ?wkt } }\n\n";
+      sparqlUpdate = sparqlUpdate + "INSERT DATA { GRAPH <"+currentNamedGraph+"> {<"+currentMapSubject+"> <http://www.geographicknowledge.de/vocab/maps#mapsArea> _:geometry . _:geometry <http://www.opengis.net/ont/geosparql/1.0#asWKT> \""+ newWKT +"\"^^<http://www.opengis.net/ont/geosparql#wktLiteral> } }";
+  }
+
+  alert(sparqlUpdate);
+
+}
 
 
 
@@ -121,17 +237,17 @@ function gndInfoCallback(str) {
 
 			if (typeof jsonObj.results.bindings[i].gndPlace !== 'undefined') {
 
-        gndInfoString = gndInfoString +  jsonObj.results.bindings[i].gndPlace.value + ", ";
+        //gndInfoString = gndInfoString +  jsonObj.results.bindings[i].gndPlace.value + ", ";
+        $('#gndInfo').tagit("createTag",jsonObj.results.bindings[i].gndPlace.value);
 
 			}
 
   }
 
+  currentPlaces = $('#gndInfo').val();
 
-  $('#gndInfo').val(gndInfoString);
-  $('#gndInfo').inputTags();
-  $("#gndInfo").prop('disabled', true);
-
+  //$('#gndInfo').val(gndInfoString);
+  //$('#gndInfo').tagit();
 
 }
 
@@ -169,22 +285,23 @@ function sameAsCallback(str) {
 	var jsonObj = eval('(' + str + ')');
 	console.log(jsonObj);
 
-  var sameAsString ="";
+  //var sameAsString ="";
 
 	for(var i = 0; i<  jsonObj.results.bindings.length; i++) {
 
 			if (typeof jsonObj.results.bindings[i].sameAs !== 'undefined') {
 
-        sameAsString = sameAsString +  jsonObj.results.bindings[i].sameAs.value + ", ";
+        //sameAsString = sameAsString +  jsonObj.results.bindings[i].sameAs.value + ", ";
+          $('#sameAsTags').tagit("createTag",jsonObj.results.bindings[i].sameAs.value.trim());
 
 			}
 
   }
 
 
-  $('#sameAsTags').val(sameAsString);
-  $('#sameAsTags').inputTags();
-  $("#sameAsTags").prop('disabled', true);
+  //$('#sameAsTags').val(sameAsString);
+  //$('#sameAsTags').inputTags();
+  //$("#sameAsTags").prop('disabled', true);
 
 
 }
@@ -224,32 +341,22 @@ function authorsCallback(str) {
 	var jsonObj = eval('(' + str + ')');
 	console.log(jsonObj);
 
-  var authorsString ="";
 
 	for(var i = 0; i<  jsonObj.results.bindings.length; i++) {
 
 		if (typeof jsonObj.results.bindings[i].map !== 'undefined') {
 
-      var authorURI ='';
-			var authorName = '';
-
 			if (typeof jsonObj.results.bindings[i].author !== 'undefined') {
-				authorURI = jsonObj.results.bindings[i].author.value;
+
+        $('#paperMapCreator').tagit("createTag",jsonObj.results.bindings[i].author.value);
 			}
-
-			if (typeof jsonObj.results.bindings[i].authorName !== 'undefined') {
-				authorName = jsonObj.results.bindings[i].authorName.value;
-
-			}
-
-      authorsString = authorsString + authorURI + ",";
-
 
     }
+
   }
 
-  $('#paperMapCreator').val(authorsString);
-  $('#paperMapCreator').inputTags();
+  //$('#paperMapCreator').val(authorsString);
+  //$('#paperMapCreator').inputTags();
 
 }
 
@@ -274,6 +381,8 @@ function executeQuery(mapID) {
               .where("?map","maps:mapSize","?size")
   				  	.where("?time","xsd:gYear","?year")
               .where("?map","rdfs:ID","?vlid")
+              .optional().where("?map","maps:mapsArea","?geometry")
+                         .where("?geometry","geo:asWKT","?wkt").end()
               .optional().where("?map","maps:mapsArea","?area").end()
               .optional().where("?map","dct:description","?description").end().end();
 
@@ -308,6 +417,8 @@ function queryCallback(str) {
 		//** Creates list item.
 		if (typeof jsonObj.results.bindings[i].map !== 'undefined') {
 
+      currentMapSubject = jsonObj.results.bindings[i].map.value;
+
       var wkt ='';
 			var description = '';
 			var title = '';
@@ -321,6 +432,7 @@ function queryCallback(str) {
 
 			if (typeof jsonObj.results.bindings[i].description !== 'undefined') {
 				description = jsonObj.results.bindings[i].description.value;
+        currentDescription = jsonObj.results.bindings[i].description.value;
 			}
 
 			if (typeof jsonObj.results.bindings[i].title !== 'undefined') {
@@ -330,6 +442,7 @@ function queryCallback(str) {
 
 			if (typeof jsonObj.results.bindings[i].presentation !== 'undefined') {
 				presentation = jsonObj.results.bindings[i].presentation.value;
+        currentPresentation = jsonObj.results.bindings[i].presentation.value;
 			}
 
 			if (typeof jsonObj.results.bindings[i].picture !== 'undefined') {
@@ -342,6 +455,7 @@ function queryCallback(str) {
 
 			if (typeof jsonObj.results.bindings[i].scale !== 'undefined') {
 				scale = jsonObj.results.bindings[i].scale.value;
+        currentScale = jsonObj.results.bindings[i].scale.value;
 			}
 
 			if (typeof jsonObj.results.bindings[i].year !== 'undefined') {
@@ -349,7 +463,8 @@ function queryCallback(str) {
 			}
 
 			if (typeof jsonObj.results.bindings[i].size !== 'undefined') {
-				size = jsonObj.results.bindings[i].size.value;
+        size = jsonObj.results.bindings[i].size.value;
+        currentSize = jsonObj.results.bindings[i].size.value;
 			}
 
       if (typeof jsonObj.results.bindings[i].vlid !== 'undefined') {
@@ -358,10 +473,22 @@ function queryCallback(str) {
 
       if (typeof jsonObj.results.bindings[i].wkt !== 'undefined') {
 
-        wkt = "<img src='img/check.svg' width=30 height=30 title='Map already georeferenced.'>";
+        //wkt = "<img src='img/check.svg' width=30 height=30 title='Map already georeferenced.'>";
+        currentWkT = jsonObj.results.bindings[i].wkt.value;
 
-      } else {
-        wkt = "<img src='img/uncheck.svg' width=20 height=20 title='No WKT Geometry found.'>";
+
+        var geojson = Terraformer.WKT.parse(currentWkT.replace("<http://www.opengis.net/def/crs/EPSG/0/4326>",""));
+        var layer = L.geoJson(geojson);
+
+        L.geoJson(geojson).addTo(map);
+        map.fitBounds(layer.getBounds());
+
+
+
+        //omnivore.wkt.parse(currentWkT).addTo(map);
+
+      //} else {
+      //  wkt = "<img src='img/uncheck.svg' width=20 height=20 title='No WKT Geometry found.'>";
       }
 
 
@@ -456,6 +583,131 @@ function dbpediaPlacesCallback(str) {
   }
 }
 
+function queryDbpediaSpotlight(){
+
+  paperMapDescription = $.trim($("#descriptionSpotlight").val());
+
+  $.ajax({
+    //Uses DBpedia spotlight
+    url: "http://spotlight.sztaki.hu:2222/rest/annotate?text=" + escape(paperMapDescription) + "&confidence=0.0&support=00",
+    headers: {
+      Accept : "application/json; charset=utf-8",
+      "Content-Type": "text/plain; charset=utf-8"
+    },
+    }).done(function ( data ) {
+
+      $("#descriptionTags").html("");
+
+      var tmp = new Array();
+
+      if(data.Resources != null){
+
+        $("#spotlightLinks").html("");
+
+        for(var i = 0; i < data.Resources.length; i++){
+
+          var obj = data.Resources[i];
+          var subject = obj["@URI"];
+
+          if(tmp.indexOf(subject) < 0){//Avoid subject repetition
+
+            tmp.push(subject);
+            //var originalText = obj["@surfaceForm"];
+            //Gets the URL last part
+            var matchedText = subject.substring(subject.lastIndexOf("/") + 1, subject.length);
+            //Creates the checkboxes
+            $("#spotlightLinks").append("<p id='pDescriptionTag" + tmp.length +"'><input type='checkbox' id='" + subject + "' value='" + subject + "' class='chDescriptionSuggestion' >" + matchedText + " - <a href='" + subject + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pDescriptionTag" + tmp.length + "&quot;)'>remove</a></p>");
+            //Completes the subject with the label and abstract -getDbpediaLabelAbstract();
+          }
+        }
+      } else {
+
+        $("#spotlightLinks").html("<p>No matches found for the given text.</p>");
+
+      }
+    }
+  );
+
+}
+
+function listLinks(mapID) {
+
+  	var sparqlQuery = $.sparql()
+  			  .prefix("maps","http://www.geographicknowledge.de/vocab/maps#")
+  			  .prefix("dct","http://purl.org/dc/terms/")
+  			  .prefix("dnb","http://d-nb.info/standards/elementset/gnd#")
+          .prefix("rdfs","http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+  			  .select(["?map", "?link"])
+  			  	.graph("<"+currentNamedGraph+">")
+  				  	.where("?map","a","maps:Map")
+              .where("?map","rdfs:ID","?vlid")
+              .where("?map","maps:mapsPhenomenon","?link").end();
+
+              sparqlQuery.filter("?vlid='"+mapID+"'");
+
+
+    console.log("SPARQL Encoded -> "+ sparqlQuery.serialiseQuery());
+    console.log("Sending SPARQL...");
+
+
+    sparqlQueryJson(encode_utf8(sparqlQuery.serialiseQuery()), currentEndpoint, linksCallback, false);
+
+    console.log("SPARQL executed");
+
+}
+
+function linksCallback(str) {
+
+	console.log("#DEBUG query.js -> links query executed.");
+
+	var jsonObj = eval('(' + str + ')');
+	console.log(jsonObj);
+
+	for(var i = 0; i<  jsonObj.results.bindings.length; i++) {
+
+		if (typeof jsonObj.results.bindings[i].map !== 'undefined') {
+
+			if (typeof jsonObj.results.bindings[i].link !== 'undefined') {
+
+        $('#dbpediaLinks').tagit("createTag",jsonObj.results.bindings[i].link.value);
+
+			}
+
+
+    }
+  }
+
+  currentLinks = $('#dbpediaLinks').val();
+
+}
+
+
+function listCitations(mapID) {
+
+  	var sparqlQuery = $.sparql()
+  			  .prefix("maps","http://www.geographicknowledge.de/vocab/maps#")
+  			  .prefix("dct","http://purl.org/dc/terms/")
+  			  .prefix("dnb","http://d-nb.info/standards/elementset/gnd#")
+          .prefix("rdfs","http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+  			  .select(["?map", "?link"])
+  			  	.graph("<"+currentNamedGraph+">")
+  				  	.where("?map","a","maps:Map")
+              .where("?map","rdfs:ID","?vlid")
+              .where("?map","maps:mapsPhenomenon","?link").end();
+
+              sparqlQuery.filter("?vlid='"+mapID+"'");
+
+
+    console.log("SPARQL Encoded -> "+ sparqlQuery.serialiseQuery());
+    console.log("Sending SPARQL...");
+
+
+    sparqlQueryJson(encode_utf8(sparqlQuery.serialiseQuery()), currentEndpoint, linksCallback, false);
+
+    console.log("SPARQL executed");
+
+}
+
 function closePopup(popup){
 
   //document.getElementById('placesPopup').style.display='none';document.getElementById('fade').style.display='none'
@@ -472,6 +724,7 @@ function openPopup(popup){
   var valid = true;
 
   $('#stSuggestions').html("<br>");
+  $('#descriptionSpotlight').val($('#taMapDescription').val());
 
   if(currentWKT == ""){
 
@@ -497,6 +750,7 @@ function openPopup(popup){
       $('#btToggleSuggestionTags').prop('disabled', false);
   }
 
+
 }
 
 
@@ -514,7 +768,8 @@ function addPlacesGND(){
       //$('#gndInfo').val($('#gndInfo').val() + $(this).attr('id') + ",");
       if(!currenPlaces.contains($(this).attr('id')) && !placesString.contains($(this).attr('id'))){
 
-        placesString = placesString + $(this).attr('id') + ",";
+        //placesString = placesString + $(this).attr('id') + ",";
+        $('#gndInfo').tagit('createTag', $(this).attr('id'));
         qt_items++;
 
       } else {
@@ -524,9 +779,10 @@ function addPlacesGND(){
       }
   });
 
-    $('#gndInfoContainer').html('<input type="text" id="gndInfo">');
-    $('#gndInfo').val(currenPlaces + placesString);
-    $('#gndInfo').inputTags();
+    //$('#gndInfoContainer').html('<input type="text" id="gndInfo">');
+    //$('#gndInfo').val(currenPlaces + placesString);
+    //$('#gndInfo').inputTags();
+
 
     alert("Total places inserted: "+ qt_items);
 
@@ -542,7 +798,8 @@ function addPlacesDBpedia(){
 
       if(!currenPlaces.contains($(this).attr('id')) && !placesString.contains($(this).attr('id'))){
 
-        placesString = placesString + $(this).attr('id') + ",";
+        //placesString = placesString + $(this).attr('id') + ",";
+        $('#gndInfo').tagit('createTag', $(this).attr('id'));
         qt_items++;
 
       } else {
@@ -552,9 +809,9 @@ function addPlacesDBpedia(){
       }
   });
 
-    $('#gndInfoContainer').html('<input type="text" id="gndInfo">');
-    $('#gndInfo').val(currenPlaces + placesString);
-    $('#gndInfo').inputTags();
+    //$('#gndInfoContainer').html('<input type="text" id="gndInfo">');
+    //$('#gndInfo').val(currenPlaces + placesString);
+    //$('#gndInfo').inputTags();
 
     alert("Total places inserted: "+ qt_items);
 
@@ -572,7 +829,8 @@ function addSuggestionsDBpedia(){
 
       if(!currentLinks.contains($(this).attr('id')) && !linksString.contains($(this).attr('id'))){
 
-        linksString = linksString + $(this).attr('id') + ",";
+        //linksString = linksString + $(this).attr('id') + ",";
+        $('#dbpediaLinks').tagit('createTag', $(this).attr('id'));
         qt_items++;
 
       } else {
@@ -582,9 +840,37 @@ function addSuggestionsDBpedia(){
       }
   });
 
-    $('#linksInfoContainer').html('<input type="text" id="dbpediaLinks">');
-    $('#dbpediaLinks').val(currentLinks + linksString);
-    $('#dbpediaLinks').inputTags();
+    alert("Total resources inserted: "+ qt_items);
+
+}
+
+function addCitationsDBpedia(){
+
+  //var linksString = "";
+  //var currentLinks = $('#gndInfo').val();
+  var qt_items = 0;
+
+  $('#spotlightLinks input:checked').each(function() {
+
+      console.log("opt -> "+$(this).attr('id'));
+
+      if(!currentPlaces.contains($(this).attr('id')) && !$('#gndInfo').val().contains($(this).attr('id'))){
+
+        //linksString = linksString + $(this).attr('id') + ",";
+        $('#gndInfo').tagit('createTag', $(this).attr('id'));
+
+        qt_items++;
+
+      } else {
+
+        alert("Resource already inserted!\n\nDBpedia Subject: " + $(this).attr('id') + "\nLabel: " +  $(this).attr('value')+"\n");
+
+      }
+  });
+
+    //$('#citationsContainer').html('<input type="text" id="dbpediaSuggestions">');
+    //$('#dbpediaSuggestions').val(currentLinks + linksString);
+    //$('#dbpediaSuggestions').inputTags();
 
     alert("Total resources inserted: "+ qt_items);
 
@@ -1293,5 +1579,18 @@ function trasposeArray(anArray){
 		res[j][i] = temp;
 	  }
 	}
+	return res;
+}
+
+/**
+* Replaces characters for escaped versions
+* @param text - An string
+* @returns An escaped string
+*/
+function getStringEscaped(text){
+	var res = text;
+	res = res.replace(/'/g, "\'");
+	res = res.replace(/"/g, '\"');
+	res = res.replace(/\\/g, '\\');
 	return res;
 }
