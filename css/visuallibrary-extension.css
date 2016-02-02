@@ -6,8 +6,8 @@ body, html { height:100%; font-size: 13px; font-family: sans-serif;}
 
 	height:100%;
 		margin:0;
-}
 
+}
 
 
 			#vldata{
@@ -17,9 +17,10 @@ body, html { height:100%; font-size: 13px; font-family: sans-serif;}
 
       }
 
+
         #vlid {  width: 10%; float: left; margin: 5px 5px 5px 5px}
         #paperMapTitle {  width: 84%; margin: 5px 5px 5px 5px}
-        #taMapDescription {  width: 96%;  margin: 5px 5px 5px 5px}
+        #taMapDescription {  width: 96%; height: 75px; margin: 5px 5px 5px 5px}
         #paperMapTime {  width: 10%; float: left; margin: 5px 5px 5px 5px}
         #paperMapScale {  width: 30%; float: left; margin: 5px 5px 5px 5px}
         #paperMapSize {  width: 52%; float: left; margin: 5px 5px 5px 5px}

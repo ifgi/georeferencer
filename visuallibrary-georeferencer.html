@@ -180,6 +180,7 @@
       </div>
 
       <div id="enrichment">
+
 				<form>
 
 					<div>
@@ -210,6 +211,7 @@
 
     </div>
 		<div id="mapImage"></div><div id="map"></div>
+
   </div>
 
 
@@ -217,7 +219,8 @@
 	<div id="placesPopupGND" class="white_content">
 
 
-				<img src="img/hbz.png" style="width: 10%; height: auto;">
+				<a target="_blank" href="http://www.dnb.de/"><img src="img/dnb.png" style="width: 9%; height: auto;">
+				<img src="img/header_haeuser.gif" style="width: 9%; height: auto;"></a>
 
 				<input type="search" id="paperMapSubjects" placeholder="Enter a place name and press 'Find matches'."/>
 				<button type="button" id="btFindGNDPlaces" onclick='$("#subjectTags").html("");'>Find matches</button>
@@ -236,7 +239,7 @@
 
 	<div id="placesPopupDBpedia" class="white_content">
 
-					<img src="img/dbpedia.png" style="width: 9%; height: auto;">
+					<a target="_blank" href="http://www.dbpedia.org/"><img src="img/dbpedia.png" style="width: 9%; height: auto;"></a>
 
 					<select id="languages" style="float: right; position: relative;">
 						<option value='all'>All</option>
@@ -443,7 +446,7 @@
 
 
 	<div id="suggestionsPoppupDBpedia" class="white_content">
-		<img src="img/dbpedia.png" style="width: 9%; height: auto;">
+		<a target="_blank" href="http://www.dbpedia.org/"><img src="img/dbpedia.png" style="width: 9%; height: auto;"></a>
 
 		<select id="languagesSuggestions" style="float: right; position: relative;">
 			<option value='all'>All</option>
@@ -635,7 +638,7 @@
 		</select>
 
 
-		<p>This search will look for resources which are inside of the map area (<a href="https://en.wikipedia.org/wiki/Minimum_bounding_box">Minimum bounding box<a>), and have their <a href="http://dbpedia.org/ontology/foundingYear">founding year<a> and <a href="http://dbpedia.org/ontology/dissolutionYear">dissolution year<a> maching with the given map's publishing year.</p>
+		<p>This search will look for resources which are inside of the map area (<a href="https://en.wikipedia.org/wiki/Minimum_bounding_box">Minimum bounding box<a>), and have their <a href="http://dbpedia.org/ontology/foundingYear">founding year<a> and <a href="http://dbpedia.org/ontology/dissolutionYear">dissolution year<a> maching with the given map's publishing year. Previously stored polygons will <b>not</b> be considered in this search.</p>
 		<button type="button" id="btSuggestions">Suggest links</button>
 		    Time window extension in years: <input type="text" id="tolerance" value="0" style="width: 30px; text-align: center;"><br>
 
@@ -652,10 +655,9 @@
 
 
 	<div id="citationsPoppupDBpedia" class="white_content">
+		<a target="_blank" href="https://github.com/dbpedia-spotlight/dbpedia-spotlight"><img src="img/dbpedia_spotlight.jpg" style="width: 20%; height: auto;"></a>
 
-		<img src="img/dbpedia_spotlight.jpg" style="width: 20%; height: auto;">
-
-		<p>This search will look for "things" described in the textbox bellow. This is a purely text based search, so please carefully check the chosen links.</p>
+		<p>This search will look for "things" described in the textbox bellow.</p>
 		<textarea id="descriptionSpotlight" type="text" placeholder="Map description" style="width: 99%; height: 15%" ></textarea><br>
 		<button type="button" id="btSpotlight">Suggest links</button><br>
 		<div id="spotlightLinks"></div>

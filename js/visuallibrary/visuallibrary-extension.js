@@ -98,8 +98,8 @@ function updateEntry(mapID){
 
   if(currentDescription != $('#taMapDescription').val()){
 
-     sparqlUpdate = "DELETE DATA FROM <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://purl.org/dc/terms/description> \"" + encode_utf8(currentDescription) + "\"^^<http://www.w3.org/2001/XMLSchema#string>}\n";
-     sparqlUpdate = sparqlUpdate + "INSERT DATA INTO <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://purl.org/dc/terms/description> \"" + encode_utf8($('#taMapDescription').val()) + "\"^^<http://www.w3.org/2001/XMLSchema#string>}\n";
+     sparqlUpdate = "DELETE DATA FROM <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://purl.org/dc/terms/description> \"" + currentDescription + "\"^^<http://www.w3.org/2001/XMLSchema#string>}\n";
+     sparqlUpdate = sparqlUpdate + "INSERT DATA INTO <"+currentNamedGraph+"> { <"+currentMapSubject+"> <http://purl.org/dc/terms/description> \"" + $('#taMapDescription').val().replace(/"/gi,'&quot;') + "\"^^<http://www.w3.org/2001/XMLSchema#string>}\n";
 
   }
 
@@ -183,13 +183,23 @@ function updateEntry(mapID){
   }
 
 
-  if(currentWKT!=newWKT){
+  if(currentWKT!=newWKT && newWKT!=""){
 
       sparqlUpdate = sparqlUpdate + "DELETE WHERE { GRAPH <"+currentNamedGraph+"> {<"+currentMapSubject+"> <http://www.geographicknowledge.de/vocab/maps#mapsArea> ?geometry . ?geometry <http://www.opengis.net/ont/geosparql/1.0#asWKT> ?wkt } }\n\n";
       sparqlUpdate = sparqlUpdate + "INSERT DATA { GRAPH <"+currentNamedGraph+"> {<"+currentMapSubject+"> <http://www.geographicknowledge.de/vocab/maps#mapsArea> _:geometry . _:geometry <http://www.opengis.net/ont/geosparql/1.0#asWKT> \""+ newWKT +"\"^^<http://www.opengis.net/ont/geosparql#wktLiteral> } }";
   }
 
-  alert(sparqlUpdate);
+  if(sparqlUpdate==""){
+
+    alert("No change detected for the current map.");
+
+  } else {
+
+    storeChanges(sparqlUpdate);
+    console.log("SPARQL Update:\n\n\n"+sparqlUpdate);
+
+  }
+
 
 }
 
@@ -473,36 +483,54 @@ function queryCallback(str) {
 
       if (typeof jsonObj.results.bindings[i].wkt !== 'undefined') {
 
-        //wkt = "<img src='img/check.svg' width=30 height=30 title='Map already georeferenced.'>";
-        currentWkT = jsonObj.results.bindings[i].wkt.value;
+
+        var polyStyle = {color: "#FF7800", weight: 2};
 
 
-        var geojson = Terraformer.WKT.parse(currentWkT.replace("<http://www.opengis.net/def/crs/EPSG/0/4326>",""));
-        var layer = L.geoJson(geojson);
+        currentWKT = jsonObj.results.bindings[i].wkt.value;
 
-        L.geoJson(geojson).addTo(map);
+        var geojson = Terraformer.WKT.parse(currentWKT.replace("<http://www.opengis.net/def/crs/EPSG/0/4326>",""));
+        var layer = L.geoJson(geojson,{style: polyStyle});
+
+        layer.addTo(map);
         map.fitBounds(layer.getBounds());
 
-
-
-        //omnivore.wkt.parse(currentWkT).addTo(map);
-
-      //} else {
-      //  wkt = "<img src='img/uncheck.svg' width=20 height=20 title='No WKT Geometry found.'>";
       }
 
 
       $("#vlid").val(vlid);
       $("#paperMapTitle").val(title);
-      $("#taMapDescription").val(description);
+      $("#taMapDescription").val(description.replace(/&quot;/gi,'"'));
 
       $("#paperMapTime").val(year);
       $("#paperMapScale").val(scale);
       $("#paperMapSize").val(size);
       $("#url").val(presentation);
+
     }
 
     }
+}
+
+
+function storeChanges(sparqlUpdate){
+
+  try{
+
+      console.log(sparqlUpdate);
+
+        $.ajax({
+                type:       "post",
+                url:        currentEndpoint,
+                data:       {action:'add', update:sparqlUpdate}});
+
+       alert("Map successfully updated.");
+
+  }catch(err){
+    alert(err);
+    console.log(err);
+  }
+
 }
 
 function listDBpediaPlaces(placeName) {
@@ -512,11 +540,14 @@ function listDBpediaPlaces(placeName) {
   			  .prefix("geo","http://www.w3.org/2003/01/geo/wgs84_pos#")
           .prefix("rdfs","http://www.w3.org/2000/01/rdf-schema#")
           .prefix("xsd","http://www.w3.org/2001/XMLSchema#")
-  			  .select(["?place", "?label", "(CONCAT('POINT(', STR(?long), ' ', STR(?lat), ')') AS ?wkt)"])
+          .prefix("foaf","http://xmlns.com/foaf/0.1/")
+  			  .select(["?place", "?label", "?wikiPage" ,"(CONCAT('POINT(', STR(?long), ' ', STR(?lat), ')') AS ?wkt)"])
   				  	.where("?place","a","dbp-ont:PopulatedPlace")
               .where("?place","rdfs:label","?label")
               .optional().where("?place","geo:lat","?lat").end()
-              .optional().where("?place","geo:long","?long").end();
+              .optional().where("?place","geo:long","?long").end()
+              .optional().where("?place","foaf:isPrimaryTopicOf","?wikiPage").end();
+
 
               sparqlQuery.filter("REGEX(STR(LCASE(?label)), '"+$("#paperMapPlaces").val().toLowerCase()+"')");
 
@@ -550,26 +581,34 @@ function dbpediaPlacesCallback(str) {
   if(jsonObj.results.bindings.length>0){
 
     $("#placeTags").html("");
+
     for(var i = 0; i<  jsonObj.results.bindings.length; i++) {
 
   		if (typeof jsonObj.results.bindings[i].place !== 'undefined') {
 
         var place = jsonObj.results.bindings[i].place.value;
         var label = jsonObj.results.bindings[i].label.value;
+        var wikiPage ="";
+
+        if (typeof jsonObj.results.bindings[i].wikiPage !== 'undefined') {
+
+            wikiPage = jsonObj.results.bindings[i].wikiPage.value;
+
+        }
 
 
         if(jsonObj.results.bindings[i].wkt.value != 'POINT( )'){
 
           $("#placeTags").append("<p id='pSuggestedPlaceTag" + i +"'><input type='checkbox' id='" + decodeURI(place) + "' value='" + decodeURI(label) + "' class='chPlaceSuggestion' >" +
-                                  decodeURI(label) + " - <a href='" + decodeURI(place) + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedPlaceTag" + i
-                                  + "&quot;)'>remove</a> <a target='_blank' href='http://ifgi.uni-muenster.de/~j_jone02/istg/locator.html?wkt="+jsonObj.results.bindings[i].wkt.value+
-                                  "'> <img src='img/globe2.png' style='width: 2%; height: auto;'></a></p>");
+                                  decodeURI(label) + " - <a href='" + decodeURI(place) + "' target='_blank'><img src='img/rdf.png' style='width: 2%; height: auto;'></a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedPlaceTag" + i
+                                  + "&quot;)'><img src='img/delete.png' style='width: 2%; height: auto;'></a> <a target='_blank' href='http://ifgi.uni-muenster.de/~j_jone02/istg/locator.html?wkt="+jsonObj.results.bindings[i].wkt.value+
+                                  "'> <img src='img/globe2.png' style='width: 2.2%; height: auto;'></a><a target='_blank' href='"+wikiPage+"'><img src='img/wikipedia.png' style='width: 2.5%; height: auto;'></a></p>");
 
         } else {
-
+          //alert(label);
         $("#placeTags").append("<p id='pSuggestedPlaceTag" + i +"'><input type='checkbox' id='" + place + "' value='" + decodeURI(place) + "' class='chPlaceSuggestion' >" +
-                                decodeURI(label) + " - <a href='" + decodeURI(place) + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedPlaceTag" + i
-                                + "&quot;)'>remove</a></p>");
+                                decodeURI(label) + " - <a href='" + decodeURI(place) + "' target='_blank'><img src='img/rdf.png' style='width: 2%; height: auto;'></a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedPlaceTag" + i
+                                + "&quot;)'><img src='img/delete.png' style='width: 2%; height: auto;'></a><a target='_blank' href='"+wikiPage+"'><img src='img/wikipedia.png' style='width: 2.5%; height: auto;'></a></p>");
         }
 
       }
@@ -616,7 +655,10 @@ function queryDbpediaSpotlight(){
             //Gets the URL last part
             var matchedText = subject.substring(subject.lastIndexOf("/") + 1, subject.length);
             //Creates the checkboxes
-            $("#spotlightLinks").append("<p id='pDescriptionTag" + tmp.length +"'><input type='checkbox' id='" + subject + "' value='" + subject + "' class='chDescriptionSuggestion' >" + matchedText + " - <a href='" + subject + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pDescriptionTag" + tmp.length + "&quot;)'>remove</a></p>");
+            $("#spotlightLinks").append("<p id='pDescriptionTag" + tmp.length +"'><input type='checkbox' id='" + subject +
+                                                                                                      "' value='" + subject +
+                                                                                                      "' class='chDescriptionSuggestion' >" + matchedText +
+                                                                                                      " - <a href='" + subject + "' target='_blank'><img src='img/rdf.png' style='width: 2%; height: auto;'></a> <a href='javascript: void(0)' onclick='removeElement(&quot;pDescriptionTag" + tmp.length + "&quot;)'><img src='img/delete.png' style='width: 2%; height: auto;'></a></p>");
             //Completes the subject with the label and abstract -getDbpediaLabelAbstract();
           }
         }
@@ -726,7 +768,7 @@ function openPopup(popup){
   $('#stSuggestions').html("<br>");
   $('#descriptionSpotlight').val($('#taMapDescription').val());
 
-  if(currentWKT == ""){
+  if(newWKT == ""){
 
       $('#btSuggestions').prop('disabled', true);
       $('#btToggleSuggestionTags').prop('disabled', true);
@@ -763,20 +805,19 @@ function addPlacesGND(){
   var qt_items = 0;
 
   $('#subjectTags input:checked').each(function() {
-      //selected.push($(this).attr('value'));
-      //alert($(this).attr('id'));
-      //$('#gndInfo').val($('#gndInfo').val() + $(this).attr('id') + ",");
-      if(!currenPlaces.contains($(this).attr('id')) && !placesString.contains($(this).attr('id'))){
 
-        //placesString = placesString + $(this).attr('id') + ",";
+
+
+      //if(currenPlaces.indexOf($(this).attr('id')!=-1) && placesString.indexOf($(this).attr('id')!=-1)){
+
         $('#gndInfo').tagit('createTag', $(this).attr('id'));
         qt_items++;
 
-      } else {
+      //} else {
 
-        alert("Place already inserted!\n\nGND ID: " + $(this).attr('id') + "\nPlace Name: " +  $(this).attr('value')+"\n");
+      //  alert("Place already inserted!\n\nGND ID: " + $(this).attr('id') + "\nPlace Name: " +  $(this).attr('value')+"\n");
 
-      }
+      //}
   });
 
     //$('#gndInfoContainer').html('<input type="text" id="gndInfo">');
@@ -796,17 +837,16 @@ function addPlacesDBpedia(){
 
   $('#placeTags input:checked').each(function() {
 
-      if(!currenPlaces.contains($(this).attr('id')) && !placesString.contains($(this).attr('id'))){
+        //if(currenPlaces.indexOf($(this).attr('id')!=-1) && placesString.indexOf($(this).attr('id')!=-1)){
 
-        //placesString = placesString + $(this).attr('id') + ",";
         $('#gndInfo').tagit('createTag', $(this).attr('id'));
         qt_items++;
 
-      } else {
+      //} else {
 
-        alert("Place already inserted!\n\nDBpedia Subject: " + $(this).attr('id') + "\nPlace Name: " +  $(this).attr('value')+"\n");
+        //alert("Place already inserted!\n\nDBpedia Subject: " + $(this).attr('id') + "\nPlace Name: " +  $(this).attr('value')+"\n");
 
-      }
+      //}
   });
 
     //$('#gndInfoContainer').html('<input type="text" id="gndInfo">');
@@ -827,17 +867,17 @@ function addSuggestionsDBpedia(){
 
       console.log("opt -> "+$(this).attr('id'));
 
-      if(!currentLinks.contains($(this).attr('id')) && !linksString.contains($(this).attr('id'))){
+      //if(currentLinks.indexOf($(this).attr('id')!=-1) && linksString.indexOf($(this).attr('id')!=-1)){
 
-        //linksString = linksString + $(this).attr('id') + ",";
+
         $('#dbpediaLinks').tagit('createTag', $(this).attr('id'));
         qt_items++;
 
-      } else {
+      //} else {
 
-        alert("Resource already inserted!\n\nDBpedia Subject: " + $(this).attr('id') + "\nLabel: " +  $(this).attr('value')+"\n");
+        //alert("Resource already inserted!\n\nDBpedia Subject: " + $(this).attr('id') + "\nLabel: " +  $(this).attr('value')+"\n");
 
-      }
+      //}
   });
 
     alert("Total resources inserted: "+ qt_items);
@@ -854,18 +894,17 @@ function addCitationsDBpedia(){
 
       console.log("opt -> "+$(this).attr('id'));
 
-      if(!currentPlaces.contains($(this).attr('id')) && !$('#gndInfo').val().contains($(this).attr('id'))){
+      //if(currentPlaces.indexOf($(this).attr('id')!=-1) && $('#gndInfo').val().indexOf($(this).attr('id')!=-1)){
 
-        //linksString = linksString + $(this).attr('id') + ",";
         $('#gndInfo').tagit('createTag', $(this).attr('id'));
 
         qt_items++;
 
-      } else {
+      //} else {
 
-        alert("Resource already inserted!\n\nDBpedia Subject: " + $(this).attr('id') + "\nLabel: " +  $(this).attr('value')+"\n");
+        //alert("Resource already inserted!\n\nDBpedia Subject: " + $(this).attr('id') + "\nLabel: " +  $(this).attr('value')+"\n");
 
-      }
+      //}
   });
 
     //$('#citationsContainer').html('<input type="text" id="dbpediaSuggestions">');
@@ -1070,7 +1109,10 @@ function queryGNDPlaces(){
               types = type.substring(type.lastIndexOf("#") + 1, type.length);
             }
             //Creates the checkboxes
-            $("#subjectTags").append("<p id='pSuggestedSubjectTag" + tmp.length +"'><input type='checkbox' id='" + id.replace("/about","") + "' value='" + name.replace('<','[').replace('>',']') + "' class='chSubjectSuggestion' >" + decodeURI(name.replace("<","[").replace(">","]")) + " - <a href='" + id + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedSubjectTag" + tmp.length + "&quot;)'>remove</a></p>");
+            $("#subjectTags").append("<p id='pSuggestedSubjectTag" + tmp.length +"'><input type='checkbox' id='" + id.replace("/about","") +
+                                                                                                        "' value='" + name.replace(/</g,'[').replace(/>/g,']') +
+                                                                                                        "' class='chSubjectSuggestion' >" + decodeURI(name.replace(/</g,"[").replace(/>/g,"]")) +
+                                                                                                        " - <a href='" + id + "' target='_blank'><img src='img/dnb.ico'></a> <a href='javascript: void(0)' onclick='removeElement(&quot;pSuggestedSubjectTag" + tmp.length + "&quot;)'><img src='img/delete.png' style='width: 2%; height: auto;'></a></p>");
           }
         }
 
@@ -1085,6 +1127,9 @@ function queryGNDPlaces(){
 
 }
 
+/**
+DBpedia Events Query
+**/
 function listDBpediaSuggestions(){
 
   if(!isNumber($('#tolerance').val())){
@@ -1109,13 +1154,15 @@ function listDBpediaSuggestions(){
       .prefix("xsd","http://www.w3.org/2001/XMLSchema#")
       .prefix("rdfs","http://www.w3.org/2000/01/rdf-schema#")
       .prefix("dbp-ont","http://dbpedia.org/ontology/")
-          .select(["?subject", "?label", "?abst"])
+      .prefix("foaf","http://xmlns.com/foaf/0.1/")
+          .select(["?subject", "?label", "?wikiPage", "?abst"])
                 .where("?subject","rdfs:label","?label")
                 .where("?subject","dbp-ont:abstract","?abst")
                 .where("?subject","geoWgs84:lat","?lat")
                 .where("?subject","geoWgs84:long","?long")
                 .where("?subject","dbp-ont:foundingYear","?start")
-                .where("?subject","dbp-ont:dissolutionYear","?end");
+                .where("?subject","dbp-ont:dissolutionYear","?end")
+                .optional().where("?subject","foaf:isPrimaryTopicOf","?wikiPage").end();
 
 
                 sparqlQuery.filter("xsd:double(?lat) >= "+yMin+
@@ -1157,13 +1204,26 @@ function dbpediaSuggestionsCallback(str) {
 
     for(var i = 0; i<  jsonObj.results.bindings.length; i++) {
 
-  		if (typeof jsonObj.results.bindings[i].subject !== 'undefined') {
 
+      if (typeof jsonObj.results.bindings[i].subject !== 'undefined') {
         var abst = jsonObj.results.bindings[i].subject.value;
         var label = jsonObj.results.bindings[i].label.value;
         var subject = jsonObj.results.bindings[i].subject.value;
+        var wikiPage ="";
 
-        $("#stSuggestions").append("<p id='pStTag" + i +"'><input type='checkbox' id='" + subject + "' value='" + subject + "' title='" + abst + "' class='chMapLinkSuggestion' >" + label + " - <a href='" + subject + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pStTag" + i + "&quot;)'>remove</a></p>");
+        if (typeof jsonObj.results.bindings[i].wikiPage !== 'undefined') {
+
+          wikiPage = jsonObj.results.bindings[i].wikiPage.value;
+
+        }
+
+        $("#stSuggestions").append("<p id='pStTag" + i +"'><input type='checkbox' id='" + subject +
+                                                                               "' value='" + subject +
+                                                                               "' title='" + abst +
+                                                                               "' class='chMapLinkSuggestion' >" + label +
+                                                      " - <a href='" + subject + "' target='_blank'><img src='img/rdf.png' style='width: 2%; height: auto;'></a> "+
+                                                      "<a href='javascript: void(0)' onclick='removeElement(&quot;pStTag" + i + "&quot;)'><img src='img/delete.png' style='width: 2%; height: auto;'></a>"+
+                                                      "<a target='_blank' href='"+wikiPage+"'><img src='img/wikipedia.png' style='width: 2.5%; height: auto;'></a></p>");
 
       }
 
@@ -1593,4 +1653,8 @@ function getStringEscaped(text){
 	res = res.replace(/"/g, '\"');
 	res = res.replace(/\\/g, '\\');
 	return res;
+}
+
+function removeElement(id){
+	$('#' + id).remove();
 }

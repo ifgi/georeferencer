@@ -115,7 +115,6 @@ $(function(){
 });
 
 
-
 $(function(){
   $('#btFindGNDPlaces').click(function() {
 
@@ -151,7 +150,6 @@ $(function(){
 $(function(){
   $('#btSave').click(function() {
 
-
     updateEntry();
 
   });
@@ -162,97 +160,3 @@ $("#mapAreawkt").change(function(){
   md.setMapArea($.trim($("#mapAreawkt").val()));
   alert("changed")
 });
-
-/*$(function(){
-  $( "#btSuggestions" ).click(function(){
-
-    $("#stSuggestions").html("<br><span>Loading resources matching the given map area and year, please wait ... </span>");
-    $("#stSuggestions").html("<p>Loading resources matching the year <b>"+$("#paperMapTime").val()+"</b> in <b>"+$('#languages').find('option:selected').text()+"</b> from the <a href='http://dbpedia.org/sparql' target='_blank'>DBpedia SPARQL Endpoint</a>. It might take a while, please wait...</p>");
-
-
-
-
-    if(trans != null){
-
-      var md = MapDescription.getInstance();
-      var ewmessages = md.validate()
-
-      if(countErrorMessages(ewmessages)[0] == 0){
-
-        var c = Constants.getInstance();
-        var dateSeparator = c.getConstant("DATE_SEPARATOR");
-        var year = $.trim($("#paperMapTime").val());
-
-        if(year != null){
-
-          var xyProjArrayBnd = getImageBoundariesInMapCoords(trans, imgModelScaled);
-          var xybboxBnd = getBBOX(xyProjArrayBnd);
-          var yearStart = "";
-          var yearEnd = "";
-
-          if(year.indexOf(dateSeparator) >= 0){
-
-            var yearStrArray = year.split(dateSeparator);
-            yearStart = yearStrArray[0];// + "-01-01T00:00:00+00:00";//TODO: Find a better way to make the year valid
-            yearEnd = yearStrArray[1];//HACK: Machete kills!
-
-          }else{
-
-            yearStart = year// + "-01-01T00:00:00+00:00";//TODO: Find a better way to make the year valid
-            yearEnd = year;//HACK: Machete kills!
-
-          }
-
-          var stRefs = queryDbpediaST(xybboxBnd, yearStart, yearEnd);
-          //Adds check boxes for suggestions
-          $("#stSuggestions").empty();
-          var tmp = new Array();
-
-          for(var i = 0; i < stRefs.length; i++){
-
-            var ref = stRefs[i];
-            var subject = ref[0];
-
-            if(tmp.indexOf(subject) < 0){//Avoid subject repetition
-
-              tmp.push(subject);
-              var label = ref[1];
-              var abst = ref[2];
-              $("#stSuggestions").append("<p id='pStTag" + tmp.length +"'><input type='checkbox' id='" + subject + "' value='" + subject + "' title='" + abst + "' class='chMapLinkSuggestion' >" + label + " - <a href='" + subject + "' target='_blank'>view</a> <a href='javascript: void(0)' onclick='removeElement(&quot;pStTag" + tmp.length + "&quot;)'>remove</a></p>");
-
-            }
-
-          }
-
-          if(stRefs.length == 0){
-
-            $("#stSuggestions").html("<br>No resource found for the given map area and year.</span>");
-
-          }
-        }else{
-
-          alert("Please fill the map time field in the metadata tab.");
-
-        }
-
-      }else{
-
-        var em = " ";
-
-        for (var i = 0; i < ewmessages.length; i++){
-
-          var m = ewmessages[i];
-
-          if(m[0] == "ERROR"){
-
-            em = em + " " + m[1];
-
-          }
-
-          alert("ERRORS:" + em);
-        }
-      }
-    }
-  });
-});
-*/
